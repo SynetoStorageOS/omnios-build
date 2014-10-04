@@ -43,7 +43,7 @@ if [ -d ${PREBUILT_ILLUMOS:-/dev/null} ]; then
 else
     KERNEL_SOURCE=/code/$USER-omnios-$RELVER/illumos-omnios
 fi
-PROTO_AREA=$KERNEL_SOURCE/proto/root_i386
+PROTO_AREA=$KERNEL_SOURCE/proto/root_i386-nd
 PATCHDIR=patches.$PROG
 PKG=driver/virtualization/kvm
 SUMMARY="placeholder; reset below"
