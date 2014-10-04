@@ -48,7 +48,7 @@ DATETIME=`TZ=UTC /usr/bin/date +"%Y%m%dT%H%M%SZ"`
 
 BUILD_DEPENDS_IPS="developer/sunstudio12.1 system/header/header-audio developer/versioning/mercurial runtime/java omniti/developer/build/ant omniti/library/freetype2"
 
-REPO="http://hg.openjdk.java.net/jdk7u/jdk7u"
+REPO="/code/upstream/openjdk-1.7.0"
 PATH=/opt/sunstudio12.1/bin:/opt/omni/bin:${PATH}
 export PATH
 

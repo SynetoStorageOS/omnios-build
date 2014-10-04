@@ -26,6 +26,7 @@
 #
 # Load support functions
 . ../../lib/functions.sh
+: ${USER:="root"}
 
 # First we build the kernel module
 PROG=illumos-kvm

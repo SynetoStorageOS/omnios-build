@@ -57,7 +57,7 @@ ON_CLOSED_BINS="$CODEMGR_WS/closed"
 export ON_CLOSED_BINS
 
 CAIMAN_CODEMGR_SEDSTRING="s/CODEMGR_WS=.*/CODEMGR_WS=`echo $CODEMGR_WS | sed 's/\//\\\\\//g'`/g"
-CAIMAN_PKG_REDIST="PKGPUBLISHER_REDIST=omnios; export PKGPUBLISHER_REDIST;"
+CAIMAN_PKG_REDIST="PKGPUBLISHER_REDIST=syneto.eu; export PKGPUBLISHER_REDIST;"
 CAIMAN_PKG_BRANCH="PKGVERS_BRANCH=$PVER; export PKGVERS_BRANCH;"
 
 sunstudio_location() {
@@ -90,7 +90,7 @@ clone_source(){
         logcmd rm -rf caiman
     fi
     logmsg "Cloning OMNI caiman Source..."
-    logcmd  $GIT clone anon@src.omniti.com:~omnios/core/caiman || \
+    logcmd  $GIT clone /code/upstream/caiman || \
         logerr "Failed to $GIT clone repo"
     logmsg "Leaving $TMPDIR/$BUILDDIR"
     popd > /dev/null 

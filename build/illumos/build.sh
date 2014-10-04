@@ -52,16 +52,17 @@ USE_SYSTEM_SSL_HEADERS="TRUE"
 PKGPREFIX=""
 PREFIX=""
 TMPDIR=/code	# This directory must be writable as your non-root user
+: ${USER:="root"}
 BUILDDIR=$USER-$PROG-$VER
 CODEMGR_WS=$TMPDIR/$BUILDDIR/illumos-omnios
 
 #Since these variables are used in a sed statment make sure to escape properly
-ILLUMOS_NO="NIGHTLY\_OPTIONS=\'\-nDCmpr\'"
+ILLUMOS_NO="NIGHTLY\_OPTIONS=\'\-nCmpri\'"
 ILLUMOS_CODEMGR_WS="CODEMGR\_WS=\/code\/$BUILDDIR\/illumos\-omnios"
 #ILLUMOS_CLONE_WS="CLONE\_WS=\'ssh:\/\/anonhg@hg.illumos.org\/illumos\-gate\'"
 ILLUMOS_CLONE_WS="CLONE\_WS=\'anon@src.omniti.com:~omnios\/core\/illumos\-omnios\'"
 
-ILLUMOS_PKG_REDIST="PKGPUBLISHER\_REDIST=\'omnios\'"
+ILLUMOS_PKG_REDIST="PKGPUBLISHER\_REDIST=\'syneto.eu\'"
 
 #these variables are appended to the end of the script so no need to escape
 ILLUMOS_GNUC="export __GNUC=''"
@@ -95,7 +96,7 @@ clone_source(){
         logmsg "OMNI Illumos Source in place. Using existing workspace."
     else
         logmsg "Cloning OMNI Illumos Source..."
-        logcmd  $GIT clone anon@src.omniti.com:~omnios/core/illumos-omnios || \
+        logcmd  $GIT clone /code/upstream/illumos-omnios || \
             logerr "--- Failed to clone source"
     fi
     pushd illumos-omnios 

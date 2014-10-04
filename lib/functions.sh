@@ -168,12 +168,13 @@ ask_to_install() {
         return
     fi
     if [[ -n "$BATCH" ]]; then
-        logmsg "===== Build aborted ====="
-        exit 1
+        logmsg "===== Auto-installing dependency $PKG ====="
+        REPLY="i"
+    else
+        ask_to_continue_ "$MSG " "Install/Abort?" "i/a" "[iIaA]"
     fi
-    ask_to_continue_ "$MSG " "Install/Abort?" "i/a" "[iIaA]"
     if [[ "$REPLY" == "i" || "$REPLY" == "I" ]]; then
-        logcmd sudo pkg install $PKG || logerr "pkg install failed"
+        logcmd sudo pkg install $PKG || logerr "pkg install $PKG failed"
     else
         logmsg "===== Build aborted ====="
         exit 1
