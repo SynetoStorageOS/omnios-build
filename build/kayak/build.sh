@@ -89,7 +89,7 @@ clone_source() {
     fi
     logcmd $GIT clone -b syneto /code/upstream/kayak
     pushd kayak > /dev/null
-    logcmd $GIT checkout r$RELVER || logmsg "No r$RELVER branch, using master."
+    logcmd $GIT checkout storageos3-r$RELVER || logmsg "No r$RELVER branch, using 'syneto'."
     GITREV=`$GIT log -1  --format=format:%at`
     COMMIT=`$GIT log -1  --format=format:%h`
     REVDATE=`echo $GITREV | gawk '{ print strftime("%c %Z",$1) }'`
