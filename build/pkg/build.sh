@@ -70,7 +70,7 @@ clone_source(){
     logcmd mkdir -p $TMPDIR/$BUILDDIR
     pushd $TMPDIR/$BUILDDIR > /dev/null 
     if [[ ! -d pkg ]]; then
-        logcmd $GIT clone anon@src.omniti.com:~omnios/core/pkg
+        logcmd $GIT clone ${UPSTREAM_REPO_CONTAINER}/pkg
     fi
     pushd pkg > /dev/null || logerr "no source"
     logcmd $GIT pull || logerr "failed to pull"
