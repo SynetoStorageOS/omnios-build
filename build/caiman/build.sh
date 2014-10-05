@@ -44,7 +44,7 @@ DESC="$SUMMARY"
 
 #all of the ips depends should be available from OmniTI repos
 
-BUILD_DEPENDS_IPS="developer/sunstudio12.1 system/boot/wanboot system/boot/wanboot/internal developer/build/onbld system/library developer/versioning/git developer/swig"
+BUILD_DEPENDS_IPS="developer/sunstudio12.1 system/boot/wanboot system/boot/wanboot/internal developer/build/onbld system/library developer/versioning/git pkg://omnios/developer/swig"
 
 GIT=git
 
