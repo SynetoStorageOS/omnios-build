@@ -96,7 +96,7 @@ clone_source(){
         logmsg "OMNI Illumos Source in place. Using existing workspace."
     else
         logmsg "Cloning OMNI Illumos Source..."
-        logcmd  $GIT clone /code/upstream/illumos-omnios || \
+        logcmd  $GIT clone ${UPSTREAM_REPO_CONTAINER}/illumos-omnios || \
             logerr "--- Failed to clone source"
     fi
     pushd illumos-omnios 

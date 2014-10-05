@@ -90,7 +90,7 @@ clone_source(){
         logcmd rm -rf caiman
     fi
     logmsg "Cloning OMNI caiman Source..."
-    logcmd  $GIT clone /code/upstream/caiman || \
+    logcmd  $GIT clone ${UPSTREAM_REPO_CONTAINER}/caiman || \
         logerr "Failed to $GIT clone repo"
     logmsg "Leaving $TMPDIR/$BUILDDIR"
     popd > /dev/null 

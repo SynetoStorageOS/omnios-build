@@ -58,7 +58,7 @@ clone_source(){
     logcmd mkdir -p $TMPDIR/$BUILDDIR
     pushd $TMPDIR/$BUILDDIR > /dev/null 
     if [[ ! -d g11n ]]; then
-        logcmd  $GIT clone -b omni /code/upstream/g11n
+        logcmd  $GIT clone -b omni ${UPSTREAM_REPO_CONTAINER}/g11n
     fi
     logcmd  cd g11n || logerr "g11n inaccessible"
     SRC=$TMPDIR/$BUILDDIR/g11n
