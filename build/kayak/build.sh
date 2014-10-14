@@ -101,7 +101,7 @@ clone_source() {
 build_server() {
     pushd $CHECKOUTDIR/kayak > /dev/null || logerr "Cannot change to src dir"
     logmsg "Installing server files"
-    logcmd gmake DESTDIR=$DESTDIR install-package || \
+    logcmd gmake BUILDSEND=$IMG_DSET DESTDIR=$DESTDIR install-package || \
         logerr "gmake failed"
     popd > /dev/null
 }
