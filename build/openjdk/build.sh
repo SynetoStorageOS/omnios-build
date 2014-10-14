@@ -103,7 +103,7 @@ install_x11_headers() {
 
 fetch_source() {
     logmsg "Fetching JDK source"
-    cp hgforest.sh $TMPDIR/$BUILDDIR/make/scripts/hgforest.sh
+    cp $SRCDIR/hgforest.sh $TMPDIR/$BUILDDIR/make/scripts/hgforest.sh
     pushd $TMPDIR/$BUILDDIR > /dev/null
     logcmd sh ./get_source.sh
     popd > /dev/null
