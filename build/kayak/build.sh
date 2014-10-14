@@ -87,7 +87,7 @@ clone_source() {
         logmsg "--- old checkout found, removing it."
         logcmd rm -rf kayak
     fi
-    logcmd $GIT clone -b syneto /code/upstream/kayak
+    logcmd $GIT clone -b syneto ${UPSTREAM_REPO_CONTAINER}/kayak
     pushd kayak > /dev/null
     logcmd $GIT checkout storageos3-r$RELVER || logmsg "No r$RELVER branch, using 'syneto'."
     GITREV=`$GIT log -1  --format=format:%at`
