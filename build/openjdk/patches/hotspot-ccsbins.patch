@@ -19,3 +19,12 @@ diff -r af383e67806b make/solaris/makefiles/sparcWorks.make
  endif
  
  REORDER_FLAG = -xF
+diff -r af383e67806b make/solaris/makefiles/adjust-mflags.sh
+--- hotspot/make/solaris/makefiles/adjust-mflags.sh Tue Oct  7 13:30:19 2014
++++ hotspot/make/solaris/makefiles/adjust-mflags.sh Tue Oct  7 13:28:40 2014
+@@ -1,4 +1,4 @@
+-#! /bin/sh
++#! /usr/gnu/bin/sh
+ #
+ # Copyright (c) 1999, 2008, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
