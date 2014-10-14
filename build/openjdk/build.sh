@@ -129,7 +129,10 @@ build32() {
         ALT_UNIXCCS_PATH=/usr/bin \
         ALT_FREETYPE_HEADERS_PATH=/opt/omni/include \
         ALT_FREETYPE_LIB_PATH=/opt/omni/lib \
-        ALT_OPENWIN_HOME=$ALT_OPENWIN_HOME || \
+        ALT_OPENWIN_HOME=$ALT_OPENWIN_HOME \
+        PARALLEL_COMPILE_JOBS=$PARALLEL_COMPILE_JOBS \
+        HOTSPOT_BUILD_JOBS=$HOTSPOT_BUILD_JOBS \
+        NO_DOCS=true || \
             logerr "--- make sanity failed"
 
     $MAKE all \
