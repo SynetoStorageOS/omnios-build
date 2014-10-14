@@ -20,11 +20,21 @@ diff -r af383e67806b make/solaris/makefiles/sparcWorks.make
  
  REORDER_FLAG = -xF
 diff -r af383e67806b make/solaris/makefiles/adjust-mflags.sh
---- hotspot/make/solaris/makefiles/adjust-mflags.sh Tue Oct  7 13:30:19 2014
-+++ hotspot/make/solaris/makefiles/adjust-mflags.sh Tue Oct  7 13:28:40 2014
+--- hotspot/make/solaris/makefiles/adjust-mflags.sh	2014-10-14 17:43:49.000000000 +0300
++++ hotspot/make/solaris/makefiles/adjust-mflags.sh	2014-10-14 17:44:51.000000000 +0300
 @@ -1,4 +1,4 @@
 -#! /bin/sh
 +#! /usr/gnu/bin/sh
  #
  # Copyright (c) 1999, 2008, Oracle and/or its affiliates. All rights reserved.
  # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+@@ -59,6 +59,9 @@
+ MFLAGS=$1
+ HOTSPOT_BUILD_JOBS=${2-}
+ 
++echo "dollarTwo=$2"
++echo "HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
++
+ # Normalize any -jN argument to the form " -j${HBJ}"
+ MFLAGS=`
+         echo "$MFLAGS" \
