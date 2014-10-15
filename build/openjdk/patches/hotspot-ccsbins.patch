@@ -22,18 +22,13 @@ diff -r af383e67806b make/solaris/makefiles/sparcWorks.make
 diff -r af383e67806b make/solaris/makefiles/adjust-mflags.sh
 --- hotspot/make/solaris/makefiles/adjust-mflags.sh	2014-10-14 17:43:49.000000000 +0300
 +++ hotspot/make/solaris/makefiles/adjust-mflags.sh	2014-10-14 17:44:51.000000000 +0300
-@@ -1,4 +1,4 @@
--#! /bin/sh
-+#! /usr/bin/env bash
- #
- # Copyright (c) 1999, 2008, Oracle and/or its affiliates. All rights reserved.
- # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-@@ -52,30 +52,33 @@
- MFLAGS=$1
- HOTSPOT_BUILD_JOBS=${2-}
+@@ -56,6 +56,9 @@
+ *)	>&2 echo "Usage: $0 ${MFLAGS} ${HOTSPOT_BUILD_JOBS}"; exit 2;;
+ esac
  
 +>&2 echo "# dollarTwo=$2"
 +>&2 echo "# HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
 +
- # Normalize any -jN argument to the form " -j${HBJ}"
- MFLAGS=`
+ MFLAGS=$1
+ HOTSPOT_BUILD_JOBS=${2-}
+ 
