@@ -24,29 +24,11 @@ diff -r af383e67806b make/solaris/makefiles/adjust-mflags.sh
 +++ hotspot/make/solaris/makefiles/adjust-mflags.sh	2014-10-14 17:44:51.000000000 +0300
 @@ -1,4 +1,4 @@
 -#! /bin/sh
-+#! /usr/gnu/bin/sh
++#! /usr/bin/env bash
  #
  # Copyright (c) 1999, 2008, Oracle and/or its affiliates. All rights reserved.
  # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-@@ -20,7 +20,7 @@
- # Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
- # or visit www.oracle.com if you need additional information or have any
- # questions.
--#
-+#  
- #
- 
- # This script is used only from top.make.
 @@ -52,30 +52,33 @@
- default_build_jobs=4
- 
- case $# in
--[12])   true;;
--*)      >&2 echo "Usage: $0 ${MFLAGS} ${HOTSPOT_BUILD_JOBS}"; exit 2;;
-+[12])	true;;
-+*)	>&2 echo "Usage: $0 ${MFLAGS} ${HOTSPOT_BUILD_JOBS}"; exit 2;;
- esac
- 
  MFLAGS=$1
  HOTSPOT_BUILD_JOBS=${2-}
  
@@ -55,31 +37,3 @@ diff -r af383e67806b make/solaris/makefiles/adjust-mflags.sh
 +
  # Normalize any -jN argument to the form " -j${HBJ}"
  MFLAGS=`
--        echo "$MFLAGS" \
--        | sed '
--                s/^-/ -/
--                s/ -\([^        ][^     ]*\)j/ -\1 -j/
--                s/ -j[0-9][0-9]*/ -j/
--                s/ -j\([^       ]\)/ -j -\1/
--                s/ -j/ -j'${HOTSPOT_BUILD_JOBS:-${default_build_jobs}}'/
--        ' `
-+	echo "$MFLAGS" \
-+	| sed '
-+		s/^-/ -/
-+		s/ -\([^ 	][^ 	]*\)j/ -\1 -j/
-+		s/ -j[0-9][0-9]*/ -j/
-+		s/ -j\([^ 	]\)/ -j -\1/
-+		s/ -j/ -j'${HOTSPOT_BUILD_JOBS:-${default_build_jobs}}'/
-+	' `
- 
- case ${HOTSPOT_BUILD_JOBS} in \
- 
- '') case ${MFLAGS} in
-     *\ -j*)
--        >&2 echo "# Note: -jN is ineffective for setting parallelism in this makefile."
--        >&2 echo "# please set HOTSPOT_BUILD_JOBS=${default_build_jobs} in the command line or environment."
-+	>&2 echo "# Note: -jN is ineffective for setting parallelism in this makefile." 
-+	>&2 echo "# please set HOTSPOT_BUILD_JOBS=${default_build_jobs} in the command line or environment."
-     esac;;
- 
- ?*) case ${MFLAGS} in
