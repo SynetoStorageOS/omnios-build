@@ -26,8 +26,8 @@ diff -r af383e67806b make/solaris/makefiles/adjust-mflags.sh
  *)	>&2 echo "Usage: $0 ${MFLAGS} ${HOTSPOT_BUILD_JOBS}"; exit 2;;
  esac
  
-+>&2 echo "# dollarTwo=$2"
-+>&2 echo "# HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
++echo "# dollarTwo=$2" >> /tmp/adjust-mflags.log
++echo "# HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}" >> /tmp/adjust-mflags.log
 +
  MFLAGS=$1
  HOTSPOT_BUILD_JOBS=${2-}
