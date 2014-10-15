@@ -114,7 +114,7 @@ build32() {
     pushd $TMPDIR/$BUILDDIR > /dev/null
     logmsg "Building 32-bit"
     export ISALIST="$ISAPART"
-    $MAKE sanity \
+    $MAKE MAKE_VERBOSE=1 sanity \
         MILESTONE="fcs" \
         BUILD_NUMBER=b$BUILD \
         JDK_UPDATE_VERSION=$UPDATE \
@@ -135,7 +135,7 @@ build32() {
         NO_DOCS=true || \
             logerr "--- make sanity failed"
 
-    $MAKE all \
+    $MAKE MAKE_VERBOSE=1 all \
         MILESTONE="fcs" \
         BUILD_NUMBER=b$BUILD \
         JDK_UPDATE_VERSION=$UPDATE \
