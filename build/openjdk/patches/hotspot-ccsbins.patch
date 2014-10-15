@@ -19,16 +19,3 @@ diff -r af383e67806b make/solaris/makefiles/sparcWorks.make
  endif
  
  REORDER_FLAG = -xF
-diff -r af383e67806b make/solaris/makefiles/adjust-mflags.sh
---- hotspot/make/solaris/makefiles/adjust-mflags.sh	2014-10-14 17:43:49.000000000 +0300
-+++ hotspot/make/solaris/makefiles/adjust-mflags.sh	2014-10-14 17:44:51.000000000 +0300
-@@ -56,6 +56,9 @@
- *)	>&2 echo "Usage: $0 ${MFLAGS} ${HOTSPOT_BUILD_JOBS}"; exit 2;;
- esac
- 
-+echo "# dollarTwo=$2" >> /tmp/adjust-mflags.log
-+echo "# HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}" >> /tmp/adjust-mflags.log
-+
- MFLAGS=$1
- HOTSPOT_BUILD_JOBS=${2-}
- 
