@@ -96,8 +96,6 @@ depend fmri=system/install@0.5.11,5.11-@PVER@ type=incorporate
 depend fmri=system/install/auto-install@0.5.11,5.11-@PVER@ type=incorporate
 depend fmri=system/install/auto-install/auto-install-common@0.5.11,5.11-@PVER@ type=incorporate
 depend fmri=system/install/configuration@0.5.11,5.11-@PVER@ type=incorporate
-depend fmri=system/install/kayak@1.1,5.11-@PVER@ type=incorporate
-depend fmri=system/install/kayak-kernel@1.1,5.11-@PVER@ type=incorporate
 depend fmri=system/install/media/internal@0.5.11,5.11-@PVER@ type=incorporate
 depend fmri=system/install/tests@0.5.11,5.11-@PVER@ type=incorporate
 depend fmri=system/install/text-install@0.5.11,5.11-@PVER@ type=incorporate
