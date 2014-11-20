@@ -182,8 +182,9 @@ build() {
             fi
             built_packages_p5m $SCRIPT
         else
-            PATH=$PATH:. $SCRIPT -r $PKGSRVR $batch_flag $lint_flag || \
+            PATH=$PATH:. $SCRIPT -a $BUILDARCH -r $PKGSRVR $batch_flag $lint_flag || \
                 logerr "Unable to run $SCRIPT"
+
             built_packages_sh $SCRIPT
         fi
     popd >/dev/null
