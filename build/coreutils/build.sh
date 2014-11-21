@@ -40,15 +40,18 @@ DEPENDS_IPS="library/gmp system/library"
 CPPFLAGS="-I/usr/include/gmp"
 PREFIX=/usr/gnu
 reset_configure_opts
+if [ ! -z "$ROOT_OK" ]; then
+    export FORCE_UNSAFE_CONFIGURE=1
+fi
 CONFIGURE_OPTS_32="$CONFIGURE_OPTS_32 --libexecdir=/usr/lib --bindir=/usr/gnu/bin"
 CONFIGURE_OPTS_64="$CONFIGURE_OPTS_64 --libexecdir=/usr/lib/$ISAPART64"
 
 link_in_usr_bin() {
     logmsg "Making links to /usr/bin"
     logcmd mkdir -p $DESTDIR/usr/bin
-    for cmd in [ base64 dir dircolors install md5sum nproc pinky printenv \
+    for cmd in "[" base64 dir dircolors install md5sum nproc pinky printenv \
 	ptx readlink seq sha1sum sha224sum sha256sum sha384sum sha512sum \
-	shred shuf stat stdbuf tac timeout truncate users vdir whoami 
+	shred shuf stat stdbuf tac timeout truncate users vdir whoami
     do
         logcmd ln $DESTDIR/usr/gnu/bin/$cmd $DESTDIR/usr/bin/$cmd
     done
