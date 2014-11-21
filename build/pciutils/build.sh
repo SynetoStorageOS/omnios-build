@@ -34,7 +34,7 @@ PKG=system/pciutils
 SUMMARY="Programs (lspci, setpci) for inspecting and manipulating configuration of PCI devices"
 DESC="$SUMMARY"
 
-DEPENDS_IPS="system/pciutils/pci.ids@2.2"
+DEPENDS_IPS="system/pciutils/pci.ids"
 
 BUILDARCH=32
 NO_PARALLEL_MAKE=1
