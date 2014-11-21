@@ -907,6 +907,25 @@ make_install_in() {
         logerr "------ Make install in $1 failed"
 }
 
+select_packages_and_build() {
+    tobuild=$*
+	if [ -z "$tobuild" ] || [ "$tobuild" == "all" ]; then
+		batch_flag="-b"
+		DEPENDENCY_CHECK="y"
+		for tgt in "${!fulltargets[@]}"; do
+                        # Uncomment the echo line if you want to see a
+                        # one-package-per-line status of what's building in
+                        # /tmp/debug.<PID>.
+                        # echo "Target = $tgt" >> /tmp/debug.$$
+			build $tgt
+		done
+	else
+		for tgt in $tobuild; do
+			build $tgt
+		done
+	fi
+}
+
 build() {
     if [[ $BUILDARCH == "32" || $BUILDARCH == "both" ]]; then
         build32
@@ -1165,8 +1184,8 @@ clean_up() {
         logmsg "--- Cleaning up temporary manifest and transform files"
         logcmd rm -f $P5M_INT $P5M_INT2 $P5M_INT3 $P5M_FINAL $MY_MOG_FILE $MANUAL_DEPS || \
             logerr "Failed to remove temporary manifest and transform files"
-        logmsg "Done."
     fi
+    logmsg "Done."
 }
 
 #############################################################################

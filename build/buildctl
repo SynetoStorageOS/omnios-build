@@ -40,35 +40,46 @@ add_target() {
 
 declare -A licenses
 TCNT=0
-for build in */build*.sh
-do
-    for PKG in $(grep -v '##IGNORE##' $build | sed -e 's/^ +//' -e 's/ +#.+//' -e 's/=/ /g' -e 's/^.+make_package/make_package/g' | awk '{if($1=="PKG"){PKG=$2; print $2;} if($1=="make_package"){print PKG"="$2;}}')
-    do
-        if [ -n "`echo ${PKG} | grep '.='`" ] ; then
-            [ -z "${AUDIT_LICENSE}" ] && continue
-            MOG=`echo ${PKG} | sed -e 's/^.*=//'`
-            PKG=`echo ${PKG} | sed -e 's/=.*$//'`
-            LOCALMOG=`echo ${build} | sed -e 's:/.*$:/local.mog:'`
-            [ -f $MOG ] || MOG=""
-            [ -f $LOCALMOG ] || LOCALMOG=""
-            LICENSE=`nawk -F "[ =]" '/"/{gsub("\"", "")} /^license/ {print $3;}' $MOG $LOCALMOG /dev/null | xargs`
-            licenses+=([$PKG]=$LICENSE)
-            TCNT=$(($TCNT + 1))
-            print -f "."
-        else
-		add_target $PKG $build
-        fi
-    done
-done
-[ -n "${AUDIT_LICENSE}" ] && echo
 
-for manifest in */*.p5m
-do
-    for PKG in $(awk '/^set name=pkg.fmri/ {print $3;}' $manifest | sed -e 's/value=//' -e 's/.*\/\/[^\/]*\///g' -e 's/@.*//')
+load_targets() {
+    INCREMENTAL_BUILD=$1
+    for build in */build*.sh
     do
-        add_target $PKG $manifest
+        for PKG in $(grep -v '##IGNORE##' $build | sed -e 's/^ +//' -e 's/ +#.+//' -e 's/=/ /g' -e 's/^.+make_package/make_package/g' | awk '{if($1=="PKG"){PKG=$2; print $2;} if($1=="make_package"){print PKG"="$2;}}')
+        do
+            if [ -n "`echo ${PKG} | grep '.='`" ] ; then
+                [ -z "${AUDIT_LICENSE}" ] && continue
+                MOG=`echo ${PKG} | sed -e 's/^.*=//'`
+                PKG=`echo ${PKG} | sed -e 's/=.*$//'`
+                LOCALMOG=`echo ${build} | sed -e 's:/.*$:/local.mog:'`
+                [ -f $MOG ] || MOG=""
+                [ -f $LOCALMOG ] || LOCALMOG=""
+                LICENSE=`nawk -F "[ =]" '/"/{gsub("\"", "")} /^license/ {print $3;}' $MOG $LOCALMOG /dev/null | xargs`
+                licenses+=([$PKG]=$LICENSE)
+                TCNT=$(($TCNT + 1))
+                print -f "."
+            else
+                grep 'Done.' `dirname $build`/build.log >/dev/null 2>&1
+                already_compiled=$?
+                if [ "$INCREMENTAL_BUILD" == "yes" -a $already_compiled == 0 ]; then
+                    echo "---> Already compiled $PKG. Skipping."
+                else
+                    echo "---> Adding $PKG"
+                    add_target $PKG $build
+                fi
+            fi
+        done
     done
-done
+    [ -n "${AUDIT_LICENSE}" ] && echo
+
+    for manifest in */*.p5m
+    do
+        for PKG in $(awk '/^set name=pkg.fmri/ {print $3;}' $manifest | sed -e 's/value=//' -e 's/.*\/\/[^\/]*\///g' -e 's/@.*//')
+        do
+            add_target $PKG $manifest
+        done
+    done
+}
 
 usage() {
     echo $0
@@ -229,41 +240,37 @@ fi
 
 case "$1" in
     list)
+    load_targets
 	list $2
 	exit
 	;;
 
     list-build)
+    load_targets
 	list_build $2
 	exit
 	;;
 
     licenses)
+    load_targets
 	licenses
 	exit
 	;;
 
     build)
 	shift
-	tobuild=$*
-	if [ -z "$tobuild" ] || [ "$tobuild" == "all" ]; then
-		batch_flag="-b"
-		DEPENDENCY_CHECK="y"
-		for tgt in "${!fulltargets[@]}"; do
-                        # Uncomment the echo line if you want to see a
-                        # one-package-per-line status of what's building in
-                        # /tmp/debug.<PID>.
-                        # echo "Target = $tgt" >> /tmp/debug.$$
-			build $tgt
-		done
-	else
-		for tgt in $tobuild; do
-			build $tgt
-		done
-	fi
-        exit
+    load_targets
+    select_packages_and_build $*
+    exit
 	;;
 
+    inc-build)
+	shift
+	INCREMENTAL_BUILD=yes
+	load_targets $INCREMENTAL_BUILD
+    select_packages_and_build $*
+    exit
+	;;
     *)
 	usage
 	;;

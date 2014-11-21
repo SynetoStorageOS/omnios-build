@@ -123,3 +123,5 @@ clone_source
 #crib_headers
 build
 package
+
+logmsg "Done."

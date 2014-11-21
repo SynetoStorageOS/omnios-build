@@ -119,3 +119,5 @@ build
 install_man
 package
 push_pkgs
+
+logmsg "Done."
