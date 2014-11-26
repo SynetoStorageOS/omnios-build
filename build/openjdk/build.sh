@@ -46,7 +46,7 @@ BUILDARCH=32
 DESTDIR=
 DATETIME=`TZ=UTC /usr/bin/date +"%Y%m%dT%H%M%SZ"`
 
-BUILD_DEPENDS_IPS="developer/sunstudio12.1 system/header/header-audio developer/versioning/mercurial runtime/java omniti/developer/build/ant omniti/library/freetype2"
+BUILD_DEPENDS_IPS="developer/sunstudio12.1 system/header/header-audio developer/versioning/mercurial runtime/java developer/build/ant omniti/library/freetype2"
 
 REPO="${UPSTREAM_REPO_CONTAINER}/openjdk-1.7.0"
 PATH=/opt/sunstudio12.1/bin:/opt/omni/bin:${PATH}
