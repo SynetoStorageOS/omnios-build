@@ -45,8 +45,6 @@ DEPENDS_IPS="developer/gcc44/libgmp-gcc44 developer/gcc44/libmpfr-gcc44 develope
 	     developer/gnu-binutils developer/library/lint developer/linker system/library/gcc-4-runtime"
 BUILD_DEPENDS_IPS="$DEPENDS_IPS"
 
-NO_PARALLEL_MAKE=1
-
 # This stuff is in its own domain
 PKGPREFIX=""
 

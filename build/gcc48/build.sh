@@ -40,7 +40,6 @@ export PATH
 
 DEPENDS_IPS="developer/gcc48/libgmp-gcc48 developer/gcc48/libmpfr-gcc48 developer/gcc48/libmpc-gcc48
 	     developer/gnu-binutils developer/library/lint developer/linker system/library/gcc-4-runtime"
-NO_PARALLEL_MAKE=1
 
 # This stuff is in its own domain
 PKGPREFIX=""
