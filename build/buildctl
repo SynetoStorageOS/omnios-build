@@ -64,7 +64,6 @@ load_targets() {
                 if [ "$INCREMENTAL_BUILD" == "yes" -a $already_compiled == 0 ]; then
                     echo "---> Already compiled $PKG. Skipping."
                 else
-                    echo "---> Adding $PKG"
                     add_target $PKG $build
                 fi
             fi
