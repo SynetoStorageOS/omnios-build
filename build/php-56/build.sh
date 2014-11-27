@@ -45,7 +45,6 @@ BUILD_DEPENDS_IPS="compress/bzip2
     system/library/iconv/xsh4/latin
     web/curl
     library/zlib
-    library/libldap
     library/freetype2
     library/libgd
     library/libjpeg
