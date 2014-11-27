@@ -36,7 +36,7 @@ VERHUMAN="jdk7u${UPDATE}-b${BUILD}"
 
 # Mercurial hash from jdk7u repo marking the desired update/build
 # taken from http://hg.openjdk.java.net/jdk7u/jdk7u/file/tip/.hgtags
-HGREV=450e8dde919df278fe75ae95e0eb0a6464f5bc41
+HGREV=36e8397bf04d972519b80ca9e24e68a2ed1e4dbd
 
 PKG=
 SUMMARY="x"
