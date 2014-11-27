@@ -34,7 +34,7 @@ SUMMARY="PHP Server 5.6"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 
 BUILD_DEPENDS_IPS="compress/bzip2
-    mawi/database/sqlite
+    database/sqlite-3
     database/bdb
     library/libtool/libltdl
     library/libxml2
@@ -43,8 +43,8 @@ BUILD_DEPENDS_IPS="compress/bzip2
     system/library/iconv/utf-8
     system/library/iconv/utf-8/manual
     system/library/iconv/xsh4/latin
-    local/web/curl
-    local/library/zlib
+    web/curl
+    library/zlib
     library/libldap
     library/freetype2
     library/libgd
@@ -441,7 +441,7 @@ make_package ext.mog
 ### CREATE PHP 5.6 PACKAGE ###
 ##############################
 
-
+#
 #DESTDIR=$INSTALLDIR
 #PROG=php
 #PKG=runtime/php56
