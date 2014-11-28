@@ -52,7 +52,6 @@ BUILD_DEPENDS_IPS="compress/bzip2
     library/libpng
     library/libssh2
     library/libtiff
-    library/security/cyrus-sasl
     library/mhash"
 
 # Though not strictly needed since we override build(), still nice to set
