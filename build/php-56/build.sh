@@ -291,7 +291,7 @@ PROG=php-curl
 PKG=runtime/php56/php-curl
 SUMMARY="PHP 5.6 - curl extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
-DEPENDS_IPS="local/web/curl library/security/cyrus-sasl library/libldap"
+DEPENDS_IPS="local/web/curl library/libldap"
 prep_build
 install_ext_curl
 make_package ext.mog
