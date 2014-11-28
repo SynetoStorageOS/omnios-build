@@ -289,7 +289,7 @@ patch_source
 prep_build
 build
 clean_dotfiles
-
+make_package php56.mog
 
 #################################
 ### CREATE EXTENSION PACKAGES ###
@@ -407,27 +407,6 @@ DEPENDS_IPS="local/library/zlib"
 prep_build
 install_ext_zlib
 make_package ext.mog
-
-
-##############################
-### CREATE PHP 5.6 PACKAGE ###
-##############################
-
-#
-#DESTDIR=$INSTALLDIR
-#PROG=php
-#PKG=runtime/php56
-#SUMMARY="PHP Server 5.6"
-#DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
-#DEPENDS_IPS="database/sqlite-3
-#    database/bdb
-#    system/library/iconv/unicode
-#    system/library/iconv/utf-8
-#    system/library/iconv/xsh4/latin
-#    local/library/zlib
-#    library/libssh2
-#    library/mhash"
-#make_package php56.mog
 
 clean_up
 
