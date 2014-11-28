@@ -62,9 +62,9 @@ reset_configure_opts
 #CFLAGS="-O2 -DZLIB_INTERNAL=1 -std=c99"
 CFLAGS="-O2 -DZLIB_INTERNAL=1 -std=gnu99"
 CPPFLAGS=""
-CPPFLAGS64="-I/usr/local/include/$ISAPART64 -I/usr/local/include/$ISAPART64/curl \
-    -I/usr/local/include"
-LDFLAGS64="$LDFLAGS64 -L/usr/local/lib/$ISAPART64 -R/usr/local/lib/$ISAPART64 \
+CPPFLAGS64="-I/usr/include/$ISAPART64 -I/usr/include/$ISAPART64/curl \
+    -I/usr/include"
+LDFLAGS64="$LDFLAGS64 -L/usr/lib/$ISAPART64 -R/usr/lib/$ISAPART64 \
     -L$PREFIX/lib -R$PREFIX/lib"
 
 
@@ -87,20 +87,15 @@ CONFIGURE_OPTS="
         --enable-cgi
         --enable-fpm
         --enable-zip=shared
-        --with-zlib=shared,/usr/local
-        --with-zlib-dir=/usr/local
-        --with-sqlite3=shared,/usr/local
-        --with-db4=/usr/local
+        --with-zlib=shared
+        --with-sqlite3=shared
+        --with-db4
         --enable-pdo=shared
         --with-pdo-sqlite=shared
         --enable-mbstring=shared
-        --with-mhash=/usr/local
-        --with-mcrypt=shared,/usr/local
-        --with-gd=shared,/usr/local
-        --with-jpeg-dir=/usr/local
-        --with-png-dir=/usr/local
-        --with-tiff-dir=/usr/local
-        --with-freetype-dir=/usr/local
+        --with-mhash
+        --with-mcrypt=shared
+        --with-gd=shared
         --with-xpm=no
         --enable-gd-native-ttf
         --enable-exif=shared
@@ -111,17 +106,17 @@ CONFIGURE_OPTS="
         --enable-soap=shared
         --with-curl=shared
         --with-openssl
-        --with-ldap=shared,/usr/local
+        --with-ldap=shared
         "
 
 # TEST TODO
-#        --with-bzip2=shared,/usr/local
-#        --with-libxml-dir=/usr/local
-#        --with-t1lib-dir=/usr/local # for gd
+#        --with-bzip2=shared
+#        --with-libxml-dir
+#        --with-t1lib-dir # for gd
 
 
 # DID NOT WORK
-#        --with-ldap-sasl=shared,/usr/local -> did not find sasl.h in inc/sasl/sasl.h
+#        --with-ldap-sasl=shared -> did not find sasl.h in inc/sasl/sasl.h
 #        --enable-sockets
 #        --enable-intl=shared
 #        --enable-intl=shared
