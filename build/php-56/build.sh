@@ -71,7 +71,7 @@ LDFLAGS64="$LDFLAGS64 -L/usr/lib/$ISAPART64 -R/usr/lib/$ISAPART64 \
 export EXTENSION_DIR=$PREFIX/lib/modules
 CONFIGURE_OPTS_32=""
 CONFIGURE_OPTS_64=""
-CONFIGURE_OPTS="
+CONFIGURE_OPTS="f
         --prefix=$PREFIX
         --with-libdir=lib/$ISAPART64
         --sysconfdir=$PREFIX/etc
@@ -108,7 +108,36 @@ CONFIGURE_OPTS="
         --with-openssl
         --with-ldap=shared
         --enable-sockets
-        "
+        --enable-pcntl
+        --enable-posix
+        --enable-sigchild
+        --with-readline
+        --with-pcre-regex
+        --enable-ctype
+        --enable-session
+        --enable-xml
+        --enable-simplexml
+        --enable-filter
+        --with-gettext
+ 		--enable-dom
+		--enable-tokenizer
+		--enable-shmop
+		--enable-sysvmsg
+		--enable-sysvsem
+		--enable-sysvshm
+		--with-xsl
+		--enable-fileinfo
+		--enable-json
+		--enable-hash
+		--enable-xmlwriter
+		--enable-phar
+		--enable-igbinary
+		--with-pam
+		--with-iconv
+        --enable-memcache
+		--enable-r_
+		--enable-xdebug=shared
+		"
 
 # TEST TODO
 #        --with-bzip2=shared
