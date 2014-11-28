@@ -71,7 +71,7 @@ LDFLAGS64="$LDFLAGS64 -L/usr/lib/$ISAPART64 -R/usr/lib/$ISAPART64 \
 export EXTENSION_DIR=$PREFIX/lib/modules
 CONFIGURE_OPTS_32=""
 CONFIGURE_OPTS_64=""
-CONFIGURE_OPTS="f
+CONFIGURE_OPTS="
         --prefix=$PREFIX
         --with-libdir=lib/$ISAPART64
         --sysconfdir=$PREFIX/etc
@@ -136,7 +136,7 @@ CONFIGURE_OPTS="f
 		--with-iconv
         --enable-memcache
 		--enable-r_
-		--enable-xdebug=shared
+		--enable-xdebu=shared
 		"
 
 # TEST TODO
