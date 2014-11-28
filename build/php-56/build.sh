@@ -209,19 +209,6 @@ install_ext_mcrypt() {
             logerr "--- Moving mcrypt extensions failed."
 }
 
-# PHP mysql extension
-install_ext_mysql() {
-    create_extension_dir
-    logmsg "--- Moving files for mysql extensions"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/mysql.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/mysql.so $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/mysqli.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/mysqli.so $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo_mysql.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo_mysql.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving mysql extensions failed."
-}
-
 # PHP pdo extension
 install_ext_pdo() {
     create_extension_dir
@@ -240,17 +227,6 @@ install_ext_sqlite() {
         logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo_sqlite.a $DESTDIR/$EXTENSION_DIR/ && \
         logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo_sqlite.so $DESTDIR/$EXTENSION_DIR/ || \
             logerr "--- Moving sqlite extensions failed."
-}
-
-# PHP pgsql extension
-install_ext_pgsql() {
-    create_extension_dir
-    logmsg "--- Moving files for pgsql extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/pgsql.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/pgsql.so $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo_pgsql.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo_pgsql.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving pgsql extensions failed."
 }
 
 # PHP zlib extension
@@ -368,15 +344,6 @@ prep_build
 install_ext_mcrypt
 make_package ext.mog
 
-PROG=php-mysql
-PKG=runtime/php56/php-mysql
-SUMMARY="PHP 5.6 - MySQL Extensions"
-DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
-DEPENDS_IPS=""
-prep_build
-install_ext_mysql
-make_package ext_mysql.mog
-
 PROG=php-pdo
 PKG=runtime/php56/php-pdo
 SUMMARY="PHP 5.6 - pdo extension"
@@ -385,15 +352,6 @@ DEPENDS_IPS=""
 prep_build
 install_ext_pdo
 make_package ext.mog
-
-PROG=php-pgsql
-PKG=runtime/php56/php-pgsql
-SUMMARY="PHP 5.6 - PostgreSQL Extension"
-DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
-DEPENDS_IPS="library/libpq5"
-prep_build
-install_ext_pgsql
-make_package ext_pgsql.mog
 
 PROG=php-sqlite
 PKG=runtime/php56/php-sqlite
