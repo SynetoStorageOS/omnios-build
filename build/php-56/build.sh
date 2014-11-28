@@ -135,7 +135,6 @@ CONFIGURE_OPTS="
 		--with-pam
 		--with-iconv
         --enable-memcache
-		--enable-r_
 		--enable-xdebu=shared
 		"
 
