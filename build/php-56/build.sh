@@ -50,12 +50,10 @@ BUILD_DEPENDS_IPS="compress/bzip2
     library/libjpeg
     library/libmcrypt
     library/libpng
-    library/libpq5
     library/libssh2
     library/libtiff
     library/security/cyrus-sasl
-    library/mhash
-    library/libmysqlclient18"
+    library/mhash"
 
 # Though not strictly needed since we override build(), still nice to set
 BUILDARCH=64
@@ -95,12 +93,7 @@ CONFIGURE_OPTS="
         --with-sqlite3=shared,/usr/local
         --with-db4=/usr/local
         --enable-pdo=shared
-        --with-pgsql=shared,/usr/local
-        --with-pdo-pgsql=shared,/usr/local
         --with-pdo-sqlite=shared
-        --with-mysql=shared,mysqlnd
-        --with-mysqli=shared,mysqlnd
-        --with-pdo-mysql=shared,mysqlnd
         --enable-mbstring=shared
         --with-mhash=/usr/local
         --with-mcrypt=shared,/usr/local
