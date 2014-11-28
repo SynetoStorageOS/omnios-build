@@ -107,6 +107,7 @@ CONFIGURE_OPTS="
         --with-curl=shared
         --with-openssl
         --with-ldap=shared
+        --enable-sockets
         "
 
 # TEST TODO
@@ -117,7 +118,6 @@ CONFIGURE_OPTS="
 
 # DID NOT WORK
 #        --with-ldap-sasl=shared -> did not find sasl.h in inc/sasl/sasl.h
-#        --enable-sockets
 #        --enable-intl=shared
 #        --enable-intl=shared
 
