@@ -38,7 +38,6 @@ DESC="$SUMMARY ($VER)"
 DEPENDS_IPS="system/library/gcc-4-runtime library/libpng"
 
 export GNUMAKE=gmake
-export CONFIGURE_OPTS="--mandir=/usr/share/man"
 
 init
 download_source $PROG $PROG $VER

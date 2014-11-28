@@ -32,6 +32,7 @@ VER=2.5.8
 PKG=library/libmcrypt
 SUMMARY="MCrypt library"
 DESC="$SUMMMARY ($VER)"
+CONFIGURE_OPTS="--mandir=/usr/share/man"
 
 init
 download_source $PROG $PROG $VER
@@ -40,7 +41,7 @@ prep_build
 build
 make_isa_stub
 make_package
-#clean_up
+clean_up
 
 # Vim hints
 # vim:ts=4:sw=4:et:
