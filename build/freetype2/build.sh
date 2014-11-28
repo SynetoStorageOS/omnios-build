@@ -36,9 +36,9 @@ SUMMARY="A Free, High-Quality, and Portable Font Engine"
 DESC="$SUMMARY ($VER)"
 
 DEPENDS_IPS="system/library/gcc-4-runtime library/libpng"
-export GNUMAKE=gmake
 
-CONFIGURE_OPTS="--mandir=/usr/share/man"
+export GNUMAKE=gmake
+export CONFIGURE_OPTS="--mandir=/usr/share/man"
 
 init
 download_source $PROG $PROG $VER
