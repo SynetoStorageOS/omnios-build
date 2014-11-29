@@ -22,6 +22,6 @@ KVM_CMD_ROLLBACK=1c6181be55d1cadc4426069960688307a6083131
 
 # Upstream repository container
 # UPSTREAM_REPO_CONTAINER=ssh://admin@storage//tank/source-repository/storageos3
-UPSTREAM_REPO_CONTAINER=ssh://dan.vatca@10.88.88.1//Volumes/Source/storageos3
+UPSTREAM_REPO_CONTAINER=/code/source-repos
 
 PREBUILT_ILLUMOS=`readlink -f /code/root-omnios-* | sort |  tail -n 1`/illumos-omnios

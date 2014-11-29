@@ -30,13 +30,13 @@
 
 PROG=openjdk
 VER=1.7.0
-UPDATE=21
-BUILD=30
+UPDATE=80
+BUILD=03
 VERHUMAN="jdk7u${UPDATE}-b${BUILD}"
 
 # Mercurial hash from jdk7u repo marking the desired update/build
 # taken from http://hg.openjdk.java.net/jdk7u/jdk7u/file/tip/.hgtags
-HGREV=36e8397bf04d972519b80ca9e24e68a2ed1e4dbd
+HGREV=9d2b485d2a58ea57ab2b3c06b2128f456ab39a38
 
 PKG=
 SUMMARY="x"
@@ -46,7 +46,7 @@ BUILDARCH=32
 DESTDIR=
 DATETIME=`TZ=UTC /usr/bin/date +"%Y%m%dT%H%M%SZ"`
 
-BUILD_DEPENDS_IPS="developer/sunstudio12.1 system/header/header-audio developer/versioning/mercurial runtime/java developer/build/ant omniti/library/freetype2"
+BUILD_DEPENDS_IPS="developer/sunstudio12.1 system/header/header-audio developer/versioning/mercurial runtime/java developer/build/ant library/freetype2"
 
 REPO="${UPSTREAM_REPO_CONTAINER}/openjdk-1.7.0"
 PATH=/opt/sunstudio12.1/bin:/opt/omni/bin:${PATH}
@@ -61,8 +61,8 @@ DUPS_LIST=
 J2RE_INSTALLTMP=
 J2SDK_INSTALLTMP=
 
-PARALLEL_COMPILE_JOBS=$MAKE_JOBS
-HOTSPOT_BUILD_JOBS="-j $MAKE_JOBS"
+PARALLEL_COMPILE_JOBS=${MJOBS}
+HOTSPOT_BUILD_JOBS=${MJOBS}
 NO_DOCS=true
 export PARALLEL_COMPILE_JOBS HOTSPOT_BUILD_JOBS NO_DOCS
 
@@ -127,8 +127,8 @@ build32() {
         ALT_COMPILER_PATH=$ALT_COMPILER_PATH \
         ALT_CUPS_HEADERS_PATH=$ALT_CUPS_HEADERS_PATH \
         ALT_UNIXCCS_PATH=/usr/bin \
-        ALT_FREETYPE_HEADERS_PATH=/opt/omni/include \
-        ALT_FREETYPE_LIB_PATH=/opt/omni/lib \
+        ALT_FREETYPE_HEADERS_PATH=/usr/include/freetype2 \
+        ALT_FREETYPE_LIB_PATH=/usr/lib \
         ALT_OPENWIN_HOME=$ALT_OPENWIN_HOME \
         PARALLEL_COMPILE_JOBS="$PARALLEL_COMPILE_JOBS" \
         HOTSPOT_BUILD_JOBS="$HOTSPOT_BUILD_JOBS" \
@@ -148,8 +148,8 @@ build32() {
         ALT_COMPILER_PATH=$ALT_COMPILER_PATH \
         ALT_CUPS_HEADERS_PATH=$ALT_CUPS_HEADERS_PATH \
         ALT_UNIXCCS_PATH=/usr/bin \
-        ALT_FREETYPE_HEADERS_PATH=/opt/omni/include \
-        ALT_FREETYPE_LIB_PATH=/opt/omni/lib \
+        ALT_FREETYPE_HEADERS_PATH=/usr/include/freetype2 \
+        ALT_FREETYPE_LIB_PATH=/usr/lib \
         ALT_OPENWIN_HOME=$ALT_OPENWIN_HOME \
         PARALLEL_COMPILE_JOBS="$PARALLEL_COMPILE_JOBS" \
         HOTSPOT_BUILD_JOBS="$HOTSPOT_BUILD_JOBS" \

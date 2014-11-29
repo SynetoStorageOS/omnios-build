@@ -54,6 +54,8 @@ BUILD_DEPENDS_IPS="compress/bzip2
     library/libtiff
     library/mhash"
 
+DEPENDS_IPS="system/library"
+
 # Though not strictly needed since we override build(), still nice to set
 BUILDARCH=64
 PREFIX=$PREFIX/php56
@@ -119,36 +121,23 @@ CONFIGURE_OPTS="
         --enable-simplexml
         --enable-filter
         --with-gettext
- 		--enable-dom
-		--enable-tokenizer
-		--enable-shmop
-		--enable-sysvmsg
-		--enable-sysvsem
-		--enable-sysvshm
-		--with-xsl
-		--enable-fileinfo
-		--enable-json
-		--enable-hash
-		--enable-xmlwriter
-		--enable-phar
-		--enable-igbinary
-		--with-pam
-		--with-iconv
+        --enable-dom
+        --enable-tokenizer
+        --enable-shmop
+        --enable-sysvmsg
+        --enable-sysvsem
+        --enable-sysvshm
+        --with-xsl
+        --enable-fileinfo
+        --enable-json
+        --enable-hash
+        --enable-xmlwriter
+        --enable-phar
+        --enable-igbinary
+        --with-pam
+        --with-iconv
         --enable-memcache
-		--enable-xdebu=shared
-		"
-
-# TEST TODO
-#        --with-bzip2=shared
-#        --with-libxml-dir
-#        --with-t1lib-dir # for gd
-
-
-# DID NOT WORK
-#        --with-ldap-sasl=shared -> did not find sasl.h in inc/sasl/sasl.h
-#        --enable-intl=shared
-#        --enable-intl=shared
-
+        --enable-xdebug=shared"
 
 make_install() {
     logmsg "--- make install"

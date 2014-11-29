@@ -92,4 +92,4 @@ SUMMARY="Simple IPC library based on messages - client libraries"
 DESC="Simple IPC library based on messages - client libraries"
 make_package libdbus.mog
 
-#clean_up
+clean_up

@@ -36,10 +36,7 @@ DESC="$SUMMARY"
 
 DEPENDS_IPS="SUNWcs system/library system/library/gcc-4-runtime library/zlib@1.2.8"
 
-NO_PARALLEL_MAKE=1
-
 make_prog() {
-    [[ -n $NO_PARALLEL_MAKE ]] && MAKE_JOBS=""
     logmsg "--- make"
     # This will setup the internal runpath of libssl and libcrypto
     logcmd $MAKE $MAKE_JOBS SHARED_LDFLAGS="$SHARED_LDFLAGS" || \

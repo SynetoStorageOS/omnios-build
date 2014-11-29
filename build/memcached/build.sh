@@ -22,27 +22,22 @@
 #
 #
 # Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
-# Copyright 2014 S.C. Syneto S.R.L.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-PROG=tmux
-VER=1.9a
-VERHUMAN=$VER
-PKG=terminal/tmux
-SUMMARY="terminal multiplexer"
+PROG=memcached
+VER=1.4.21
+PKG=system/memcached
+SUMMARY="Distributed memory object caching system"
 DESC="$SUMMARY"
 
 BUILD_DEPENDS_IPS="library/libevent"
 
-BUILDARCH=32
-CONFIGURE_OPTS_32="$CONFIGURE_OPTS_32 --bindir=/usr/bin"
-CPPFLAGS="-I/usr/include/event2"
-CFLAGS="-std=c99 -D_XPG6 -D_POSIX_C_SOURCE=200112L"
-LDFLAGS="-lsocket -lnsl -lsendfile"
+DEPENDS_IPS="SUNWcs"
 
+# TODO: We still miss SMF manifest and SVC method
 init
 download_source $PROG $PROG $VER
 patch_source
@@ -50,9 +45,5 @@ prep_build
 build
 make_isa_stub
 strip_install
-VER=${VER//a/.0}
 make_package
 clean_up
-
-# Vim hints
-# vim:ts=4:sw=4:et:

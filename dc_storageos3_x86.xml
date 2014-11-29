@@ -32,7 +32,7 @@
     is to do serial builds and to keep all the incremental
     images around
   -->
-  <distro name="SynetoStorageOS3" add_timestamp="false">
+  <distro name="syneto-storage-3.00.0001" add_timestamp="false">
   <!-- Uncomment if http_proxy needs to be set
   <distro name="OmniOS_Text_X86" add_timestamp="false"
       http_proxy="http://example.com">
