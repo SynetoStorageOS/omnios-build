@@ -37,13 +37,21 @@ BUILD_DEPENDS_IPS="library/libevent"
 
 DEPENDS_IPS="SUNWcs"
 
-# TODO: We still miss SMF manifest and SVC method
+
+add_service() {
+	ginstall -d -m 755 $(DESTDIR)/lib/svc/method/
+	ginstall -d -m 755 $(DESTDIR)/lib/svc/manifest/application/database/
+	ginstall -m 755 svc/memcached/lib/svc/method/
+	ginstall -m 755 svc/memcached.xml $(DESTDIR)/lib/svc/manifest/application/database/
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
 prep_build
 build
 make_isa_stub
+add_service
 strip_install
 make_package
 clean_up
