@@ -39,10 +39,10 @@ DEPENDS_IPS="SUNWcs"
 
 
 add_service() {
-	ginstall -d -m 755 $(DESTDIR)/lib/svc/method/
-	ginstall -d -m 755 $(DESTDIR)/lib/svc/manifest/application/database/
-	ginstall -m 755 svc/memcached $(DESTDIR)/lib/svc/memcached/lib/svc/method/
-	ginstall -m 755 svc/memcached.xml $(DESTDIR)/lib/svc/manifest/application/database/
+	ginstall -d -m 755 ${DESTDIR}/lib/svc/method/
+	ginstall -d -m 755 ${DESTDIR}/lib/svc/manifest/application/database/
+	ginstall -m 755 svc/memcached ${DESTDIR}/lib/svc/memcached/lib/svc/method/
+	ginstall -m 755 svc/memcached.xml ${DESTDIR}/lib/svc/manifest/application/database/
 }
 
 init
