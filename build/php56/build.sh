@@ -70,13 +70,13 @@ LDFLAGS64="$LDFLAGS64 -L/usr/lib/$ISAPART64 -R/usr/lib/$ISAPART64 \
     -L$PREFIX/lib -R$PREFIX/lib"
 
 
-export EXTENSION_DIR=$PREFIX/lib/modules
+export EXTENSION_DIR=$PREFIX/lib/php/modules
 CONFIGURE_OPTS_32=""
 CONFIGURE_OPTS_64=""
 CONFIGURE_OPTS="
         --prefix=$PREFIX
         --with-libdir=lib/$ISAPART64
-        --sysconfdir=$PREFIX/etc
+        --sysconfdir=/etc
         --includedir=$PREFIX/include
         --bindir=$PREFIX/bin
         --sbindir=$PREFIX/sbin
