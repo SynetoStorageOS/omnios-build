@@ -76,13 +76,14 @@ CONFIGURE_OPTS="
         --prefix=$PREFIX
         --with-libdir=lib/$ISAPART64
         --sysconfdir=/etc
+        --localstatedir=/var
         --includedir=$PREFIX/include
         --bindir=$PREFIX/bin
         --sbindir=$PREFIX/sbin
         --libdir=$PREFIX/lib
         --libexecdir=$PREFIX/libexec
         --datarootdir=$PREFIX/share
-        --mandir=$PREFIX/man
+        --mandir=$PREFIX/share/man
         --with-pear=$PREFIX/pear
         --enable-dtrace
         --enable-cgi
@@ -277,7 +278,7 @@ patch_source
 prep_build
 build
 clean_dotfiles
-make_package php56.mog
+make_package php.mog
 
 #################################
 ### CREATE EXTENSION PACKAGES ###
@@ -286,7 +287,7 @@ make_package php56.mog
 INSTALLDIR=$DESTDIR
 
 PROG=php-bcmath
-PKG=runtime/php56/php-bcmath
+PKG=runtime/php/php-bcmath
 SUMMARY="PHP 5.6 - bcmath extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS=""
@@ -295,7 +296,7 @@ install_ext_bcmath
 make_package ext.mog
 
 PROG=php-calendar
-PKG=runtime/php56/php-calendar
+PKG=runtime/php/php-calendar
 SUMMARY="PHP 5.6 - calendar extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS=""
@@ -304,7 +305,7 @@ install_ext_calendar
 make_package ext.mog
 
 PROG=php-curl
-PKG=runtime/php56/php-curl
+PKG=runtime/php/php-curl
 SUMMARY="PHP 5.6 - curl extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS="local/web/curl library/libldap"
@@ -313,7 +314,7 @@ install_ext_curl
 make_package ext.mog
 
 PROG=php-exif
-PKG=runtime/php56/php-exif
+PKG=runtime/php/php-exif
 SUMMARY="PHP 5.6 - exif extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS=""
@@ -322,7 +323,7 @@ install_ext_exif
 make_package ext.mog
 
 PROG=php-ftp
-PKG=runtime/php56/php-ftp
+PKG=runtime/php/php-ftp
 SUMMARY="PHP 5.6 - ftp extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS=""
@@ -331,7 +332,7 @@ install_ext_ftp
 make_package ext.mog
 
 PROG=php-gd
-PKG=runtime/php56/php-gd
+PKG=runtime/php/php-gd
 SUMMARY="PHP 5.6 - gd extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS="library/freetype2
@@ -343,7 +344,7 @@ install_ext_gd
 make_package ext.mog
 
 PROG=php-mbstring
-PKG=runtime/php56/php-mbstring
+PKG=runtime/php/php-mbstring
 SUMMARY="PHP 5.6 - mcrypt extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS=""
@@ -352,7 +353,7 @@ install_ext_mbstring
 make_package ext.mog
 
 PROG=php-mcrypt
-PKG=runtime/php56/php-mcrypt
+PKG=runtime/php/php-mcrypt
 SUMMARY="PHP 5.6 - mcrypt extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS="library/libmcrypt"
@@ -361,7 +362,7 @@ install_ext_mcrypt
 make_package ext.mog
 
 PROG=php-pdo
-PKG=runtime/php56/php-pdo
+PKG=runtime/php/php-pdo
 SUMMARY="PHP 5.6 - pdo extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS=""
@@ -370,7 +371,7 @@ install_ext_pdo
 make_package ext.mog
 
 PROG=php-sqlite
-PKG=runtime/php56/php-sqlite
+PKG=runtime/php/php-sqlite
 SUMMARY="PHP 5.6 - sqlite extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS="database/sqlite-3"
@@ -379,7 +380,7 @@ install_ext_sqlite
 make_package ext_sqlite.mog
 
 PROG=php-zib
-PKG=runtime/php56/php-zip
+PKG=runtime/php/php-zip
 SUMMARY="PHP 5.6 - zip extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS="local/library/zlib"
@@ -388,7 +389,7 @@ install_ext_zip
 make_package ext.mog
 
 PROG=php-zlib
-PKG=runtime/php56/php-zlib
+PKG=runtime/php/php-zlib
 SUMMARY="PHP 5.6 - zlib extension"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 DEPENDS_IPS="local/library/zlib"

@@ -23,7 +23,7 @@
 # Copyright 2013 Steffen Kram.  All rights reserved.
 # Use is subject to license terms.
 #
-<transform dir path="usr/local/php56/var/log" -> drop>
-<transform dir path="usr/local/php56/var/run" -> drop>
-<transform dir path="usr/local/php56/var" -> drop>
+<transform dir path="var/log" -> drop>
+<transform dir path="var/run" -> drop>
+<transform dir path="var" -> drop>
 license LICENSE license="The PHP License, version 3.01"
