@@ -29,7 +29,7 @@
 
 PROG=php
 VER=5.6.3
-PKG=runtime/php56
+PKG=runtime/php
 SUMMARY="PHP Server 5.6"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
 
@@ -58,7 +58,6 @@ DEPENDS_IPS="system/library"
 
 # Though not strictly needed since we override build(), still nice to set
 BUILDARCH=64
-PREFIX=$PREFIX/php56
 reset_configure_opts
 
 #CFLAGS="-O2 -DZLIB_INTERNAL=1 -std=c99"
