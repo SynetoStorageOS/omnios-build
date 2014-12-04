@@ -148,6 +148,7 @@ make_install() {
     logcmd cp $TMPDIR/$BUILDDIR/php.ini-production $DESTDIR/$PREFIX/etc/php.ini-production
     logcmd cp $TMPDIR/$BUILDDIR/php.ini-development $DESTDIR/$PREFIX/etc/php.ini-development
     logmsg "--- copy php.ini with sensible defaults"
+    logcmd mkdir -p $DESTDIR/etc
     logcmd cp $SRCDIR/php.ini $DESTDIR/etc/php.ini
 }
 
