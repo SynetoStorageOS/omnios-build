@@ -24,4 +24,4 @@
 # Use is subject to license terms.
 #
 license LICENSE license="The PHP License, version 3.01"
-<transform pkg -> emit depend fmri=runtime/php56 type=require>
+<transform pkg -> emit depend fmri=runtime/php type=require>
