@@ -196,7 +196,7 @@ build() {
                     rm $SCRIPT.final
                 fi
                 built_packages_p5m $SCRIPT
-                echo "Done." > build.log
+                echo "Done." >> build.log
             fi
         else
             PATH=$PATH:. $SCRIPT -a $BUILDARCH -r $PKGSRVR $batch_flag $lint_flag || \
