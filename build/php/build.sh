@@ -277,8 +277,11 @@ clean_dotfiles() {
 }
 
 add_static_extensions() {
+    logmsg "--- Copying static extensions"
     logcmd cp -r ${SRCDIR}/static_extensions/* $TMPDIR/$BUILDDIR/ext/
-    ./buildconf --force
+    pushd $TMPDIR/$BUILDDIR
+    MAKE=${MAKE} ./buildconf --force
+    popd > /dev/null
 }
 
 init
