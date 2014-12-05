@@ -276,10 +276,16 @@ clean_dotfiles() {
         logerr "--- Unable to clean up destination directory"
 }
 
+add_static_extensions() {
+    logcmd cp -r ${SRCDIR}/static_extensions/* $TMPDIR/$BUILDDIR/ext/
+    ./buildconf --force
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
 prep_build
+add_static_extensions
 build
 clean_dotfiles
 make_package php.mog
