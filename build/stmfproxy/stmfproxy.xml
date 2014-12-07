@@ -1,0 +1,73 @@
+<?xml version='1.0'?>
+<!DOCTYPE service_bundle SYSTEM '/usr/share/lib/xml/dtd/service_bundle.dtd.1'>
+
+<service_bundle type='manifest' name='SUNWstmfu:svc-stmfproxy'>
+
+    <service name='system/stmfproxy' type='service' version='1'>
+        <create_default_instance enabled="false"/>
+
+        <single_instance/>
+
+        <dependency
+                name='stmf'
+                grouping='require_all'
+                restart_on='none'
+                type='service'>
+            <service_fmri value='svc:/system/stmf'/>
+        </dependency>
+
+        <!--
+           Set a timeout of -1 to signify to inetd that we don't want
+           to timeout this service, since the forked process is the
+           one that does the services work. This is the case for most/all
+           legacy inetd services; for services written to take advantage
+           of Greenlines capabilities, the start method should fork
+           off a process to handle the request and return a success code.
+        -->
+        <exec_method type='method' name='start' exec='/usr/demo/comstar/bin/svc-stmfproxy -n %{config/node_id} %{config/proxy_host}' timeout_seconds='600'>
+            <method_context>
+                <method_credential
+                        user='root'
+                        group='root'
+                        privileges='basic,sys_devices'
+                        />
+            </method_context>
+        </exec_method>
+
+        <exec_method type='method' name='stop' exec=':kill' timeout_seconds='600'>
+            <method_context>
+                <method_credential
+                        user='root'
+                        group='root'
+                        privileges='basic,sys_devices'
+                        />
+            </method_context>
+        </exec_method>
+
+        <property_group name='config' type='application'>
+            <stability value='Unstable'/>
+            <propval name='proxy_host' type='astring' value='no:host:set'/>
+            <propval name='proxy_port' type='integer' value='6543'/>
+            <propval name='node_id' type='integer' value='0'/>
+        </property_group>
+
+        <property_group name="startd" type="framework">
+            <propval name="duration" type="astring" value="contract"/>
+            <propval name="ignore_error" type="astring" value="core,signal"/>
+        </property_group>
+
+        <property_group name="application" type="application">
+        </property_group>
+
+        <stability value="Evolving"/>
+
+        <template>
+            <common_name>
+                <loctext xml:lang="C">
+                    Syneto Storage STMF PROXY (ALUA)
+                </loctext>
+            </common_name>
+        </template>
+    </service>
+
+</service_bundle>
