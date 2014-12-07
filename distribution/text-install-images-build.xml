@@ -23,7 +23,7 @@
   Copyright (c) 2010, 2011, Oracle and/or its affiliates. All rights reserved.
   Copyright 2012, OmniTI Computer Consulting, Inc. All rights reserved.
 
-  XML specification for building an OmniOS installer iso image
+  XML specification for building an Syneto StorageOS installer iso image
 -->
 <dc>
   <!--
@@ -32,7 +32,7 @@
     is to do serial builds and to keep all the incremental
     images around
   -->
-  <distro name="syneto-storage-3.00.0001" add_timestamp="false">
+  <distro name='syneto-storage-3.1.12-23' add_timestamp='false'>
   <!-- Uncomment if http_proxy needs to be set
   <distro name="OmniOS_Text_X86" add_timestamp="false"
       http_proxy="http://example.com">
@@ -101,7 +101,7 @@
     -->
     <target name="desired">
       <logical>
-        <zpool name="rpool" action="use_existing">
+        <zpool name="code" action="use_existing">
           <filesystem name="dc/text" action="preserve"/>
         </zpool>
       </logical>
@@ -169,7 +169,7 @@
       </destination>
       <source>
         <publisher name="syneto.eu">
-          <origin name="http://storageos3.syneto.net"/>
+          <origin name="http://pkg.syneto.eu"/>
           <!-- 
             If mirrors for this publisher are desired, they can be set here
           -->
@@ -249,10 +249,16 @@
             the hostname here will override the default.
           -->
           <kwargs>
-            <arg name="root_password"></arg>
+            <arg name="root_password">Syneto.default1</arg>
             <arg name="is_plaintext">true</arg>
-            <arg name="hostname">storageos3</arg>
+            <arg name="hostname">storage</arg>
           </kwargs>
+      </checkpoint>
+      <checkpoint name="add-storage-admin-user"
+          desc="Add storage administrator user (admin)"
+          mod_path="solaris_install/distro_const/checkpoints/custom_script"
+          checkpoint_class="CustomScript">
+          <args>/code/src/omnios-build/distribution/scripts/customize.sh {PKG_IMAGE_PATH}</args>
       </checkpoint>
       <checkpoint name="ba-init"
           desc="Boot Archive Initialization"
