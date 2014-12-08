@@ -91,10 +91,10 @@ CONFIGURE_OPTS="
         --enable-fpm
         --enable-zip=shared
         --with-zlib=shared
-        --with-sqlite3=shared
+        --with-sqlite3=static
         --with-db4
-        --enable-pdo=shared
-        --with-pdo-sqlite=shared
+        --enable-pdo=static
+        --with-pdo-sqlite=static
         --enable-mbstring=shared
         --with-mhash
         --with-mcrypt=shared
@@ -232,22 +232,12 @@ install_ext_mcrypt() {
 
 # PHP pdo extension
 install_ext_pdo() {
-    create_extension_dir
-    logmsg "--- Moving files for pdo extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving pdo extensions failed."
+    logmsg "--- PDO compiled statically. Nothing to be done"
 }
 
 # PHP sqlite extension
 install_ext_sqlite() {
-    create_extension_dir
-    logmsg "--- Moving files for sqlite extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/sqlite3.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/sqlite3.so $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo_sqlite.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/pdo_sqlite.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving sqlite extensions failed."
+    logmsg "--- Sqlite extensions compiled statically. Nothing to be done"
 }
 
 # PHP zlib extension
