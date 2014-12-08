@@ -36,8 +36,8 @@ DESC="$SUMMARY"
 DEPENDS_IPS="SUNWcs"
 
 add_service() {
-	ginstall -d -m 755 ${DESTDIR}/var/svc/manifest/system/
-	ginstall -m 644 stmfproxy.xml ${DESTDIR}/var/svc/manifest/system/
+	logcmd ginstall -d -m 755 ${DESTDIR}/var/svc/manifest/system/
+	logcmd ginstall -m 644 stmfproxy.xml ${DESTDIR}/var/svc/manifest/system/
 }
 
 init
