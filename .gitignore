@@ -7,3 +7,4 @@ tmp.repo/
 
 .idea
 .project
+distribution/text-install-images-build.xml
