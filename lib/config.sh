@@ -33,7 +33,7 @@ PVER=0.$RELVER
 
 # Which server to fetch files from.
 # If $MIRROR begins with a '/', it is treated as a local directory.
-MIRROR=/code/source-mirror
+MIRROR=http://storage.dev.syneto.net/system-storage-os-3
 
 # Default prefix for packages (may be overridden)
 PREFIX=/usr

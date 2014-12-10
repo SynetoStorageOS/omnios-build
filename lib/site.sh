@@ -1,6 +1,6 @@
 # Package server URL and publisher
 : ${PKGPUBLISHER:=syneto.eu}
-: ${PKGSRVR:=file:///code/storageos3-repo/}
+: ${PKGSRVR:=file:///code/pkg.syneto.eu-dev/}
 
 # To create a on-disk repo in the top level of your checkout
 # and publish there instead of the URI specified above.
@@ -21,7 +21,6 @@ KVM_ROLLBACK=43aa6602f0d68ff7e032aad06645e34e9921d976
 KVM_CMD_ROLLBACK=1c6181be55d1cadc4426069960688307a6083131
 
 # Upstream repository container
-# UPSTREAM_REPO_CONTAINER=ssh://admin@storage//tank/source-repository/storageos3
-UPSTREAM_REPO_CONTAINER=/code/source-repos
+UPSTREAM_REPO_CONTAINER=ssh://admin@storage.dev.syneto.net//tank/source-repository/storageos3
 
 PREBUILT_ILLUMOS=`readlink -f /code/root-omnios-* | sort |  tail -n 1`/illumos-omnios
