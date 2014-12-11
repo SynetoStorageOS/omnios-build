@@ -159,8 +159,8 @@ ask_to_continue() {
 }
 
 ask_to_install() {
-    PKG=$1
-    MSG=$2
+    local PKG=$1
+    local MSG=$2
     if [[ -n "$AUTOINSTALL" ]]; then
         logmsg "Auto-installing $PKG..."
         logcmd sudo pkg install $PKG || logerr "pkg install $PKG failed"
