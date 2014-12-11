@@ -46,9 +46,9 @@ export JAVA_HOME
 fetch_junit() {
     pushd $TMPDIR/${BUILDDIR}/lib/optional > /dev/null
     logmsg "Fetching JUnit for build"
-    logcmd cp ${MIRROR}/junit/junit-${JUNITVER}.jar . || \
+    logcmd get_resource junit/junit-${JUNITVER}.jar || \
         logerr "-- Failed to download junit-${JUNITVER} jar file."
-    logcmd cp ${MIRROR}/hamcrest/hamcrest-core-${HAMCRESTVER}.jar . || \
+    logcmd get_resource hamcrest/hamcrest-core-${HAMCRESTVER}.jar || \
         logerr "-- Failed to download hamcrest-${HAMCRESTVER} jar file."
     popd > /dev/null
 }
