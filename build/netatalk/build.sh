@@ -50,7 +50,7 @@ CONFIGURE_OPTS="
     --with-uams-path=$PREFIX/lib/netatalk
     --sysconfdir=/etc
     --localstatedir=/var
-    --with-bdb=/opt/omniti
+    --with-bdb=/usr
     --with-libevent-header=/usr/include/
     --with-libevent-lib=/usr/lib/
     --disable-ddp
