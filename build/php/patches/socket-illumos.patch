@@ -1,0 +1,28 @@
+iff -ru php-5.5.4-orig/ext/sockets/conversions.c php-5.5.4-cli-mod/ext/sockets/conversions.c
+--- php-5.5.4-orig/ext/sockets/conversions.c    Wed Sep 18 16:08:04 2013
++++ php-5.5.4-cli-mod/ext/sockets/conversions.c Sun Sep 29 21:13:25 2013
+@@ -1,3 +1,8 @@
++#if defined (__SVR4) && defined (__sun)
++#    define _XPG4_2 1
++#    define __EXTENSIONS__ 1
++#endif
++
+ #include "sockaddr_conv.h"
+ #include "conversions.h"
+ #include "sendrecvmsg.h" /* for ancillary registry */
+diff -ru php-5.5.4-orig/ext/sockets/sendrecvmsg.c php-5.5.4-cli-mod/ext/sockets/sendrecvmsg.c
+--- php-5.5.4-orig/ext/sockets/sendrecvmsg.c    Wed Sep 18 16:08:04 2013
++++ php-5.5.4-cli-mod/ext/sockets/sendrecvmsg.c Sun Sep 29 21:13:49 2013
+@@ -16,6 +16,11 @@
+    +----------------------------------------------------------------------+
+  */
+
++#if defined (__SVR4) && defined (__sun)
++#    define _XPG4_2 1
++#    define __EXTENSIONS__ 1
++#endif
++
+ #include <php.h>
+ #include "php_sockets.h"
+ #include "sendrecvmsg.h"
+

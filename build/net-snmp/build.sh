@@ -34,8 +34,6 @@ PKG=system/management/snmp/net-snmp
 SUMMARY="Net-SNMP Agent files and libraries"
 DESC="$SUMMARY ($VER)"
 
-NO_PARALLEL_MAKE=true
-
 DEPENDS_IPS="SUNWcs shell/bash system/library
              system/management/snmp/sea/sea-config"
 

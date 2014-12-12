@@ -46,6 +46,8 @@ CONFIGURE_OPTS="--disable-yacc"
 M4=/usr/bin/gm4
 export M4
 
+REMOVE_PREVIOUS="yes"
+
 make_links() {
     logcmd mkdir -p $DESTDIR/usr/sfw/bin
     logcmd ln -s ../../bin/bison $DESTDIR/usr/sfw/bin/bison

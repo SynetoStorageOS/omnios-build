@@ -33,7 +33,6 @@ PKG=file/gnu-coreutils  # Package name (without prefix)
 SUMMARY="coreutils - GNU core utilities"
 DESC="GNU core utilities ($VER)"
 
-NO_PARALLEL_MAKE=1
 BUILD_DEPENDS_IPS="compress/xz"
 DEPENDS_IPS="library/gmp system/library"
 
@@ -55,6 +54,7 @@ link_in_usr_bin() {
     do
         logcmd ln $DESTDIR/usr/gnu/bin/$cmd $DESTDIR/usr/bin/$cmd
     done
+    logcmd ln $DESTDIR/usr/gnu/bin/install $DESTDIR/usr/bin/ginstall
 }
 
 init

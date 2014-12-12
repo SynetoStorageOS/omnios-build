@@ -22,6 +22,7 @@
 #
 #
 # Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2014 S.C. Syneto S.R.L.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
@@ -33,34 +34,17 @@ VERHUMAN=$VER
 PKG=terminal/tmux
 SUMMARY="terminal multiplexer"
 DESC="$SUMMARY"
-LIBEVENT_VER=2.0.20
-LDIR=libevent-${LIBEVENT_VER}-stable
+
+BUILD_DEPENDS_IPS="library/libevent"
 
 BUILDARCH=32
 CONFIGURE_OPTS_32="$CONFIGURE_OPTS_32 --bindir=/usr/bin"
-CPPFLAGS="-I$TMPDIR/$PROG-$VER/$LDIR/include/event2 \
-    -I$TMPDIR/$PROG-$VER/$LDIR/include"
+CPPFLAGS="-I/usr/include/event2"
 CFLAGS="-std=c99 -D_XPG6 -D_POSIX_C_SOURCE=200112L"
-LDFLAGS="-L$TMPDIR/$PROG-$VER/$LDIR/.libs -lsocket -lnsl -lsendfile"
-
-save_function configure32 configure32_orig
-configure32(){
-  pushd $TMPDIR/$BUILDDIR/$LDIR > /dev/null
-  logmsg "configuring libevent"
-  logcmd ./configure --disable-static --disable-libevent-install || \
-    logerr "failed libevent configure"
-  logcmd "building a static libevent"
-  logcmd make || logerr "failed libevent build"
-  popd > /dev/null
-  configure32_orig
-}
+LDFLAGS="-lsocket -lnsl -lsendfile"
 
 init
 download_source $PROG $PROG $VER
-MAINBUILDDIR=$BUILDDIR
-BUILDDIR=$LDIR
-download_source libevent libevent ${LIBEVENT_VER}-stable $TMPDIR/$PROG-$VER
-BUILDDIR=$MAINBUILDDIR
 patch_source
 prep_build
 build

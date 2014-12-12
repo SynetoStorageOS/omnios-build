@@ -82,8 +82,7 @@ process_opts() {
                 BUILDARCH=$OPTARG
                 OLDBUILDARCH=$OPTARG # Used to see if the script overrides the
                                      # BUILDARCH variable
-                if [[ "$BUILDARCH" != "32" && "$BUILDARCH" != "64" &&
-                      "$BUILDARCH" != "both" ]]; then
+                if [[ "$BUILDARCH" != "32" && "$BUILDARCH" != "64" && "$BUILDARCH" != "both" ]]; then
                     echo "Invalid build architecture specified: $BUILDARCH"
                     show_usage
                     exit 2
@@ -160,8 +159,8 @@ ask_to_continue() {
 }
 
 ask_to_install() {
-    PKG=$1
-    MSG=$2
+    local PKG=$1
+    local MSG=$2
     if [[ -n "$AUTOINSTALL" ]]; then
         logmsg "Auto-installing $PKG..."
         logcmd sudo pkg install $PKG || logerr "pkg install $PKG failed"
@@ -681,6 +680,11 @@ make_package() {
     (
         set -e
         $PKGDEPEND generate -md $DESTDIR $P5M_INT2 > $P5M_INT3
+        if [[ -f $SRCDIR/resolve.mog ]]; then
+            $PKGMOGRIFY $SRCDIR/resolve.mog $P5M_INT3 > ${P5M_INT3}.resolve
+            rm -f ${P5M_INT3}
+            mv ${P5M_INT3}.resolve ${P5M_INT3}
+        fi
         $PKGDEPEND resolve -m $P5M_INT3
     ) || logerr "--- Dependency resolution failed"
     echo > "$MANUAL_DEPS"

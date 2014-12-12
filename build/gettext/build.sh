@@ -33,7 +33,6 @@ PKG=text/gnu-gettext          # Package name (without prefix)
 SUMMARY="gettext - GNU gettext utility"
 DESC="GNU gettext - GNU gettext utility ($VER)"
 
-NO_PARALLEL_MAKE=1
 BUILDARCH=32
 
 DEPENDS_IPS="developer/macro/gnu-m4"
