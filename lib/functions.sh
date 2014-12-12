@@ -825,7 +825,7 @@ make_clean() {
 }
 
 configure32() {
-    logmsg "--- configure (32-bit)"
+    logmsg "--- Running configure (32-bit) in `pwd`"
     CFLAGS="$CFLAGS $CFLAGS32" \
     CXXFLAGS="$CXXFLAGS $CXXFLAGS32" \
     CPPFLAGS="$CPPFLAGS $CPPFLAGS32" \
@@ -837,7 +837,7 @@ configure32() {
 }
 
 configure64() {
-    logmsg "--- configure (64-bit)"
+    logmsg "--- Running configure (64-bit) in `pwd`"
     CFLAGS="$CFLAGS $CFLAGS64" \
     CXXFLAGS="$CXXFLAGS $CXXFLAGS64" \
     CPPFLAGS="$CPPFLAGS $CPPFLAGS64" \
