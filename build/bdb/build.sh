@@ -28,7 +28,7 @@
 . ../../lib/functions.sh
 
 PROG=bdb
-VER=4.7.25
+VER=6.0.30
 VERHUMAN=$VER
 PKG=omniti/database/bdb
 SUMMARY="$PROG - Berkeley DB: an embedded database library for key/value data"
@@ -37,14 +37,14 @@ DESC="$SUMMARY"
 BUILDDIR=db-$VER/build_unix
 CONFIGURE_CMD="../dist/configure"
 CONFIGURE_OPTS="--enable-compat185"
-LDFLAGS32="$LDFLAGS32 -L/opt/omni/lib -R/opt/omni/lib"
-LDFLAGS64="$LDFLAGS64 -L/opt/omni/lib/$ISAPART64 -R/opt/omni/lib/$ISAPART64"
+LDFLAGS32="$LDFLAGS32 -L/usr/lib -R/usr/lib"
+LDFLAGS64="$LDFLAGS64 -L/usr/lib/$ISAPART64 -R/usr/lib/$ISAPART64"
 
 export EXTLIBS=-lm
 
 save_function build64 build64_orig
 build64() {
-  export DLDFLAGS="-L/opt/omni/lib/$ISAPART64 -R/opt/omni/lib/$ISAPART64"
+  export DLDFLAGS="-L/usr/lib/$ISAPART64 -R/usr/lib/$ISAPART64"
   build64_orig
 }
 
