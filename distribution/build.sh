@@ -3,6 +3,10 @@
 DIR=`dirname $0`
 CUSTOM_SCRIPT=`readlink -f $DIR/scripts/customize.sh`
 
+if ! pkg info distribution-constructor >/dev/null 2>&1; then
+	sudo pkg install -v distribution-constructor
+fi
+
 if [ ! -e text-install-images-build.xml ]; then
 	cp -a text-install-images.xml text-install-images-build.xml
 fi
