@@ -84,9 +84,10 @@ sunstudio_location() {
     fi
 }
 
-#In order for the clone to work while running as root, you must have ssh'ed into the box with agent forwarding turned on.  Also the sudo'er file must either have the default, group, or user set to allow SSL_AUTH_SOCK.
-
-clone_source(){
+# In order for the clone to work while running as root, you must have ssh'ed
+# into the box with agent forwarding turned on. Also the sudo'er file must
+# either have the default, group, or user set to allow SSL_AUTH_SOCK.
+clone_source() {
     logmsg "Creating build dir $TMPDIR/$BUILDDIR"
     logcmd mkdir -p $TMPDIR/$BUILDDIR || \
         logerr "--- Failed to create build dir $TMPDIR/$BUILDDIR"
@@ -94,20 +95,22 @@ clone_source(){
     pushd $TMPDIR/$BUILDDIR > /dev/null 
     if [ -d illumos-omnios ]; then
         logmsg "OMNI Illumos Source in place. Pulling changes from upstream."
+        pushd illumos-omnios
         $GIT fetch
         $GIT pull
+        popd
     else
         logmsg "Cloning OMNI Illumos Source..."
         logcmd  $GIT clone ${UPSTREAM_REPO_CONTAINER}/illumos-omnios || \
             logerr "--- Failed to clone source"
     fi
-    pushd illumos-omnios 
-    ILLUMOS_VERSION="VERSION=\'omnios\-`$GIT log --pretty=format:'%h' -n 1`'" 
-    RELEASE_DATE=`$GIT show --format=format:%ai | awk '{print $1; exit;}' | tr - .` 
+    pushd illumos-omnios
+    ILLUMOS_VERSION="VERSION=\'syneto\-`$GIT log --pretty=format:'%h' -n 1`'" 
+    RELEASE_DATE=`$GIT show --format=format:%ai | awk '{print $1; exit;}' | tr - .`
     echo $ILLUMOS_VERSION
-    popd > /dev/null 
+    popd > /dev/null
     logmsg "Leaving $TMPDIR/$BUILDDIR"
-    popd > /dev/null 
+    popd > /dev/null
 }
 
 build_tools(){
