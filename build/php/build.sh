@@ -92,7 +92,6 @@ CONFIGURE_OPTS="
         --enable-zip=shared
         --with-zlib=shared
         --with-sqlite3=static
-        --with-db4
         --enable-pdo=static
         --with-pdo-sqlite=static
         --enable-mbstring=shared
