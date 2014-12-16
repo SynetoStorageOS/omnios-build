@@ -30,23 +30,20 @@
 PROG=Python
 VER=3.4.0
 VERHUMAN=$VER
-PKG=omniti/runtime/python-34
+PKG=runtime/python-34
 SUMMARY="$PROG - An Interpreted, Interactive, Object-oriented, Extensible Programming Language."
 DESC="$SUMMARY"
 
 DEPENDS_IPS="system/library/gcc-4-runtime"
 
-PREFIX=/opt/python34
+PREFIX=/usr
 BUILDARCH=64
 
 CFLAGS="-O3"
 CXXFLAGS="-O3"
 CPPFLAGS="-D_REENTRANT"
-#LDFLAGS64="$LDFLAGS64 -L/opt/python34/lib/$ISAPART64 -R/opt/python34/lib/$ISAPART64"
 
-CONFIGURE_OPTS="--with-system-ffi
-                --enable-shared
-		"
+CONFIGURE_OPTS="--enable-shared"
 CONFIGURE_OPTS_64="--prefix=$PREFIX
                    --sysconfdir=$PREFIX/etc
                    --includedir=$PREFIX/include
