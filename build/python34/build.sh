@@ -45,7 +45,7 @@ CPPFLAGS="-D_REENTRANT"
 
 CONFIGURE_OPTS="--enable-shared"
 CONFIGURE_OPTS_64="--prefix=$PREFIX
-                   --sysconfdir=$PREFIX/etc
+                   --sysconfdir=/etc
                    --includedir=$PREFIX/include
                    --bindir=$PREFIX/bin
                    --sbindir=$PREFIX/sbin
