@@ -37,11 +37,19 @@ DEPENDS_IPS="SUNWcs"
 
 CONFIGURE_OPTS="--without-libnetsnmp --enable-write_graphite"
 
+collectd_build() {
+    pushd $TMPDIR/$BUILDDIR > /dev/null
+    logmsg "Reconfiguring ${PROG}"
+    logcmd autoreconf
+    popd > /dev/null
+    build
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
 prep_build
-build
+collectd_build
 strip_install
 make_package
 clean_up
