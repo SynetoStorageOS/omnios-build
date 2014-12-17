@@ -49,7 +49,7 @@ CONFIGURE_OPTS_64="--prefix=$PREFIX
                    --includedir=$PREFIX/include
                    --bindir=$PREFIX/bin
                    --sbindir=$PREFIX/sbin
-                   --libdir=$PREFIX/lib/$BUILDARCH
+                   --libdir=$PREFIX/lib/amd$BUILDARCH
                    --libexecdir=$PREFIX/libexec
                    "
 
