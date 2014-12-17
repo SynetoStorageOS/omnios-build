@@ -67,9 +67,14 @@ build() {
 save_function configure64 configure64_orig
 configure64() {
     configure64_orig
+
     logmsg "--- Fixing pyconfig.h so _socket.so builds"
     perl -pi'*.orig' -e 's/#define (HAVE_NETPACKET_PACKET_H) 1/#undef \1/' \
         pyconfig.h || logerr "Failed to fix pyconfig.h"
+
+    logmsg "--- Fixing cgi.py so that it points to the correct python path"
+    perl -pi'*.orig' -e 's/\#\! \/usr\/local\/bin\/python/\#\! \/usr\/bin\/python/' \
+        Lib/cgi.py || logerr "Failed to fix cgi.py"
 }
 
 init
