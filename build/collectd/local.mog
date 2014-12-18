@@ -1,2 +1,3 @@
 license COPYING license=GPLv3
 <transform file path=usr/lib/i86pc-solaris-thread-multi-64int/perllocal.pod -> drop>
+<transform file path=usr/lib/i86pc-solaris-thread-multi-64/perllocal.pod -> drop>
