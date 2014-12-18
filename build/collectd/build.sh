@@ -36,7 +36,7 @@ DESC="$SUMMARY"
 DEPENDS_IPS="SUNWcs"
 CC="gcc -std=gnu99"
 CONFIGURE_OPTS="--without-libnetsnmp --enable-write_graphite --with-python=/usr/bin/python3"
-ac_aux_dir=./libltdl/config
+export ac_aux_dir=./libltdl/config
 
 collectd_build() {
     pushd $TMPDIR/$BUILDDIR > /dev/null
