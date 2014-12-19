@@ -1006,6 +1006,8 @@ python_build() {
 }
 
 python34_build() {
+    PYTHON=/usr/bin/python3
+    PYTHONHOME=/usr/lib/python3.4
     if [[ -z "$PYTHON" ]]; then logerr "PYTHON not set"; fi
     if [[ -z "$PYTHONPATH" ]]; then logerr "PYTHONPATH not set"; fi
     if [[ -z "$PYTHONLIB" ]]; then logerr "PYTHONLIB not set"; fi
