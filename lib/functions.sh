@@ -1018,10 +1018,10 @@ python34_build() {
     export ISALIST
     pre_python_64
     logmsg "--- setup.py (64) build"
-    logcmd PYTHONHOME=$PH $PYTHON ./setup.py build ||
+    logcmd "PYTHONHOME=$PH $PYTHON ./setup.py build" ||
         logerr "--- build failed"
     logmsg "--- setup.py (64) install"
-    logcmd PYTHONHOME=$PH $PYTHON \
+    logcmd "PYTHONHOME=$PH $PYTHON" \
         ./setup.py install --root=$DESTDIR ||
         logerr "--- install failed"
     popd > /dev/null
