@@ -1005,6 +1005,29 @@ python_build() {
         logerr "Cannot move from site-packages to vendor-packages"
 }
 
+python34_build() {
+    if [[ -z "$PYTHON" ]]; then logerr "PYTHON not set"; fi
+    if [[ -z "$PYTHONPATH" ]]; then logerr "PYTHONPATH not set"; fi
+    if [[ -z "$PYTHONLIB" ]]; then logerr "PYTHONLIB not set"; fi
+    logmsg "Building using python setup.py"
+    pushd $TMPDIR/$BUILDDIR > /dev/null
+
+    ISALIST="amd64 i386"
+    export ISALIST
+    pre_python_64
+    logmsg "--- setup.py (64) build"
+    logcmd $PYTHON ./setup.py build ||
+        logerr "--- build failed"
+    logmsg "--- setup.py (64) install"
+    logcmd $PYTHON \
+        ./setup.py install --root=$DESTDIR ||
+        logerr "--- install failed"
+    popd > /dev/null
+
+    mv $DESTDIR/usr/lib/python3.4/site-packages $DESTDIR/usr/lib/python3.4/vendor-packages ||
+        logerr "Cannot move from site-packages to vendor-packages"
+}
+
 #############################################################################
 # Build/test function for perl modules
 #############################################################################
