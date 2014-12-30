@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+if [ -z "$PYTHONHOME" ]; then
+	export PYTHONHOME=/usr/python3.4
+fi
+exec `dirname $0`/python3.4 $*

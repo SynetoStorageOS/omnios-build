@@ -28,7 +28,7 @@
 . ../../lib/functions.sh
 
 PROG=Python
-VER=3.4.0
+VER=3.4.2
 VERHUMAN=$VER
 PKG=runtime/python-34
 SUMMARY="$PROG - An Interpreted, Interactive, Object-oriented, Extensible Programming Language."
@@ -36,7 +36,8 @@ DESC="$SUMMARY"
 
 DEPENDS_IPS="system/library/gcc-4-runtime"
 
-PREFIX=/usr
+PREFIX=/usr/python3.4
+BINDIR=/usr/bin
 BUILDARCH=64
 
 CFLAGS="-O3"
@@ -44,14 +45,11 @@ CXXFLAGS="-O3"
 CPPFLAGS="-D_REENTRANT"
 
 CONFIGURE_OPTS="--enable-shared"
-CONFIGURE_OPTS_64="--prefix=$PREFIX
-                   --sysconfdir=/etc
-                   --includedir=$PREFIX/include
-                   --bindir=$PREFIX/bin
-                   --sbindir=$PREFIX/sbin
-                   --libdir=$PREFIX/lib/amd$BUILDARCH
-                   --libexecdir=$PREFIX/libexec
-                   "
+CONFIGURE_OPTS_64="
+    --prefix=$PREFIX
+    --exec-prefix=$PREFIX
+    --bindir=$BINDIR
+    --libdir=/usr/lib/amd$BUILDARCH"
 
 build() {
     CC="$CC $CFLAGS $CFLAGS64" \
@@ -62,6 +60,10 @@ build() {
     mv "$DESTDIR/$PREFIX/lib/python3.4/site-packages/setuptools/command/launcher manifest.xml" "$DESTDIR/$PREFIX/lib/python3.4/site-packages/setuptools/command/launcher_manifest.xml"
     mv "$DESTDIR/$PREFIX/lib/python3.4/site-packages/setuptools/__pycache__/script template (dev).cpython-34.pyc" "$DESTDIR/$PREFIX/lib/python3.4/site-packages/setuptools/__pycache__/script_template_dev.cpython-34.pyc"
     mv "$DESTDIR/$PREFIX/lib/python3.4/site-packages/setuptools/__pycache__/script template.cpython-34.pyc" "$DESTDIR/$PREFIX/lib/python3.4/site-packages/setuptools/__pycache__/script_template.cpython-34.pyc"
+
+    # We install a python3 exec wrapper that sets a default PYTHONHOME to our installation $PREFIX
+    rm -f $DESTDIR/$BINDIR/python3
+    install -m 755 python3-execwrapper $DESTDIR/$BINDIR/python3
 }
 
 save_function configure64 configure64_orig
@@ -73,7 +75,7 @@ configure64() {
         pyconfig.h || logerr "Failed to fix pyconfig.h"
 
     logmsg "--- Fixing cgi.py so that it points to the correct python path"
-    perl -pi'*.orig' -e 's/\#\! \/usr\/local\/bin\/python/\#\! \/usr\/bin\/python3/' \
+    perl -pi'*.orig' -e 's/\#\! \/usr\/python3.4\/bin\/python3/\#\! \/usr\/bin\/python3/' \
         Lib/cgi.py || logerr "Failed to fix cgi.py"
 }
 

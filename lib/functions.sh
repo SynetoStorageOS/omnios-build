@@ -119,8 +119,8 @@ logcmd() {
         echo Running: "$@" >> $LOGFILE
         "$@" >> $LOGFILE 2>&1
     else
-        echo Running: "$@" | tee $LOGFILE
-        "$@" | tee $LOGFILE 2>&1
+        echo Running: "$@" | tee -a $LOGFILE
+        "$@" | tee -a $LOGFILE 2>&1
         return ${PIPESTATUS[0]}
     fi
 }
@@ -1007,7 +1007,6 @@ python_build() {
 
 python34_build() {
     PYTHON=/usr/bin/python3
-    PH=/usr/lib/python3.4/
     if [[ -z "$PYTHON" ]]; then logerr "PYTHON not set"; fi
     if [[ -z "$PYTHONPATH" ]]; then logerr "PYTHONPATH not set"; fi
     if [[ -z "$PYTHONLIB" ]]; then logerr "PYTHONLIB not set"; fi
@@ -1018,10 +1017,10 @@ python34_build() {
     export ISALIST
     pre_python_64
     logmsg "--- setup.py (64) build"
-    PYTHONHOME=$PH $PYTHON ./setup.py build ||
+    $PYTHON ./setup.py build ||
         logerr "--- build failed"
     logmsg "--- setup.py (64) install"
-    PYTHONHOME=$PH $PYTHON \
+    $PYTHON \
         ./setup.py install --root=$DESTDIR ||
         logerr "--- install failed"
     popd > /dev/null
