@@ -36,9 +36,11 @@ DESC="$SUMMARY"
 
 DEPENDS_IPS="system/library/gcc-4-runtime"
 
+BUILDARCH=64
+
 PREFIX=/usr/python3.4
 BINDIR=/usr/bin
-BUILDARCH=64
+LIBDIR=/usr/lib/amd$BUILDARCH
 
 CFLAGS="-O3"
 CXXFLAGS="-O3"
@@ -49,7 +51,7 @@ CONFIGURE_OPTS_64="
     --prefix=$PREFIX
     --exec-prefix=$PREFIX
     --bindir=$BINDIR
-    --libdir=/usr/lib/amd$BUILDARCH"
+    --libdir=$LIBDIR"
 
 build() {
     CC="$CC $CFLAGS $CFLAGS64" \
@@ -64,6 +66,9 @@ build() {
     # We install a python3 exec wrapper that sets a default PYTHONHOME to our installation $PREFIX
     rm -f $DESTDIR/$BINDIR/python3
     install -m 755 python3-execwrapper $DESTDIR/$BINDIR/python3
+
+    # Link lib-dynload path so python3 can find it
+    ln -s $LIBDIR/python3.4/lib-dynload $DESTDIR/$PREFIX/lib/python3.4/lib-dynload
 }
 
 save_function configure64 configure64_orig

@@ -1023,10 +1023,10 @@ python34_build() {
     $PYTHON \
         ./setup.py install --root=$DESTDIR ||
         logerr "--- install failed"
+    logmsg "--- Running 2to3 conversions for python scripts"
+    2to3 -nw $DESTDIR ||
+        logerr "--- 2to3 conversion failed"
     popd > /dev/null
-
-    mv $DESTDIR/usr/lib/python3.4/site-packages $DESTDIR/usr/lib/python3.4/vendor-packages ||
-        logerr "Cannot move from site-packages to vendor-packages"
 }
 
 #############################################################################
