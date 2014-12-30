@@ -80,7 +80,7 @@ configure64() {
         pyconfig.h || logerr "Failed to fix pyconfig.h"
 
     logmsg "--- Fixing cgi.py so that it points to the correct python path"
-    perl -pi'*.orig' -e 's/\#\! \/usr\/python3.4\/bin\/python3/\#\! \/usr\/bin\/python3/' \
+    perl -pi'*.orig' -e 's/\#\! \/usr\/local\/bin\/python/\#\! \/usr\/bin\/python3/' \
         Lib/cgi.py || logerr "Failed to fix cgi.py"
 }
 

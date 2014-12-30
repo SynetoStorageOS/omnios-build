@@ -150,7 +150,7 @@ closed_bins() {
     for bin in on-closed-bins.i386.tar.bz2 on-closed-bins-nd.i386.tar.bz2 ; do
 	if [[ ! -f $bin ]]; then
 	    # Move to our mirrors
-            logcmd curl -s -O http://mirrors.omniti.com/illumos-gate/$bin
+            logcmd curl -s -O $MIRROR/illumos-gate/$bin
 	fi
     	logcmd tar xvpf $bin
     done

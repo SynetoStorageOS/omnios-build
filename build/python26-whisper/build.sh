@@ -21,7 +21,7 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2014 Syneto LTD.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
@@ -29,17 +29,16 @@
 
 PROG=whisper
 VER=0.9.12
-PKG=library/python-3/whisper-34
-SUMMARY="Whisper Python module"
+PKG=library/python-2/whisper-26
+SUMMARY="Whisper - a file-based time-series database format for Graphite"
 DESC="$SUMMARY"
-BUILDARCH=64
 
-DEPENDS_IPS="runtime/python-34"
+DEPENDS_IPS="runtime/python-26"
 
 init
 download_source $PROG $PROG $VER
 patch_source
 prep_build
-python34_build
+python_build
 make_package
 clean_up

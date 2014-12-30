@@ -36,22 +36,12 @@ DESC="$SUMMARY"
 BUILDARCH=64
 DEPENDS_IPS="SUNWcs"
 CC="gcc -std=gnu99"
-CONFIGURE_OPTS="--without-libnetsnmp --enable-write_graphite --with-python=/usr/bin/python3 --mandir=/usr/share/man"
-export ac_aux_dir=./libltdl/config
-
-collectd_build() {
-    pushd $TMPDIR/$BUILDDIR > /dev/null
-    logmsg "Reconfiguring ${PROG}"
-    logcmd autoreconf
-    popd > /dev/null
-    build
-}
+CONFIGURE_OPTS="--without-libnetsnmp --enable-write_graphite --mandir=/usr/share/man"
 
 init
 download_source $PROG $PROG $VER
 patch_source
 prep_build
-collectd_build
 strip_install
 make_package
 clean_up

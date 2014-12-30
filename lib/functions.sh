@@ -670,7 +670,7 @@ make_package() {
     fi
     echo "set name=pkg.summary value=\"$SUMMARY\"" >> $MY_MOG_FILE
     echo "set name=pkg.descr value=\"$DESCSTR\"" >> $MY_MOG_FILE
-    echo "set name=publisher value=\"sa@omniti.com\"" >> $MY_MOG_FILE
+    echo "set name=publisher value=\"build@syneto.net\"" >> $MY_MOG_FILE
     if [[ -f $SRCDIR/local.mog ]]; then
         LOCAL_MOG_FILE=$SRCDIR/local.mog
     fi
@@ -1023,9 +1023,6 @@ python34_build() {
     $PYTHON \
         ./setup.py install --root=$DESTDIR ||
         logerr "--- install failed"
-    logmsg "--- Running 2to3 conversions for python scripts"
-    2to3 -nw $DESTDIR ||
-        logerr "--- 2to3 conversion failed"
     popd > /dev/null
 }
 
