@@ -28,7 +28,7 @@
 . ../../lib/functions.sh
 
 PROG=gunicorn
-VER=19.1.1
+VER=18.0
 PKG=library/python-2/${PROG}-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
