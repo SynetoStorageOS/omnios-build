@@ -25,6 +25,5 @@
 #
 # uncompress is delivered by another package
 <transform hardlink path=.*/uncompress$ -> drop>
-<transform file path=.*/uncompress$ -> drop>
 <transform file path=usr/sfw/.* -> drop>
 license COPYING license=GPLv3
