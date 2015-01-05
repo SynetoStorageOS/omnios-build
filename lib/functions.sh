@@ -544,7 +544,7 @@ download_source() {
     if [[ "$FILENAME" == "" ]]; then
         # Try all possible archive names
         logmsg "--- Archive not found."
-        logmsg "Downloading archive"
+        logmsg "Downloading archive: $DLDIR/$ARCHIVEPREFIX.[tar.[gz|bz2|xz] | tgz | tbz | tar | zip]"
         get_resource $DLDIR/$ARCHIVEPREFIX.tar.gz || \
             get_resource $DLDIR/$ARCHIVEPREFIX.tar.bz2 || \
             get_resource $DLDIR/$ARCHIVEPREFIX.tar.xz || \
