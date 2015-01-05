@@ -34,6 +34,7 @@ SUMMARY="${PROG}"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"
+BUILDARCH=32
 
 init
 download_source $PROG $PROG $VER
