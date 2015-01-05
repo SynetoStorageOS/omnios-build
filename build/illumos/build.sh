@@ -57,7 +57,7 @@ BUILDDIR=$USER-$PROG-$VER
 CODEMGR_WS=$TMPDIR/$BUILDDIR/illumos-omnios
 
 #Since these variables are used in a sed statment make sure to escape properly
-ILLUMOS_NO="NIGHTLY\_OPTIONS=\'\-nCmpri\'"
+ILLUMOS_NO="NIGHTLY\_OPTIONS=\'\-nCmpr\'"
 ILLUMOS_CODEMGR_WS="CODEMGR\_WS=\/code\/$BUILDDIR\/illumos\-omnios"
 #ILLUMOS_CLONE_WS="CLONE\_WS=\'ssh:\/\/anonhg@hg.illumos.org\/illumos\-gate\'"
 ILLUMOS_CLONE_WS="CLONE\_WS=\'anon@src.omniti.com:~omnios\/core\/illumos\-omnios\'"
@@ -94,11 +94,7 @@ clone_source() {
     logmsg "Entering $TMPDIR/$BUILDDIR"
     pushd $TMPDIR/$BUILDDIR > /dev/null 
     if [ -d illumos-omnios ]; then
-        logmsg "OMNI Illumos Source in place. Pulling changes from upstream."
-        pushd illumos-omnios
-        $GIT fetch
-        $GIT pull
-        popd
+        logmsg "OMNI Illumos Source in place. Using existing checkout."
     else
         logmsg "Cloning OMNI Illumos Source..."
         logcmd  $GIT clone ${UPSTREAM_REPO_CONTAINER}/illumos-omnios || \
