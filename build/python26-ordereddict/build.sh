@@ -29,8 +29,8 @@
 
 PROG=ordereddict
 VER=1.1
-PKG=library/python-2/ordereddict-26
-SUMMARY="ordereddict"
+PKG=library/python-2/${PROG}-26
+SUMMARY="${PROG}"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

@@ -29,8 +29,8 @@
 
 PROG=carbon
 VER=0.9.13
-PKG=library/python-2/carbon-26
-SUMMARY="Carbon"
+PKG=library/python-2/${PROG}-26
+SUMMARY="${PROG}"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"
