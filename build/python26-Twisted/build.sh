@@ -34,6 +34,7 @@ SUMMARY="${PROG}"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"
+CFLAGS="$CFLAGS -std=c89"
 
 init
 download_source $PROG $PROG $VER
