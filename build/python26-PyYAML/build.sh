@@ -27,7 +27,7 @@
 # Load support functions
 . ../../lib/functions.sh
 
-PROG=Twisted
+PROG=PyYAML
 VER=3.11
 PKG=library/python-2/${PROG}-26
 SUMMARY="${PROG}"
