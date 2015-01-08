@@ -1,0 +1,56 @@
+diff -Nru Heartbeat-3-0-STABLE-3.0.5.orig/Makefile.am Heartbeat-3-0-STABLE-3.0.5/Makefile.am
+--- Heartbeat-3-0-STABLE-3.0.5.orig/Makefile.am	2011-06-16 13:46:23.000000000 +0300
++++ Heartbeat-3-0-STABLE-3.0.5/Makefile.am	2015-01-08 11:47:11.000000000 +0200
+@@ -54,12 +54,9 @@
+ 
+ # 'buildtools' must be first in the list: tools to aid building of remainder.
+ SUBDIRS	= buildtools $(LIBLTDL_DIR) pkg port replace include lib	\
+-          heartbeat membership telecom resources tools doc cts  \
++          heartbeat membership telecom resources tools cts  \
+           config contrib
+ 
+-HANDY_DOCS = doc/ChangeLog doc/GettingStarted.html doc/DirectoryMap.txt
+-HBDOCS = doc/heartbeat_api.html
+-
+ # Pass these to configure when running "make distcheck"
+ DISTCHECK_CONFIGURE_FLAGS = --with-initdir=prefix
+ 
+@@ -101,13 +98,7 @@
+ 
+ drpm:		dist
+ 		$(RPM) --nodeps $(RPMFLAGS) $(TARFILE) </dev/null;
+-handy: drpm handy-copy
++handy: drpm
+ 	$HOME/bin/linuxhasums $VERSION
+ 
+-handy-copy:
+-	cd doc; $(MAKE)
+-	rm -f $(WEBDIR)/ChangeLog
+-	cp $(HANDY_DOCS) $(TARFILE) $(ALL_RPMS) $(WEBDIR)
+-	cp $(HBDOCS) $(HBWEBDIR)
+-
+-.PHONY: rpm pkg handy handy-copy
++.PHONY: rpm pkg handy
+diff -Nru Heartbeat-3-0-STABLE-3.0.5.orig/contrib/mlock/Makefile.am Heartbeat-3-0-STABLE-3.0.5/contrib/mlock/Makefile.am
+--- Heartbeat-3-0-STABLE-3.0.5.orig/contrib/mlock/Makefile.am	2011-06-16 13:46:23.000000000 +0300
++++ Heartbeat-3-0-STABLE-3.0.5/contrib/mlock/Makefile.am	2015-01-08 11:47:11.000000000 +0200
+@@ -32,7 +32,7 @@
+ 
+ ## SOURCES
+ mlock_SOURCES          = mlock.c
+-mlock_LDADD            =$(GLIBLIB) $(top_builddir)/replace/libreplace.la
++mlock_LDADD            =$(GLIBLIB) -lsocket -lnsl $(top_builddir)/replace/libreplace.la
+ 
+ 
+ ## additional Makefile targets
+diff -Nru Heartbeat-3-0-STABLE-3.0.5.orig/heartbeat/Makefile.am Heartbeat-3-0-STABLE-3.0.5/heartbeat/Makefile.am
+--- Heartbeat-3-0-STABLE-3.0.5.orig/heartbeat/Makefile.am	2011-06-16 13:46:23.000000000 +0300
++++ Heartbeat-3-0-STABLE-3.0.5/heartbeat/Makefile.am	2015-01-08 11:48:18.000000000 +0200
+@@ -63,6 +63,7 @@
+ 			-lpils		\
+ 			-lplumb	\
+ 			-lplumbgpl	\
++			-lsocket \
+ 			$(top_builddir)/lib/apphb/libapphb.la		\
+ 			$(top_builddir)/replace/libreplace.la		\
+ 			$(gliblib) $(LIBRT)
