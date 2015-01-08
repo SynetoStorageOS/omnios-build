@@ -1252,5 +1252,23 @@ wait_for_prebuilt() {
     fi
 }
 
+update_git_repo() {
+    local REPO_SOURCE=$1
+
+    if [[ -d /$TMPDIR/$BUILDDIR ]]; then
+        logmsg "Updating existing cloned repo in $TMPDIR/$BUILDDIR"
+        pushd $TMPDIR/$BUILDDIR
+        logcmd $GIT pull
+        popd >/dev/null
+    else
+        logmsg "Cloning ${REPO_SOURCE} ..."
+        logcmd  $GIT clone ${REPO_SOURCE} $TMPDIR/$BUILDDIR ||
+            logerr "Failed to clone repo $REPO_SOURCE"
+    fi
+
+    logmsg "Leaving $TMPDIR/$BUILDDIR"
+    popd > /dev/null
+}
+
 # Vim hints
 # vim:ts=4:sw=4:et:
