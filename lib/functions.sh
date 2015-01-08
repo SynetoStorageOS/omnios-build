@@ -1255,7 +1255,7 @@ wait_for_prebuilt() {
 update_git_repo() {
     local REPO_SOURCE=$1
 
-    if [[ -d /$TMPDIR/$BUILDDIR ]]; then
+    if [[ -d $TMPDIR/$BUILDDIR ]]; then
         logmsg "Updating existing cloned repo in $TMPDIR/$BUILDDIR"
         pushd $TMPDIR/$BUILDDIR
         logcmd $GIT pull
