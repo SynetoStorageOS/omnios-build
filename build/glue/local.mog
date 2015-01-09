@@ -1,3 +1,8 @@
 license COPYING license=GPLv2
 <transform dir path=etc/init.d -> set group sys>
 <transform file path=usr/lib/heartbeat/lrmd -> drop>
+
+<transform file path=usr/lib/stonith/plugins/external/dracmc-telnet -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/lib/stonith/plugins/external/ibmrsa-telnet -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/lib/stonith/plugins/external/riloe -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/lib/stonith/plugins/stonith2/ribcl.py -> set pkg.depend.bypass-generate .*>
