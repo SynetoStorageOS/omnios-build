@@ -21,36 +21,24 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2015 Syneto SRL.  All rights reserved.
+# Copyright 2014 Syneto LTD.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
 . ../../lib/functions.sh
 
-PROG=crmsh
-VER=2.1.0
-PKG=cluster/crmsh
-SUMMARY="crmsh is a command-line interface for High-Availability cluster management on GNU/Linux systems. It simplifies the configuration, management and troubleshooting of Pacemaker-based clusters, by providing a powerful and intuitive set of features."
+PROG=gunicorn
+VER=18.0
+PKG=library/python-2/${PROG}-26
+SUMMARY="${PROG}"
 DESC="$SUMMARY"
 
-BUILDARCH=32
-
-CONFIGURE_OPTS_32="--bindir=$PREFIX/bin"
-
-function create_modules_link()
-{
-	ln -s crmsh ${DESTDIR}/usr/lib/python2.6/site-packages/modules
-}
+DEPENDS_IPS="runtime/python-26"
 
 init
 download_source $PROG $PROG $VER
 patch_source
-autogen
 prep_build
-build
-create_modules_link
+python_build
 make_package
 clean_up
-
-# Vim hints
-# vim:ts=4:sw=4:et:
