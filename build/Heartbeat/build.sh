@@ -48,6 +48,7 @@ function bootstrap() {
 }
 
 function install_services() {
+    svccfg validate heartbeat.xml || logerr "Invalid service configuration file: heartbeat.xml"
 	install -d -m 755 ${DESTDIR}/lib/svc/method/
 	install -d -m 755 ${DESTDIR}/var/svc/manifest/system/
 	install -d -m 755 ${DESTDIR}/usr/sbin/
