@@ -1,0 +1,2 @@
+license COPYING license=GPLv2
+<transform dir path=etc/init.d -> set group sys>
