@@ -36,10 +36,6 @@ DESC="$SUMMARY"
 BUILDARCH=32
 NO_PARALLEL_MAKE=1
 
-#CFLAGS="$CFLAGS -DHAVE_NFDS_T"
-#CONFIGURE_OPTS="--disable-libnet --disable-ansi --disable-fatal-warnings"
-#
-
 function bootstrap() {
     logmsg "Running bootstrap"
     pushd $TMPDIR/$BUILDDIR > /dev/null
