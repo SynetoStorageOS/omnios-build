@@ -1,0 +1,159 @@
+diff -Nru pacemaker-Pacemaker-1.1.12-orig/cib/io.c pacemaker-Pacemaker-1.1.12/cib/io.c
+--- pacemaker-Pacemaker-1.1.12-orig/cib/io.c	2014-07-22 05:05:00.000000000 +0300
++++ pacemaker-Pacemaker-1.1.12/cib/io.c	2015-01-09 14:03:27.000000000 +0200
+@@ -304,6 +304,21 @@
+     return root;
+ }
+ 
++/*
++ * for OSs without support for direntry->d_type, like Solaris
++ */
++#ifndef DT_UNKNOWN
++# define DT_UNKNOWN     0
++# define DT_FIFO        1
++# define DT_CHR         2
++# define DT_DIR         4
++# define DT_BLK         6
++# define DT_REG         8
++# define DT_LNK         10
++# define DT_SOCK        12
++# define DT_WHT         14
++#endif /*DT_UNKNOWN*/
++
+ static int cib_archive_filter(const struct dirent * a)
+ {
+     int rc = 0;
+@@ -317,7 +332,22 @@
+         rc = 0;
+ 
+     } else if ((s.st_mode & S_IFREG) != S_IFREG) {
+-        crm_trace("%s - wrong type (%d)", a->d_name, a->d_type);
++        unsigned char dtype;
++#ifdef HAVE_STRUCT_DIRENT_D_TYPE
++        dtype = a->d_type;
++#else
++        switch (s.st_mode & S_IFMT) {
++            case S_IFREG:  dtype = DT_REG;      break;
++            case S_IFDIR:  dtype = DT_DIR;      break;
++            case S_IFCHR:  dtype = DT_CHR;      break;
++            case S_IFBLK:  dtype = DT_BLK;      break;
++            case S_IFLNK:  dtype = DT_LNK;      break;
++            case S_IFIFO:  dtype = DT_FIFO;     break;
++            case S_IFSOCK: dtype = DT_SOCK;     break;
++            default:       dtype = DT_UNKNOWN;  break;
++        }
++#endif
++         crm_trace("%s - wrong type (%d)", a->d_name, dtype);
+ 
+     } else if(strstr(a->d_name, "cib-") != a->d_name) {
+         crm_trace("%s - wrong prefix", a->d_name);
+diff -Nru pacemaker-Pacemaker-1.1.12-orig/configure.ac pacemaker-Pacemaker-1.1.12/configure.ac
+--- pacemaker-Pacemaker-1.1.12-orig/configure.ac	2014-07-22 05:05:00.000000000 +0300
++++ pacemaker-Pacemaker-1.1.12/configure.ac	2015-01-09 16:10:50.000000000 +0200
+@@ -448,6 +448,7 @@
+ 		INIT_EXT=".sh"
+ 		;;
+ *solaris*)
++		AC_DEFINE_UNQUOTED(ON_SOLARIS, 1, Compiling for Solaris platform)
+ 		;;
+ *linux*)
+ 		AC_DEFINE_UNQUOTED(ON_LINUX, 1, Compiling for Linux platform)
+@@ -806,6 +807,9 @@
+ 
+ AC_CHECK_MEMBERS([struct tm.tm_gmtoff],,,[[#include <time.h>]])
+ AC_CHECK_MEMBERS([lrm_op_t.rsc_deleted],,,[[#include <lrm/lrm_api.h>]])
++AC_CHECK_MEMBER([struct dirent.d_type],
++    AC_DEFINE(HAVE_STRUCT_DIRENT_D_TYPE,1,[Define this if struct dirent has d_type]),,
++    [#include <dirent.h>])
+ 
+ dnl ========================================================================
+ dnl Functions
+@@ -1144,7 +1148,7 @@
+ AC_PATH_PROGS(GIT, git false)
+ AC_MSG_CHECKING(build version)
+ 
+-BUILD_VERSION=561c4cf
++BUILD_VERSION=$Format:%h$
+ if test $BUILD_VERSION != ":%h$"; then
+    AC_MSG_RESULT(archive hash: $BUILD_VERSION)
+ 
+@@ -1686,7 +1690,6 @@
+ 
+ 	# We had to eliminate -Wnested-externs because of libtool changes
+         EXTRA_FLAGS="-fgnu89-inline
+-		-fstack-protector-all
+ 		-Wall
+ 		-Waggregate-return
+ 		-Wbad-function-cast
+@@ -1702,16 +1705,21 @@
+ 		-Wnested-externs
+ 		-Wno-long-long
+ 		-Wno-strict-aliasing
+-		-Wunused-but-set-variable
+ 		-Wpointer-arith
+ 		-Wstrict-prototypes
+-    		-Wunsigned-char
+-		-Wwrite-strings"
++		-Wwrite-strings
++		-Wunused-but-set-variable
++		-Wunsigned-char"
+ 
+ # Additional warnings it might be nice to enable one day
+ #		-Wshadow
+ #		-Wunreachable-code
+-
++	case "$host_os" in
++	    *solaris*) ;;
++	    *) EXTRA_FLAGS="$EXTRA_FLAGS
++			-fstack-protector-all"
++		;;
++	esac
+ 	for j in $EXTRA_FLAGS
+ 	do
+ 	  if
+diff -Nru pacemaker-Pacemaker-1.1.12-orig/lib/common/remote.c pacemaker-Pacemaker-1.1.12/lib/common/remote.c
+--- pacemaker-Pacemaker-1.1.12-orig/lib/common/remote.c	2014-07-22 05:05:00.000000000 +0300
++++ pacemaker-Pacemaker-1.1.12/lib/common/remote.c	2015-01-09 14:03:14.000000000 +0200
+@@ -67,25 +67,25 @@
+  * casts are necessary for constants, because we never know how for sure
+  * how U/UL/ULL map to __u16, __u32, __u64. At least not in a portable way.
+  */
+-#define ___swab16(x) ((__u16)(                                  \
+-        (((__u16)(x) & (__u16)0x00ffU) << 8) |                  \
+-        (((__u16)(x) & (__u16)0xff00U) >> 8)))
++#define __swab16(x) ((uint16_t)(                                      \
++        (((uint16_t)(x) & (uint16_t)0x00ffU) << 8) |                  \
++        (((uint16_t)(x) & (uint16_t)0xff00U) >> 8)))
+ 
+-#define ___swab32(x) ((__u32)(                                  \
+-        (((__u32)(x) & (__u32)0x000000ffUL) << 24) |            \
+-        (((__u32)(x) & (__u32)0x0000ff00UL) <<  8) |            \
+-        (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) |            \
+-        (((__u32)(x) & (__u32)0xff000000UL) >> 24)))
++#define __swab32(x) ((uint32_t)(                                      \
++        (((uint32_t)(x) & (uint32_t)0x000000ffUL) << 24) |            \
++        (((uint32_t)(x) & (uint32_t)0x0000ff00UL) <<  8) |            \
++        (((uint32_t)(x) & (uint32_t)0x00ff0000UL) >>  8) |            \
++        (((uint32_t)(x) & (uint32_t)0xff000000UL) >> 24)))
+ 
+-#define ___swab64(x) ((__u64)(                                  \
+-        (((__u64)(x) & (__u64)0x00000000000000ffULL) << 56) |   \
+-        (((__u64)(x) & (__u64)0x000000000000ff00ULL) << 40) |   \
+-        (((__u64)(x) & (__u64)0x0000000000ff0000ULL) << 24) |   \
+-        (((__u64)(x) & (__u64)0x00000000ff000000ULL) <<  8) |   \
+-        (((__u64)(x) & (__u64)0x000000ff00000000ULL) >>  8) |   \
+-        (((__u64)(x) & (__u64)0x0000ff0000000000ULL) >> 24) |   \
+-        (((__u64)(x) & (__u64)0x00ff000000000000ULL) >> 40) |   \
+-        (((__u64)(x) & (__u64)0xff00000000000000ULL) >> 56)))
++#define __swab64(x) ((uint64_t)(                                      \
++        (((uint64_t)(x) & (uint64_t)0x00000000000000ffULL) << 56) |   \
++        (((uint64_t)(x) & (uint64_t)0x000000000000ff00ULL) << 40) |   \
++        (((uint64_t)(x) & (uint64_t)0x0000000000ff0000ULL) << 24) |   \
++        (((uint64_t)(x) & (uint64_t)0x00000000ff000000ULL) <<  8) |   \
++        (((uint64_t)(x) & (uint64_t)0x000000ff00000000ULL) >>  8) |   \
++        (((uint64_t)(x) & (uint64_t)0x0000ff0000000000ULL) >> 24) |   \
++        (((uint64_t)(x) & (uint64_t)0x00ff000000000000ULL) >> 40) |   \
++        (((uint64_t)(x) & (uint64_t)0xff00000000000000ULL) >> 56)))
+ #endif
+ 
+ #define REMOTE_MSG_VERSION 1

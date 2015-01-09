@@ -32,14 +32,14 @@ VER=1.1.12
 PKG=cluster/Pacemaker
 SUMMARY="Pacemaker is an advanced, scalable High-Availability cluster resource manager"
 DESC="$SUMMARY"
-
 BUILDARCH=32
 
-export CONFIG_SHELL="/usr/bin/bash"
-
+PATH="/usr/gnu/bin:$PATH"
 CFLAGS="$CFLAGS -D_POSIX_PTHREAD_SEMANTICS"
 LDFLAGS="-L/usr/gnu/lib"
 CONFIGURE_OPTS="--prefix=/usr --disable-ansi --disable-fatal-warnings --with-heartbeat --with-corosync=no"
+
+export CONFIG_SHELL="/usr/bin/bash"
 
 function autogen() {
     logmsg "Running autogen.sh"
