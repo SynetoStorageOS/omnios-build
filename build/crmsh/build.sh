@@ -35,12 +35,18 @@ DESC="$SUMMARY"
 
 BUILDARCH=32
 
+function create_modules_link()
+{
+	ln -s crmsh ${DESTDIR}/usr/lib/python2.6/site-packages/modules
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
 autogen
 prep_build
 build
+create_modules_link
 make_package
 clean_up
 
