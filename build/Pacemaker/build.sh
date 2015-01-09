@@ -48,13 +48,18 @@ function autogen() {
     popd > /dev/null
 }
 
+function link_lrmd() {
+    mkdir -p ${DESTDIR}/usr/lib/heartbeat
+    ln -s /usr/libexec/pacemaker/lrmd ${DESTDIR}/usr/lib/heartbeat/lrmd
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
 autogen
 prep_build
 build
-make_isa_stub
+link_lrmd
 make_package
 clean_up
 
