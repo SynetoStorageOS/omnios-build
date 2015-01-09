@@ -47,13 +47,21 @@ function bootstrap() {
     popd > /dev/null
 }
 
+function install_services() {
+	install -d -m 755 ${DESTDIR}/lib/svc/method/
+	install -d -m 755 ${DESTDIR}/var/svc/manifest/system/
+	install -d -m 755 ${DESTDIR}/usr/sbin/
+	install -m 755 svc-heartbeat.sh ${DESTDIR}/lib/svc/method/svc-heartbeat
+	install -m 644 heartbeat.xml ${DESTDIR}/var/svc/manifest/system/heartbeat.xml
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
 bootstrap
 prep_build
 build
-make_isa_stub
+install_services
 make_package
 clean_up
 
