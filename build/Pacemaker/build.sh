@@ -37,8 +37,7 @@ BUILDARCH=32
 PATH="/usr/gnu/bin:$PATH"
 CFLAGS="$CFLAGS -D_POSIX_PTHREAD_SEMANTICS"
 LDFLAGS="-L/usr/gnu/lib"
-CONFIGURE_OPTS="--prefix=/usr --disable-ansi --disable-fatal-warnings --with-heartbeat --with-corosync=no"
-
+CONFIGURE_OPTS_32="$CONFIGURE_OPTS_32 --bindir=${PREFIX}/bin --sbindir=${PREFIX}/sbin --disable-ansi --disable-fatal-warnings --with-heartbeat --with-corosync=no"
 export CONFIG_SHELL="/usr/bin/bash"
 
 function link_lrmd() {
