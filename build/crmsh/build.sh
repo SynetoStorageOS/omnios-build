@@ -27,16 +27,13 @@
 # Load support functions
 . ../../lib/functions.sh
 
-PROG=glue
-VER=1.0.12
-PKG=cluster/glue
-SUMMARY="Cluster Glue is a set of libraries, tools and utilities suitable for the Heartbeat/Pacemaker cluster stack"
+PROG=crmsh
+VER=2.1.0
+PKG=cluster/crmsh
+SUMMARY="crmsh is a command-line interface for High-Availability cluster management on GNU/Linux systems. It simplifies the configuration, management and troubleshooting of Pacemaker-based clusters, by providing a powerful and intuitive set of features."
 DESC="$SUMMARY"
 
 BUILDARCH=32
-
-CFLAGS="$CFLAGS -DHAVE_NFDS_T"
-CONFIGURE_OPTS="--disable-libnet --disable-ansi --disable-fatal-warnings"
 
 init
 download_source $PROG $PROG $VER
@@ -44,7 +41,6 @@ patch_source
 autogen
 prep_build
 build
-make_isa_stub
 make_package
 clean_up
 

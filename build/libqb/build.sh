@@ -35,13 +35,6 @@ DESC="$SUMMARY"
 
 export PATH=/usr/gnu/bin:$PATH
 
-function autogen() {
-    logmsg "Running autogen.sh"
-    pushd $TMPDIR/$BUILDDIR > /dev/null
-    logcmd ./autogen.sh || logerr "Failed to run autogen.sh"
-    popd > /dev/null
-}
-
 init
 download_source $PROG $PROG $VER
 patch_source

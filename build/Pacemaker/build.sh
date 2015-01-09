@@ -41,13 +41,6 @@ CONFIGURE_OPTS="--prefix=/usr --disable-ansi --disable-fatal-warnings --with-hea
 
 export CONFIG_SHELL="/usr/bin/bash"
 
-function autogen() {
-    logmsg "Running autogen.sh"
-    pushd $TMPDIR/$BUILDDIR > /dev/null
-    logcmd ./autogen.sh || logerr "Failed to run autogen.sh"
-    popd > /dev/null
-}
-
 function link_lrmd() {
     mkdir -p ${DESTDIR}/usr/lib/heartbeat
     ln -s /usr/libexec/pacemaker/lrmd ${DESTDIR}/usr/lib/heartbeat/lrmd

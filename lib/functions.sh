@@ -1270,5 +1270,11 @@ update_git_repo() {
     popd > /dev/null
 }
 
+autogen() {
+    logmsg "Running autogen.sh"
+    pushd $TMPDIR/$BUILDDIR > /dev/null
+    logcmd ./autogen.sh || logerr "Failed to run autogen.sh"
+    popd > /dev/null
+}
 # Vim hints
 # vim:ts=4:sw=4:et:
