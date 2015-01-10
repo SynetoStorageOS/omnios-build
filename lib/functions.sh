@@ -544,7 +544,7 @@ download_source() {
     if [[ "$FILENAME" == "" ]]; then
         # Try all possible archive names
         logmsg "--- Archive not found."
-        logmsg "Downloading archive"
+        logmsg "Downloading archive: $DLDIR/$ARCHIVEPREFIX.[tar.[gz|bz2|xz] | tgz | tbz | tar | zip]"
         get_resource $DLDIR/$ARCHIVEPREFIX.tar.gz || \
             get_resource $DLDIR/$ARCHIVEPREFIX.tar.bz2 || \
             get_resource $DLDIR/$ARCHIVEPREFIX.tar.xz || \
@@ -1252,5 +1252,29 @@ wait_for_prebuilt() {
     fi
 }
 
+update_git_repo() {
+    local REPO_SOURCE=$1
+
+    if [[ -d $TMPDIR/$BUILDDIR ]]; then
+        logmsg "Updating existing cloned repo in $TMPDIR/$BUILDDIR"
+        pushd $TMPDIR/$BUILDDIR
+        logcmd $GIT pull
+        popd >/dev/null
+    else
+        logmsg "Cloning ${REPO_SOURCE} ..."
+        logcmd  $GIT clone ${REPO_SOURCE} $TMPDIR/$BUILDDIR ||
+            logerr "Failed to clone repo $REPO_SOURCE"
+    fi
+
+    logmsg "Leaving $TMPDIR/$BUILDDIR"
+    popd > /dev/null
+}
+
+autogen() {
+    logmsg "Running autogen.sh"
+    pushd $TMPDIR/$BUILDDIR > /dev/null
+    logcmd ./autogen.sh || logerr "Failed to run autogen.sh"
+    popd > /dev/null
+}
 # Vim hints
 # vim:ts=4:sw=4:et:

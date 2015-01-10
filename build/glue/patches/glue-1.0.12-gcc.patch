@@ -1,0 +1,499 @@
+diff -Nru glue-1.0.12-orig/configure.ac glue-1.0.12/configure.ac
+--- glue-1.0.12-orig/configure.ac	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/configure.ac	2015-01-07 21:03:35.007065476 +0200
+@@ -102,7 +102,7 @@
+ dnl Helpers 
+ dnl ===============================================
+ cc_supports_flag() {
+-         local CFLAGS="$@"
++         CFLAGS="$@"
+          AC_MSG_CHECKING(whether $CC supports "$@")
+          AC_COMPILE_IFELSE([AC_LANG_SOURCE(int main(){return 0;})] ,[RC=0; AC_MSG_RESULT(yes)],[RC=1; AC_MSG_RESULT(no)])
+          return $RC
+@@ -274,13 +274,6 @@
+ eval infodir="`eval echo ${infodir}`"
+ eval mandir="`eval echo ${mandir}`"
+ 
+-dnl docdir is a recent addition to autotools
+-eval docdir="`eval echo ${docdir}`"
+-if test "x$docdir" = "x"; then
+-   docdir="`eval echo ${datadir}/doc`"
+-fi
+-AC_SUBST(docdir)
+-
+ AC_MSG_CHECKING(for the location of the lock directory)
+ for HA_VARLOCKDIR in ${localstatedir}/lock ${localstatedir}/spool/lock ${localstatedir}/spool/locks ${localstatedir}/lock
+ do
+@@ -300,7 +293,7 @@
+ 
+ for j in prefix exec_prefix bindir sbindir libexecdir datadir sysconfdir \
+     sharedstatedir localstatedir libdir includedir oldincludedir infodir \
+-    mandir INITDIR docdir HA_VARLOCKDIR
++    mandir INITDIR HA_VARLOCKDIR
+ do 
+   dirname=`eval echo '${'${j}'}'`
+   if
+@@ -1229,8 +1222,7 @@
+         CFLAGS="$CFLAGS -ggdb"
+ 
+ 	# We had to eliminate -Wnested-externs because of libtool changes
+-        EXTRA_FLAGS="-fgnu89-inline
+-		-fstack-protector-all
++        EXTRA_FLAGS="
+ 		-Wall
+ 		-Waggregate-return
+ 		-Wbad-function-cast 
+@@ -1251,7 +1243,6 @@
+ 		-Wno-strict-aliasing
+ 		-Wpointer-arith 
+ 		-Wstrict-prototypes
+-    		-Wunsigned-char
+ 		-Wwrite-strings"
+ 
+ # Additional warnings it might be nice to enable one day
+@@ -1397,12 +1388,6 @@
+ replace/Makefile				        	\
+ hb_report/Makefile				        	\
+    hb_report/hb_report				        	\
+-doc/Makefile							\
+-   doc/ha_logd.xml						\
+-   doc/ha_logger.xml						\
+-   doc/stonith.xml						\
+-   doc/meatclient.xml						\
+-   doc/stonith/Makefile
+ )
+ 
+ dnl Now process the entire list of files added by previous 
+@@ -1424,7 +1409,6 @@
+ AC_MSG_RESULT([  Libraries                = ${libdir}])
+ AC_MSG_RESULT([  Header files             = ${includedir}])
+ AC_MSG_RESULT([  Arch-independent files   = ${datadir}])
+-AC_MSG_RESULT([  Documentation            = ${docdir}])
+ AC_MSG_RESULT([  State information        = ${localstatedir}])
+ AC_MSG_RESULT([  System configuration     = ${sysconfdir}])
+ AC_MSG_RESULT([])
+diff -Nru glue-1.0.12-orig/lib/clplumbing/cl_msg.c glue-1.0.12/lib/clplumbing/cl_msg.c
+--- glue-1.0.12-orig/lib/clplumbing/cl_msg.c	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/lib/clplumbing/cl_msg.c	2015-01-07 20:18:34.908232108 +0200
+@@ -2096,7 +2096,7 @@
+ 		if (ch->ch_status == IPC_CONNECT) {
+ 			snprintf(ch->failreason,MAXFAILREASON, 
+ 				 "send failed,farside_pid=%d, sendq length=%ld(max is %ld)",
+-				 ch->farside_pid, (long)ch->send_queue->current_qlen, 
++				 (int)ch->farside_pid, (long)ch->send_queue->current_qlen, 
+ 				 (long)ch->send_queue->max_qlen);	
+ 		}
+ 		imsg->msg_done(imsg);
+diff -Nru glue-1.0.12-orig/lib/clplumbing/ipcsocket.c glue-1.0.12/lib/clplumbing/ipcsocket.c
+--- glue-1.0.12-orig/lib/clplumbing/ipcsocket.c	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/lib/clplumbing/ipcsocket.c	2015-01-07 20:19:36.956328692 +0200
+@@ -1369,7 +1369,7 @@
+ 			default:
+ 				cl_perror("socket_resume_io_read"
+ 					  ": unknown recv error, peerpid=%d",
+-					  ch->farside_pid);
++					  (int)ch->farside_pid);
+ 				ch->ch_status = IPC_DISCONNECT;
+ 				retcode = IPC_FAIL;
+ 				break;
+diff -Nru glue-1.0.12-orig/lib/clplumbing/ipctest.c glue-1.0.12/lib/clplumbing/ipctest.c
+--- glue-1.0.12-orig/lib/clplumbing/ipctest.c	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/lib/clplumbing/ipctest.c	2015-01-07 20:26:45.727310927 +0200
+@@ -576,7 +576,7 @@
+ 	wmsg.msg_buf = NULL;
+ 	wmsg.msg_ch = wchan;
+ 
+-	cl_log(LOG_INFO, "Echo server: %d reps pid %d.", repcount, getpid());
++	cl_log(LOG_INFO, "Echo server: %d reps pid %d.", repcount, (int)getpid());
+ 	for (j=1; j <= repcount
+ 	;++j, rmsg != NULL && (rmsg->msg_done(rmsg),1)) {
+ 		int	rc;
+diff -Nru glue-1.0.12-orig/lib/clplumbing/ocf_ipc.c glue-1.0.12/lib/clplumbing/ocf_ipc.c
+--- glue-1.0.12-orig/lib/clplumbing/ocf_ipc.c	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/lib/clplumbing/ocf_ipc.c	2015-01-07 20:20:54.152706312 +0200
+@@ -447,7 +447,7 @@
+ 			cl_log(LOG_ERR, "ipc_bufpool_update: "
+ 			       "magic number in head does not match."
+ 			       "Something very bad happened, abort now, farside pid =%d",
+-			       ch->farside_pid);
++			       (int)ch->farside_pid);
+ 			cl_log(LOG_ERR, "magic=%x, expected value=%x", head->magic, HEADMAGIC);
+ 			ipc_bufpool_display(pool);
+ 			cl_log(LOG_INFO, "nmsgs=%d", nmsgs);
+diff -Nru glue-1.0.12-orig/lib/clplumbing/proctrack.c glue-1.0.12/lib/clplumbing/proctrack.c
+--- glue-1.0.12-orig/lib/clplumbing/proctrack.c	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/lib/clplumbing/proctrack.c	2015-01-07 20:23:14.402701223 +0200
+@@ -390,13 +390,13 @@
+ 	pinfo = GetProcInfo(pid);
+ 	
+ 	if (pinfo == NULL) {
+-		cl_log(LOG_ERR, "%s: bad pinfo in call (pid %d)", __FUNCTION__, pid);
++		cl_log(LOG_ERR, "%s: bad pinfo in call (pid %d)", __FUNCTION__, (int)pid);
+ 		return FALSE;
+ 	}
+ 	if (pinfo->timeoutseq < 0 || pinfo->killinfo == NULL) {
+ 		cl_log(LOG_ERR
+ 		,	 "%s: bad call (pid %d): killinfo (%d, 0x%lx)"
+-		,	__FUNCTION__, pid
++		,	__FUNCTION__, (int)pid
+ 		,	pinfo->timeoutseq
+ 		,	(unsigned long)POINTER_TO_SIZE_T(pinfo->killinfo));
+ 		return FALSE;
+@@ -439,7 +439,7 @@
+ 			return FALSE;
+ 		}else{
+ 			cl_perror("%s: kill(%d,%d) failed"
+-			,	__FUNCTION__, pid, nsig);
++			,	__FUNCTION__, (int)pid, nsig);
+ 		}
+ 	}
+ 	if (!hadprivs) {
+diff -Nru glue-1.0.12-orig/lib/clplumbing/replytrack.c glue-1.0.12/lib/clplumbing/replytrack.c
+--- glue-1.0.12-orig/lib/clplumbing/replytrack.c	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/lib/clplumbing/replytrack.c	2015-01-07 20:25:39.473071663 +0200
+@@ -34,6 +34,7 @@
+ #include <errno.h>
+ #include <sys/wait.h>
+ #include <sys/types.h>
++#include <strings.h>
+ #include <signal.h>
+ #include <memory.h>
+ #include <clplumbing/cl_log.h>
+diff -Nru glue-1.0.12-orig/lib/plugins/stonith/stonith_expect_helpers.h glue-1.0.12/lib/plugins/stonith/stonith_expect_helpers.h
+--- glue-1.0.12-orig/lib/plugins/stonith/stonith_expect_helpers.h	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/lib/plugins/stonith/stonith_expect_helpers.h	2015-01-07 20:28:02.870142273 +0200
+@@ -101,7 +101,7 @@
+ 
+ #ifndef DOESNT_USE_STONITHKILLCOMM
+ static void
+-Stonithkillcomm(int *rdfd, int *wrfd, int *pid)
++Stonithkillcomm(int *rdfd, int *wrfd, pid_t *pid)
+ {
+         if ((rdfd != NULL) && (*rdfd >= 0)) {
+ 		close(*rdfd);
+diff -Nru glue-1.0.12-orig/lrm/lrmd/lrmd.c glue-1.0.12/lrm/lrmd/lrmd.c
+--- glue-1.0.12-orig/lrm/lrmd/lrmd.c	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/lrm/lrmd/lrmd.c	2015-01-07 20:47:54.305683655 +0200
+@@ -275,7 +275,7 @@
+ 	if (op->exec_pid > 1) {
+ 		lrmd_log(LOG_CRIT
+ 		,	"%s: lingering operation process %d, op %s"
+-		,	__FUNCTION__, op->exec_pid, small_op_info(op));	
++		,	__FUNCTION__, (int)op->exec_pid, small_op_info(op));	
+ 		return;
+ 	}
+ 	lrmd_debug2(LOG_DEBUG, "%s: free the %s with address %p"
+@@ -437,7 +437,7 @@
+ 	": %d, child pid: %d (%s) %s %s"
+ 	,	text,	op_info(op), op_status_to_str(op_status)
+ 	,	op_target_rc_to_str(target_rc)
+-	,	op->client_id, op->call_id, op->exec_pid, pidstat
++	,	(int)op->client_id, (int)op->call_id, (int)op->exec_pid, pidstat
+ 	,	(op->is_copy ? "copy" : "original")
+ 	,	(op->is_cancelled ? "cancelled" : ""));
+ 	lrmd_debug(LOG_DEBUG
+@@ -500,7 +500,7 @@
+ 		", last op in: %s, lastop out: %s"
+ 		", last op rc: %s"
+ 		,	lrm_str(client->app_name)
+-		,	client->pid
++		,	(int)client->pid
+ 		,	client->uid, client->gid
+ 		,	client->lastrequest
+ 		,	ctime(&client->lastreqstart)
+@@ -762,7 +762,7 @@
+ 		 */
+ 		snprintf(cmd, sizeof(cmd)
+ 		,	"ps -l -f -s %d | logger -p daemon.info -t 'T/O PS:'"
+-		,	op->exec_pid);
++		,	(int)op->exec_pid);
+ 		lrmd_debug(LOG_DEBUG, "Running [%s]", cmd);
+ 		if (system(cmd) != 0) {
+ 			lrmd_log(LOG_ERR, "Running [%s] failed", cmd);
+@@ -1347,7 +1347,7 @@
+ on_connect_cbk (IPC_Channel* ch, gpointer user_data)
+ {
+ 	/*client connect for create the second channel for call back*/
+-	pid_t pid;
++	int pid;
+ 	const char* type = NULL;
+ 	struct ha_msg* msg = NULL;
+ 	lrmd_client_t* client = NULL;
+@@ -1436,7 +1436,7 @@
+ 	if (IPC_DISCONNECT == ch->ch_status) {
+ 		lrmd_debug(LOG_DEBUG,
+ 			"on_receive_cmd: the IPC to client [pid:%d] disconnected."
+-		,	client->pid);
++		,	(int)client->pid);
+ 		return FALSE;
+ 	}
+ 
+@@ -1491,7 +1491,7 @@
+ 			ha_msg_del(msg);
+ 			lrmd_log(LOG_ERR, "%s: insufficient privileges for %s (pid %d)"
+ 			, __FUNCTION__
+-			, client->app_name, client->pid);
++			, client->app_name, (int)client->pid);
+ 			return FALSE;
+ 		}
+ 		strncpy(client->lastrequest, in_type.msg_type, sizeof(client->lastrequest));
+@@ -1532,7 +1532,7 @@
+ 		lrmd_log(LOG_ERR,"%s: can not find client %s [pid %d] when try "
+ 			 "to unregister it."
+ 		,	__FUNCTION__
+-		,	client->app_name, client->pid);
++		,	client->app_name, (int)client->pid);
+ 		return HA_FAIL;
+ 	}
+ 
+@@ -1546,7 +1546,7 @@
+ 	lrmd_debug(LOG_DEBUG, "%s: client %s [pid:%d] is unregistered"
+ 	, 	__FUNCTION__
+ 	,	client->app_name
+-	,	client->pid);
++	,	(int)client->pid);
+ 	return HA_OK;
+ }
+ 
+@@ -1632,7 +1632,7 @@
+ 	}
+ 	client->app_name = strdup(app_name);
+ 
+-	return_on_no_int_value(msg, F_LRM_PID, &client->pid);
++	return_on_no_int_value(msg, F_LRM_PID, (int *)&client->pid);
+ 	return_on_no_int_value(msg, F_LRM_GID, (int *)&client->gid);
+ 	return_on_no_int_value(msg, F_LRM_UID, (int *)&client->uid);
+ 
+@@ -1643,7 +1643,7 @@
+ 		lrmd_log(LOG_NOTICE,
+ 			"on_msg_register: the client [pid:%d] already exists in "
+ 			"internal client list, let remove it at first."
+-		, 	client->pid);
++		,	(int)client->pid);
+ 	}
+ 
+ 	/* everybody can connect, but only certain UIDs can perform
+@@ -1657,7 +1657,7 @@
+ 	g_hash_table_insert(clients, (gpointer)&client->pid, client);
+ 	lrmd_debug(LOG_DEBUG, "on_msg_register:client %s [%d] registered"
+ 	,	client->app_name
+-	,	client->pid);
++	,	(int)client->pid);
+ 
+ 	return HA_OK;
+ }
+@@ -1671,8 +1671,8 @@
+ 	CHECK_ALLOCATED(msg, "message", HA_FAIL);
+ 
+ 	lrmd_debug2(LOG_DEBUG
+-	, 	"on_msg_get_rsc_classes:client [%d] wants to get rsc classes"
+-	,	client->pid);
++	,	"on_msg_get_rsc_classes:client [%d] wants to get rsc classes"
++	,	(int)client->pid);
+ 
+ 	ret = create_lrm_ret(HA_OK, 4);
+ 	CHECK_RETURN_OF_CREATE_LRM_RET;
+@@ -1712,7 +1712,7 @@
+ 
+ 	lrmd_debug2(LOG_DEBUG, "on_msg_get_rsc_types: the client [pid:%d] "
+ 		 "wants to get resource types of resource class %s"
+-		, client->pid, rclass);
++		, (int)client->pid, rclass);
+ 
+ 	RAExec = g_hash_table_lookup(RAExecFuncs,rclass);
+ 
+@@ -1769,7 +1769,7 @@
+ 	lrmd_debug2(LOG_DEBUG
+ 	,	"%s: the client [%d] wants to get rsc privider of %s::%s"
+ 	,	__FUNCTION__
+-	,	client->pid
++	,	(int)client->pid
+ 	,	rclass
+ 	,	rtype);
+ 
+@@ -1823,7 +1823,7 @@
+ 	lrmd_debug2(LOG_DEBUG
+ 	,	"%s: the client [pid:%d] wants to get rsc metadata of %s::%s::%s."
+ 	,	__FUNCTION__
+-	,	client->pid
++	,	(int)client->pid
+ 	,	lrm_str(rclass)
+ 	,	lrm_str(provider)
+ 	,	lrm_str(rtype));
+@@ -1884,7 +1884,7 @@
+ 
+ 	lrmd_debug2(LOG_DEBUG
+ 	,	"on_msg_get_all:client [%d] want to get all rsc information."
+-	,	client->pid);
++	,	(int)client->pid);
+ 
+ 	ret = create_lrm_ret(HA_OK, g_hash_table_size(resources) + 1);
+ 	CHECK_RETURN_OF_CREATE_LRM_RET;
+@@ -1913,7 +1913,7 @@
+ 	lrmd_debug2(LOG_DEBUG
+ 	,	"on_msg_get_rsc: the client [pid:%d] wants to get "
+ 		"the information of the resource [rsc_id: %s]"
+-	,	client->pid, lrmd_nullcheck(id));
++	,	(int)client->pid, lrmd_nullcheck(id));
+ 
+ 	rsc = lookup_rsc_by_msg(msg);
+ 	if (NULL == rsc) {
+@@ -1977,7 +1977,7 @@
+ 	lrmd_debug2(LOG_DEBUG
+ 	,	"on_msg_get_last_op:client %s[%d] want to get the information "
+ 		"regarding last %s op on %s"
+-	,	client->app_name, client->pid
++	,	client->app_name, (int)client->pid
+ 	, 	lrmd_nullcheck(op_type), lrmd_nullcheck(rid));
+ 	
+ 	rsc = lookup_rsc_by_msg(msg);
+@@ -2040,7 +2040,7 @@
+ 	id = ha_msg_value(msg, F_LRM_RID);
+ 	lrmd_debug2(LOG_DEBUG
+ 	,	"%s: client [%d] wants to delete rsc %s"
+-	,	__FUNCTION__, client->pid, lrmd_nullcheck(id));
++	,	__FUNCTION__, (int)client->pid, lrmd_nullcheck(id));
+ 
+ 	rsc = lookup_rsc_by_msg(msg);
+ 	if (NULL == rsc) {
+@@ -2111,7 +2111,7 @@
+ 	id = ha_msg_value(msg, F_LRM_RID);
+ 	lrmd_debug2(LOG_DEBUG
+ 	,	"%s: client [%d] wants to fail rsc %s"
+-	,	__FUNCTION__, client->pid, lrmd_nullcheck(id));
++	,	__FUNCTION__, (int)client->pid, lrmd_nullcheck(id));
+ 
+ 	rsc = lookup_rsc_by_msg(msg);
+ 	if (!rsc) {
+@@ -2182,7 +2182,7 @@
+ 
+ 	lrmd_debug(LOG_DEBUG
+ 	,	"on_msg_add_rsc:client [%d] adds resource %s"
+-	,	client->pid, lrmd_nullcheck(id));
++	,	(int)client->pid, lrmd_nullcheck(id));
+ 	
+ 	if (RID_LEN <= strlen(id))	{
+ 		lrmd_log(LOG_ERR, "on_msg_add_rsc: rsc_id is too long.");
+@@ -2277,7 +2277,7 @@
+ 	lrmd_debug2(LOG_DEBUG
+ 	,	"%s:client [pid:%d] cancel the operation [callid:%d]"
+ 	,	__FUNCTION__
+-	,	client->pid
++	,	(int)client->pid
+ 	, 	cancel_op_id);
+ 
+ 	if( cancel_op(&(rsc->repeat_op_list), cancel_op_id) != HA_OK ) {
+@@ -2347,7 +2347,7 @@
+ 	/* when a flush request arrived, flush all pending ops */
+ 	lrmd_debug2(LOG_DEBUG
+ 		,	"%s:client [%d] flush operations"
+-		,	__FUNCTION__, client->pid);
++		,	__FUNCTION__, (int)client->pid);
+ 	(void)flush_all(&(rsc->repeat_op_list),0);
+ 	if( flush_all(&(rsc->op_list),0) ) {
+ 		set_rsc_flushing_ops(rsc); /* resource busy */
+@@ -2433,7 +2433,7 @@
+ 	lrmd_debug2(LOG_DEBUG
+ 	, "%s: client [%d] want to add an operation %s on resource %s."
+ 	,	__FUNCTION__
+-	,	client->pid
++	,	(int)client->pid
+ 	,	op_info(op)
+ 	,	NULL!=op->rsc_id ? op->rsc_id : "#EMPTY#");
+ 
+@@ -2500,7 +2500,7 @@
+ 	id = ha_msg_value(msg,F_LRM_RID);
+ 	lrmd_debug2(LOG_DEBUG
+ 	,	"%s: client [%d] want to get the state of resource %s"
+-	,	__FUNCTION__, client->pid, lrmd_nullcheck(id));
++	,	__FUNCTION__, (int)client->pid, lrmd_nullcheck(id));
+ 
+ 	rsc = lookup_rsc_by_msg(msg);
+ 	if (NULL == rsc) {
+@@ -3156,10 +3156,10 @@
+ 
+ 			if (!op->interval || is_logmsg_due(op)) { /* log non-repeating ops */
+ 				lrmd_log(LOG_INFO,"rsc:%s %s[%d] (pid %d)",
+-					rsc->id,probe_str(op,op_type),op->call_id,pid);
++					rsc->id,probe_str(op,op_type),op->call_id,(int)pid);
+ 			} else {
+ 				lrmd_debug(LOG_DEBUG,"rsc:%s %s[%d] (pid %d)",
+-					rsc->id,op_type,op->call_id,pid);
++					rsc->id,op_type,op->call_id,(int)pid);
+ 			}
+ 			close(stdout_fd[1]);
+ 			close(stderr_fd[1]);
+@@ -3249,7 +3249,7 @@
+ 			 * entire lrm_op_t too? */
+ 			lrmd_debug2(LOG_DEBUG
+ 			,	"perform_ra_op:calling RA plugin to perform %s, pid: [%d]"
+-			,	op_info(op), getpid());		
++			,	op_info(op), (int)getpid());
+ 
+ 			op_params = ha_msg_value_str_table(op->msg, F_LRM_PARAM);
+ 			params = merge_str_tables(rsc->params,op_params);
+@@ -3370,8 +3370,8 @@
+ 
+ 	if( signo ) {
+ 		if( proctrack_timedout(p) ) {
+-			lrmd_log(LOG_WARNING,	"%s: pid %d timed out"
+-			, small_op_info(op), proctrack_pid(p));
++			lrmd_log(LOG_WARNING, "%s: pid %d timed out"
++			, small_op_info(op), (int)proctrack_pid(p));
+ 			op_status = LRM_OP_TIMEOUT;
+ 		} else {
+ 			op_status = LRM_OP_ERROR;
+@@ -3382,13 +3382,13 @@
+ 		if (!op->interval || is_logmsg_due(op) || debug_level > 0) { /* log non-repeating ops */
+ 			if (rc == exitcode) {
+ 				lrmd_log(LOG_INFO
+-				,	"%s: pid %d exited with"
+-				" return code %d", small_op_info(op), proctrack_pid(p), rc);
++				, "%s: pid %d exited with"
++				" return code %d", small_op_info(op), (int)proctrack_pid(p), rc);
+ 			}else{
+ 				lrmd_log(LOG_INFO
+ 				,	"%s: pid %d exited with"
+ 				" return code %d (mapped from %d)"
+-				,	small_op_info(op), proctrack_pid(p), rc, exitcode);
++				,	small_op_info(op), (int)proctrack_pid(p), rc, exitcode);
+ 			}
+ 		}
+ 		if (EXECRA_EXEC_UNKNOWN_ERROR == rc || EXECRA_NO_RA == rc) {
+@@ -3975,19 +3975,19 @@
+ 		snprintf(info,sizeof(info)
+ 		,"operation %s[%d] on unknown rsc(maybe deleted) for client %d"
+ 		,lrm_str(op_type)
+-		,op->call_id ,op->client_id);
++		,(int)op->call_id ,(int)op->client_id);
+ 
+ 	}else{
+ 		if (op->exec_pid > 1) {
+ 			snprintf(info, sizeof(info)
+ 			,"operation %s[%d] with pid %d on %s for client %d"
+-			,lrm_str(op_type), op->call_id, op->exec_pid, lrm_str(rsc->id)
+-			,op->client_id);
++			,lrm_str(op_type), (int)op->call_id, (int)op->exec_pid, lrm_str(rsc->id)
++			,(int)op->client_id);
+ 		} else {
+ 			snprintf(info, sizeof(info)
+ 			,"operation %s[%d] on %s for client %d"
+-			,lrm_str(op_type), op->call_id, lrm_str(rsc->id)
+-			,op->client_id);
++			,lrm_str(op_type), (int)op->call_id, lrm_str(rsc->id)
++			,(int)op->client_id);
+ 		}
+ 
+ 		if( add_params ) {
+diff -Nru glue-1.0.12-orig/Makefile.am glue-1.0.12/Makefile.am
+--- glue-1.0.12-orig/Makefile.am	2014-07-18 14:40:19.000000000 +0300
++++ glue-1.0.12/Makefile.am	2015-01-07 21:04:19.682624175 +0200
+@@ -23,7 +23,7 @@
+ 			  DRF/stamp-h.in libtool.m4 ltdl.m4 libltdl.tar
+ 
+ SUBDIRS			= include $(LIBLTDL_DIR) replace lib lrm logd \
+-			  hb_report doc config
++			  hb_report config
+ 
+ install-exec-local:
+ 	$(INSTALL) -d $(DESTDIR)/$(HA_COREDIR)

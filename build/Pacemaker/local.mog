@@ -1,0 +1,29 @@
+license COPYING license=GPLv2
+<transform dir path=etc/init.d -> set group sys>
+
+# Prevents pkgdepend from freaking out
+<transform file path=usr/lib/libpe_status.so.4.3.0 -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/lib/libpengine.so.4.3.0 -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/libexec/pacemaker/lrmd_test -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/libexec/pacemaker/pengine -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/libexec/pacemaker/stonithd -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/attrd_updater -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/cibadmin -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_attribute -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_diff -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_error -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_node -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_mon -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_resource -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_shadow -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_simulate -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_ticket -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_uuid -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crm_verify -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/crmadmin -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/iso8601 -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/sbin/stonith_admin -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/pacemaker/tests/cts/CTSlab.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/pacemaker/tests/cts/fence_dummy -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/pacemaker/tests/fencing/regression.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/pacemaker/tests/lrmd/regression.py -> set pkg.depend.bypass-generate .*>

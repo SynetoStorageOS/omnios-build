@@ -1,0 +1,23 @@
+diff -Nru resource-agents-3.9.5-orig/Makefile.am resource-agents-3.9.5/Makefile.am
+--- resource-agents-3.9.5-orig/Makefile.am	2013-02-07 14:17:42.000000000 +0200
++++ resource-agents-3.9.5/Makefile.am	2015-01-09 18:20:28.910352712 +0200
+@@ -37,7 +37,7 @@
+ endif
+ 
+ if BUILD_LINUX_HA
+-SUBDIRS	+= include heartbeat tools ldirectord doc
++SUBDIRS	+= include heartbeat tools
+ LINUX_HA = without
+ else
+ LINUX_HA = with
+diff -Nru resource-agents-3.9.5-orig/tools/Makefile.am resource-agents-3.9.5/tools/Makefile.am
+--- resource-agents-3.9.5-orig/tools/Makefile.am	2013-02-07 14:17:42.000000000 +0200
++++ resource-agents-3.9.5/tools/Makefile.am	2015-01-09 18:09:48.735917399 +0200
+@@ -66,6 +66,7 @@
+ sfex_stat_LDADD		= $(GLIBLIB) -lplumb -lplumbgpl
+ 
+ findif_SOURCES		= findif.c
++findif_LDADD		= -lnsl
+ 
+ if BUILD_TICKLE
+ halib_PROGRAMS		+= tickle_tcp

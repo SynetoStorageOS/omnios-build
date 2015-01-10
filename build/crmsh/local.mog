@@ -1,0 +1,18 @@
+license COPYING license=GPLv2
+
+<transform file path=usr/sbin/i386/crm -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/add/add.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/check-uptime/fetch.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/check-uptime/report.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/health/collect.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/health/hahealth.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/health/report.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/init/authkey.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/init/collect.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/init/configure.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/init/init.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/init/verify.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/scripts/remove/remove.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/utils/crm_clean.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/utils/crm_pkg.py -> set pkg.depend.bypass-generate .*>
+<transform file path=usr/share/crmsh/utils/crm_rpmcheck.py -> set pkg.depend.bypass-generate .*>

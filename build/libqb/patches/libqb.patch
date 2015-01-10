@@ -1,0 +1,9 @@
+diff -Nru libqb-0.17.1.orig/autogen.sh libqb-0.17.1/autogen.sh
+--- libqb-0.17.1.orig/autogen.sh	2014-08-27 07:04:13.000000000 +0300
++++ libqb-0.17.1/autogen.sh	2015-01-08 14:45:07.000000000 +0200
+@@ -1,4 +1,5 @@
+ #!/bin/sh
+ # Run this to generate all the initial makefiles, etc.
+ mkdir -p m4
++pwd | sed -e s/^.*-// > .tarball-version
+ autoreconf -i -v && echo Now run ./configure and make
