@@ -30,12 +30,15 @@
 PROG=crmsh
 VER=2.1.0
 PKG=cluster/crmsh
-SUMMARY="crmsh is a command-line interface for High-Availability cluster management on GNU/Linux systems. It simplifies the configuration, management and troubleshooting of Pacemaker-based clusters, by providing a powerful and intuitive set of features."
+SUMMARY="crmsh is a command-line interface for High-Availability cluster management on GNU/Linux systems."
 DESC="$SUMMARY"
 
 BUILDARCH=32
 
 CONFIGURE_OPTS_32="--bindir=$PREFIX/bin"
+
+BUILD_DEPENDS_IPS="cluster/Pacemaker"
+RUN_DEPENDS_IPS="cluster/Pacemaker"
 
 function create_modules_link()
 {
