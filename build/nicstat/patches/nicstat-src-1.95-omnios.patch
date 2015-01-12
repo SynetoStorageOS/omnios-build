@@ -1,0 +1,67 @@
+diff -Nru nicstat-src-1.95-orig/Makefile.OmniOS nicstat-src-1.95/Makefile.OmniOS
+--- nicstat-src-1.95-orig/Makefile.OmniOS	1970-01-01 02:00:00.000000000 +0200
++++ nicstat-src-1.95/Makefile.OmniOS	2015-01-12 16:02:02.000000000 +0200
+@@ -0,0 +1,63 @@
++# Makefile.OmniOS -	for nicstat, OmniOS / Illumos
++
++DESTDIR=
++
++FILES =	nicstat
++
++SOURCES =	nicstat.c
++
++BINARY =	nicstat
++BINARIES =	$(BINARY)
++
++CC=gcc
++
++COPT =		-g -O3
++
++# _REENTRANT gets us the declaration of strtok_r() on Solaris 9
++CFLAGS =	$(COPT) -D_REENTRANT `./dladm.sh def`
++
++LDLIBS =	-lsocket -lkstat -lrt `./dladm.sh lib`
++
++FILES =		nicstat
++
++SOURCES =	nicstat.c
++
++INSTALL =	/usr/gnu/bin/install
++
++#--------------------------------
++
++FILES =	nicstat
++
++SOURCES =	nicstat.c
++
++BASEDIR =	$(DESTDIR)/usr
++BINDIR =	$(BASEDIR)/bin
++MANDIR =	$(BASEDIR)/share/man
++MP_DIR =	$(BINDIR)
++
++BINARY =	nicstat
++NATIVE_BINARY =	`./nicstat.sh --bin-name`
++
++
++all : $(FILES)
++	mv $? $(NATIVE_BINARY)
++
++$(NATIVE_BINARY) : $(BINARY)
++	mv $? $@
++
++#-- Choose one of these two install methods:
++install : install_native install_man
++
++install_native : $(BINARIES)
++	$(INSTALL) -d -m 755 $(BINDIR)
++	$(INSTALL) $(NATIVE_BINARY) $(BINDIR)/$(BINARY)
++
++install_man: nicstat.1
++	$(INSTALL) -d -m 755 $(MANDIR)/man1
++	$(INSTALL) -m 444 nicstat.1 $(MANDIR)/man1/nicstat.1
++
++lint :
++	lint $(SOURCES) $(LDLIBS)
++
++clean :
++	rm -f $(FILES)
