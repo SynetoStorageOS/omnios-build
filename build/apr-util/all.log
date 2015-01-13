@@ -1,0 +1,1186 @@
+===== Build started at January 13, 2015 05:43:58 PM EET =====
+Package name: library/apr-util
+Selected flavor: None (use -f to specify a flavor)
+Selected build arch: both
+Extra dependency: None (use -d to specify a version)
+Verifying dependencies
+No library/apr-util installed.  Good.
+Checking for source directory
+--- Source directory not found
+Checking for apr-util source archive
+--- Archive not found.
+Downloading archive: apr-util/apr-util-1.5.4.[tar.[gz|bz2|xz] | tgz | tbz | tar | zip]
+Extracting archive: apr-util-1.5.4.tar.bz2
+Running: extract_archive apr-util-1.5.4.tar.bz2
+apr-util-1.5.4/
+apr-util-1.5.4/libaprutil.dep
+apr-util-1.5.4/xlate/
+apr-util-1.5.4/xlate/xlate.c
+apr-util-1.5.4/docs/
+apr-util-1.5.4/docs/doxygen.conf
+apr-util-1.5.4/libaprutil.dsp
+apr-util-1.5.4/NWGNUmakefile
+apr-util-1.5.4/hooks/
+apr-util-1.5.4/hooks/apr_hooks.c
+apr-util-1.5.4/aprutil.mak
+apr-util-1.5.4/crypto/
+apr-util-1.5.4/crypto/apr_md4.c
+apr-util-1.5.4/crypto/apr_md5.c
+apr-util-1.5.4/crypto/apr_crypto_openssl.mak
+apr-util-1.5.4/crypto/apr_crypto_openssl.dep
+apr-util-1.5.4/crypto/apr_sha1.c
+apr-util-1.5.4/crypto/apr_crypto.c
+apr-util-1.5.4/crypto/apr_crypto_openssl.dsp
+apr-util-1.5.4/crypto/apr_crypto_nss.c
+apr-util-1.5.4/crypto/getuuid.c
+apr-util-1.5.4/crypto/apr_crypto_nss.dsp
+apr-util-1.5.4/crypto/apr_crypto_openssl.c
+apr-util-1.5.4/crypto/apr_crypto_nss.mak
+apr-util-1.5.4/crypto/crypt_blowfish.h
+apr-util-1.5.4/crypto/uuid.c
+apr-util-1.5.4/crypto/apr_crypto_nss.dep
+apr-util-1.5.4/crypto/apr_passwd.c
+apr-util-1.5.4/crypto/crypt_blowfish.c
+apr-util-1.5.4/test/
+apr-util-1.5.4/test/testutillib.dsp
+apr-util-1.5.4/test/dbd.c
+apr-util-1.5.4/test/testxml.c
+apr-util-1.5.4/test/testmd5.c
+apr-util-1.5.4/test/NWGNUmakefile
+apr-util-1.5.4/test/testutil.c
+apr-util-1.5.4/test/testdbm.c
+apr-util-1.5.4/test/testutil.h
+apr-util-1.5.4/test/abts.c
+apr-util-1.5.4/test/testbuckets.c
+apr-util-1.5.4/test/Makefile.in
+apr-util-1.5.4/test/testreslist.c
+apr-util-1.5.4/test/testdbd.c
+apr-util-1.5.4/test/testutildll.dsp
+apr-util-1.5.4/test/testuri.c
+apr-util-1.5.4/test/testcrypto.c
+apr-util-1.5.4/test/testmemcache.c
+apr-util-1.5.4/test/nw_misc.c
+apr-util-1.5.4/test/NWGNUaputest
+apr-util-1.5.4/test/testrmm.c
+apr-util-1.5.4/test/Makefile.win
+apr-util-1.5.4/test/testall.dsw
+apr-util-1.5.4/test/testmd4.c
+apr-util-1.5.4/test/abts.h
+apr-util-1.5.4/test/teststrmatch.c
+apr-util-1.5.4/test/testpass.c
+apr-util-1.5.4/test/testqueue.c
+apr-util-1.5.4/test/test_apu.h
+apr-util-1.5.4/test/testldap.c
+apr-util-1.5.4/test/data/
+apr-util-1.5.4/test/data/billion-laughs.xml
+apr-util-1.5.4/test/abts_tests.h
+apr-util-1.5.4/test/testdate.c
+apr-util-1.5.4/test/testuuid.c
+apr-util-1.5.4/test/testxlate.c
+apr-util-1.5.4/memcache/
+apr-util-1.5.4/memcache/apr_memcache.c
+apr-util-1.5.4/dbd/
+apr-util-1.5.4/dbd/apr_dbd_odbc.c
+apr-util-1.5.4/dbd/apr_dbd_oracle.dsp
+apr-util-1.5.4/dbd/apr_dbd_sqlite2.dep
+apr-util-1.5.4/dbd/apr_dbd_freetds.dsp
+apr-util-1.5.4/dbd/NWGNUmakefile
+apr-util-1.5.4/dbd/NWGNUdbdmysql
+apr-util-1.5.4/dbd/apr_dbd_pgsql.dep
+apr-util-1.5.4/dbd/NWGNUdbdfreetds
+apr-util-1.5.4/dbd/NWGNUdbdpgsql
+apr-util-1.5.4/dbd/apr_dbd_sqlite3.mak
+apr-util-1.5.4/dbd/apr_dbd_freetds.dep
+apr-util-1.5.4/dbd/apr_dbd_pgsql.mak
+apr-util-1.5.4/dbd/apr_dbd_oracle.mak
+apr-util-1.5.4/dbd/apr_dbd_sqlite3.c
+apr-util-1.5.4/dbd/apr_dbd_mysql.dsp
+apr-util-1.5.4/dbd/apr_dbd.c
+apr-util-1.5.4/dbd/apr_dbd_sqlite2.dsp
+apr-util-1.5.4/dbd/apr_dbd_odbc.dsp
+apr-util-1.5.4/dbd/apr_dbd_freetds.mak
+apr-util-1.5.4/dbd/NWGNUdbdsqli2
+apr-util-1.5.4/dbd/apr_dbd_sqlite3.dsp
+apr-util-1.5.4/dbd/apr_dbd_pgsql.c
+apr-util-1.5.4/dbd/apr_dbd_oracle.c
+apr-util-1.5.4/dbd/apr_dbd_pgsql.dsp
+apr-util-1.5.4/dbd/apr_dbd_sqlite2.mak
+apr-util-1.5.4/dbd/apr_dbd_mysql.dep
+apr-util-1.5.4/dbd/apr_dbd_odbc.mak
+apr-util-1.5.4/dbd/apr_dbd_mysql.c
+apr-util-1.5.4/dbd/apr_dbd_oracle.dep
+apr-util-1.5.4/dbd/apr_dbd_mysql.mak
+apr-util-1.5.4/dbd/apr_dbd_sqlite2.c
+apr-util-1.5.4/dbd/apr_dbd_freetds.c
+apr-util-1.5.4/dbd/apr_dbd_sqlite3.dep
+apr-util-1.5.4/dbd/apr_dbd_odbc.dep
+apr-util-1.5.4/dbd/NWGNUdbdsqli3
+apr-util-1.5.4/configure.in
+apr-util-1.5.4/Makefile.in
+apr-util-1.5.4/build.conf
+apr-util-1.5.4/apr-util.pc.in
+apr-util-1.5.4/README.cmake
+apr-util-1.5.4/aprutil.dep
+apr-util-1.5.4/apu-config.in
+apr-util-1.5.4/configure
+apr-util-1.5.4/buckets/
+apr-util-1.5.4/buckets/apr_buckets_pool.c
+apr-util-1.5.4/buckets/apr_buckets.c
+apr-util-1.5.4/buckets/apr_buckets_flush.c
+apr-util-1.5.4/buckets/apr_buckets_socket.c
+apr-util-1.5.4/buckets/apr_buckets_file.c
+apr-util-1.5.4/buckets/apr_buckets_simple.c
+apr-util-1.5.4/buckets/apr_buckets_mmap.c
+apr-util-1.5.4/buckets/apr_buckets_heap.c
+apr-util-1.5.4/buckets/apr_buckets_alloc.c
+apr-util-1.5.4/buckets/apr_brigade.c
+apr-util-1.5.4/buckets/apr_buckets_pipe.c
+apr-util-1.5.4/buckets/apr_buckets_eos.c
+apr-util-1.5.4/buckets/apr_buckets_refcount.c
+apr-util-1.5.4/renames_pending
+apr-util-1.5.4/CHANGES
+apr-util-1.5.4/CMakeLists.txt
+apr-util-1.5.4/config.layout
+apr-util-1.5.4/uri/
+apr-util-1.5.4/uri/apr_uri.c
+apr-util-1.5.4/Makefile.win
+apr-util-1.5.4/aprutil.dsw
+apr-util-1.5.4/include/
+apr-util-1.5.4/include/apu.hw
+apr-util-1.5.4/include/apu_errno.h
+apr-util-1.5.4/include/apr_optional.h
+apr-util-1.5.4/include/apr_base64.h
+apr-util-1.5.4/include/apr_rmm.h
+apr-util-1.5.4/include/apr_ldap_option.h
+apr-util-1.5.4/include/apr_md5.h
+apr-util-1.5.4/include/apr_xml.h
+apr-util-1.5.4/include/apu.hnw
+apr-util-1.5.4/include/apr_thread_pool.h
+apr-util-1.5.4/include/apu_version.h
+apr-util-1.5.4/include/apr_ldap.hwc
+apr-util-1.5.4/include/apr_sdbm.h
+apr-util-1.5.4/include/apr_ldap_init.h
+apr-util-1.5.4/include/apr_buckets.h
+apr-util-1.5.4/include/apr_optional_hooks.h
+apr-util-1.5.4/include/apr_date.h
+apr-util-1.5.4/include/apr_queue.h
+apr-util-1.5.4/include/apr_ldap.h.in
+apr-util-1.5.4/include/apu.h.in
+apr-util-1.5.4/include/apu_want.hnw
+apr-util-1.5.4/include/apr_anylock.h
+apr-util-1.5.4/include/apr_ldap.hw
+apr-util-1.5.4/include/apr_ldap.hnw
+apr-util-1.5.4/include/apr_ldap_rebind.h
+apr-util-1.5.4/include/apu_want.h.in
+apr-util-1.5.4/include/apr_uri.h
+apr-util-1.5.4/include/apr_memcache.h
+apr-util-1.5.4/include/apu.hwc
+apr-util-1.5.4/include/apr_ldap_url.h
+apr-util-1.5.4/include/apr_strmatch.h
+apr-util-1.5.4/include/apu_want.hw
+apr-util-1.5.4/include/apr_dbd.h
+apr-util-1.5.4/include/apr_md4.h
+apr-util-1.5.4/include/private/
+apr-util-1.5.4/include/private/apu_config.h.in
+apr-util-1.5.4/include/private/apu_config.hw
+apr-util-1.5.4/include/private/apu_config.hnw
+apr-util-1.5.4/include/private/apu_select_dbm.h.in
+apr-util-1.5.4/include/private/apr_dbm_private.h
+apr-util-1.5.4/include/private/apr_dbd_odbc_v2.h
+apr-util-1.5.4/include/private/apr_dbd_internal.h
+apr-util-1.5.4/include/private/apu_select_dbm.hw
+apr-util-1.5.4/include/private/apr_crypto_internal.h
+apr-util-1.5.4/include/private/apu_internal.h
+apr-util-1.5.4/include/apr_xlate.h
+apr-util-1.5.4/include/apr_reslist.h
+apr-util-1.5.4/include/apr_hooks.h
+apr-util-1.5.4/include/apr_sha1.h
+apr-util-1.5.4/include/apr_uuid.h
+apr-util-1.5.4/include/apr_dbm.h
+apr-util-1.5.4/include/apr_crypto.h
+apr-util-1.5.4/libaprutil.mak
+apr-util-1.5.4/dbm/
+apr-util-1.5.4/dbm/NWGNUmakefile
+apr-util-1.5.4/dbm/apr_dbm_ndbm.c
+apr-util-1.5.4/dbm/NWGNUdbmdb
+apr-util-1.5.4/dbm/apr_dbm.c
+apr-util-1.5.4/dbm/apr_dbm_db.dsp
+apr-util-1.5.4/dbm/apr_dbm_sdbm.c
+apr-util-1.5.4/dbm/apr_dbm_db.mak
+apr-util-1.5.4/dbm/sdbm/
+apr-util-1.5.4/dbm/sdbm/sdbm_pair.c
+apr-util-1.5.4/dbm/sdbm/sdbm_pair.h
+apr-util-1.5.4/dbm/sdbm/sdbm_private.h
+apr-util-1.5.4/dbm/sdbm/sdbm.c
+apr-util-1.5.4/dbm/sdbm/sdbm_tune.h
+apr-util-1.5.4/dbm/sdbm/sdbm_lock.c
+apr-util-1.5.4/dbm/sdbm/sdbm_hash.c
+apr-util-1.5.4/dbm/apr_dbm_db.dep
+apr-util-1.5.4/dbm/apr_dbm_gdbm.c
+apr-util-1.5.4/dbm/NWGNUdbmgdbm
+apr-util-1.5.4/dbm/apr_dbm_gdbm.dep
+apr-util-1.5.4/dbm/apr_dbm_gdbm.mak
+apr-util-1.5.4/dbm/apr_dbm_berkeleydb.c
+apr-util-1.5.4/dbm/apr_dbm_gdbm.dsp
+apr-util-1.5.4/libaprutil.rc
+apr-util-1.5.4/misc/
+apr-util-1.5.4/misc/apr_date.c
+apr-util-1.5.4/misc/apu_dso.c
+apr-util-1.5.4/misc/apr_queue.c
+apr-util-1.5.4/misc/apr_reslist.c
+apr-util-1.5.4/misc/apr_thread_pool.c
+apr-util-1.5.4/misc/apr_rmm.c
+apr-util-1.5.4/misc/apu_version.c
+apr-util-1.5.4/LICENSE
+apr-util-1.5.4/build/
+apr-util-1.5.4/build/crypto.m4
+apr-util-1.5.4/build/dbm.m4
+apr-util-1.5.4/build/apu-iconv.m4
+apr-util-1.5.4/build/apr_common.m4
+apr-util-1.5.4/build/config.guess
+apr-util-1.5.4/build/apu-hints.m4
+apr-util-1.5.4/build/apu-conf.m4
+apr-util-1.5.4/build/get-version.sh
+apr-util-1.5.4/build/pkg/
+apr-util-1.5.4/build/pkg/buildpkg.sh
+apr-util-1.5.4/build/pkg/README
+apr-util-1.5.4/build/pkg/pkginfo.in
+apr-util-1.5.4/build/config.sub
+apr-util-1.5.4/build/mkdir.sh
+apr-util-1.5.4/build/nw_apu_export.inc
+apr-util-1.5.4/build/preaprutil.dsp
+apr-util-1.5.4/build/dbd.m4
+apr-util-1.5.4/build/find_apr.m4
+apr-util-1.5.4/build/w32locatedb.pl
+apr-util-1.5.4/build/rpm/
+apr-util-1.5.4/build/rpm/apr-util.spec.in
+apr-util-1.5.4/build/dso.m4
+apr-util-1.5.4/build/find_apu.m4
+apr-util-1.5.4/build/install.sh
+apr-util-1.5.4/README
+apr-util-1.5.4/xml/
+apr-util-1.5.4/xml/NWGNUmakefile
+apr-util-1.5.4/xml/apr_xml.c
+apr-util-1.5.4/xml/expat/
+apr-util-1.5.4/xml/expat/configure.in
+apr-util-1.5.4/xml/expat/Makefile.in
+apr-util-1.5.4/xml/expat/buildconf.sh
+apr-util-1.5.4/xml/expat/conftools/
+apr-util-1.5.4/xml/expat/conftools/install-sh
+apr-util-1.5.4/xml/expat/conftools/config.guess
+apr-util-1.5.4/xml/expat/conftools/libtool.m4
+apr-util-1.5.4/xml/expat/conftools/mkinstalldirs
+apr-util-1.5.4/xml/expat/conftools/ltmain.sh
+apr-util-1.5.4/xml/expat/conftools/PrintPath
+apr-util-1.5.4/xml/expat/conftools/lt~obsolete.m4
+apr-util-1.5.4/xml/expat/conftools/config.sub
+apr-util-1.5.4/xml/expat/conftools/ac_c_bigendian_cross.m4
+apr-util-1.5.4/xml/expat/conftools/ltsugar.m4
+apr-util-1.5.4/xml/expat/conftools/ltoptions.m4
+apr-util-1.5.4/xml/expat/conftools/ltversion.m4
+apr-util-1.5.4/xml/expat/expat_config.h.in
+apr-util-1.5.4/xml/expat/configure
+apr-util-1.5.4/xml/expat/COPYING
+apr-util-1.5.4/xml/expat/lib/
+apr-util-1.5.4/xml/expat/lib/xmlrole.c
+apr-util-1.5.4/xml/expat/lib/xmltok_ns.c
+apr-util-1.5.4/xml/expat/lib/utf8tab.h
+apr-util-1.5.4/xml/expat/lib/xmltok.h
+apr-util-1.5.4/xml/expat/lib/nametab.h
+apr-util-1.5.4/xml/expat/lib/xmltok_impl.c
+apr-util-1.5.4/xml/expat/lib/latin1tab.h
+apr-util-1.5.4/xml/expat/lib/expat_config.hnw
+apr-util-1.5.4/xml/expat/lib/xmltok.c
+apr-util-1.5.4/xml/expat/lib/xml.dsp
+apr-util-1.5.4/xml/expat/lib/xmltok_impl.h
+apr-util-1.5.4/xml/expat/lib/xml.dep
+apr-util-1.5.4/xml/expat/lib/xmlparse.c
+apr-util-1.5.4/xml/expat/lib/map_osd_ebcdic_df04_1.h
+apr-util-1.5.4/xml/expat/lib/xml.mak
+apr-util-1.5.4/xml/expat/lib/winconfig.h
+apr-util-1.5.4/xml/expat/lib/internal.h
+apr-util-1.5.4/xml/expat/lib/xmlrole.h
+apr-util-1.5.4/xml/expat/lib/osd_ebcdic_df04_1.h
+apr-util-1.5.4/xml/expat/lib/ascii.h
+apr-util-1.5.4/xml/expat/lib/expat.dsp
+apr-util-1.5.4/xml/expat/lib/asciitab.h
+apr-util-1.5.4/xml/expat/lib/expat.h
+apr-util-1.5.4/xml/expat/lib/iasciitab.h
+apr-util-1.5.4/xml/expat/README
+apr-util-1.5.4/xml/expat/win32/
+apr-util-1.5.4/xml/expat/win32/MANIFEST.txt
+apr-util-1.5.4/xml/expat/win32/expat.iss
+apr-util-1.5.4/NOTICE
+apr-util-1.5.4/export_vars.sh.in
+apr-util-1.5.4/apr-util.spec
+apr-util-1.5.4/buildconf
+apr-util-1.5.4/build-outputs.mk
+apr-util-1.5.4/strmatch/
+apr-util-1.5.4/strmatch/apr_strmatch.c
+apr-util-1.5.4/aprutil.dsp
+apr-util-1.5.4/ldap/
+apr-util-1.5.4/ldap/NWGNUmakefile
+apr-util-1.5.4/ldap/apr_ldap.dsp
+apr-util-1.5.4/ldap/apr_ldap.dep
+apr-util-1.5.4/ldap/apr_ldap_url.c
+apr-util-1.5.4/ldap/apr_ldap_init.c
+apr-util-1.5.4/ldap/apr_ldap_stub.c
+apr-util-1.5.4/ldap/apr_ldap_rebind.c
+apr-util-1.5.4/ldap/apr_ldap_option.c
+apr-util-1.5.4/ldap/apr_ldap.mak
+apr-util-1.5.4/encoding/
+apr-util-1.5.4/encoding/apr_base64.c
+Checking for patches in patches/ (in order to apply them)
+Applying patches
+Running: gpatch -p1 -t -N -p0
+patching file configure.in
+Hunk #1 succeeded at 153 with fuzz 1 (offset 31 lines).
+--- Applied patch apu-configure.in.patch
+Preparing for build
+--- Creating temporary install dir
+Running: rm -rf /code/tmp/build_admin/library_apr-util_pkg
+Copying config layout
+Building 32-bit
+--- make (dist)clean
+Running: gmake distclean
+gmake: *** No rule to make target `distclean'.  Stop.
+Running: gmake clean
+gmake: *** No rule to make target `clean'.  Stop.
+--- *** WARNING *** make (dist)clean Failed
+--- autoconf
+--- Running configure (32-bit) in /code/tmp/build_admin/apr-util-1.5.4
+Running: ./configure --prefix=/usr --sysconfdir=/etc --includedir=/usr/include --bindir=/usr/bin/i386 --sbindir=/usr/sbin/i386 --libdir=/usr/lib --libexecdir=/usr/libexec --enable-layout=omni32 --with-installbuilddir=/usr/share/i386/build-1 --with-apr=/usr --with-dbm=sdbm --with-ldap --without-pgsql
+configure: WARNING: unrecognized options: --with-installbuilddir
+checking build system type... i386-pc-solaris2.11
+checking host system type... i386-pc-solaris2.11
+checking target system type... i386-pc-solaris2.11
+checking for a BSD-compatible install... /usr/bin/ginstall -c
+checking for working mkdir -p... yes
+APR-util Version: 1.5.4
+checking for chosen layout... omni32
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+Applying apr-util hints file rules for i386-pc-solaris2.11
+  setting apu_iconv_inbuf_const to "1"
+  setting apu_crypt_threadsafe to "1"
+checking for library containing fdatasync... none required
+checking for APR... yes
+  setting CPP to "gcc -E"
+  adding "-DSOLARIS2=11" to CPPFLAGS
+  adding "-D_POSIX_PTHREAD_SEMANTICS" to CPPFLAGS
+  adding "-D_REENTRANT" to CPPFLAGS
+  setting APRUTIL_INCLUDES to " -I/usr/include -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT"
+  setting APRUTIL_LDFLAGS to " -L/usr/lib -R/usr/lib"
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/ggrep
+checking for egrep... /usr/bin/ggrep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for ldap support...
+checking for ldap_init in -lldap50... no
+checking for ldap_init in -lldapssl41... no
+checking for ldap_init in -lldapssl40... no
+checking for ldap_init in -lldapssl30... no
+checking for ldap_init in -lldapssl20... no
+checking for ldap_init in -lldapsdk... no
+checking for ldap_init in -lldapsdk... no
+checking for ldap_init in -lldap... no
+checking for ldap_init in -lldap... no
+checking for ldap_init in -lldap... no
+checking for ldap_init in -lldap... yes
+checking for ldapssl_client_init in -lldap... yes
+checking for ldapssl_client_deinit in -lldap... no
+checking for ldapssl_add_trusted_cert in -lldap... no
+checking for ldap_start_tls_s in -lldap... no
+checking for ldap_sslinit in -lldap... no
+checking for ldapssl_init in -lldap... yes
+checking for ldapssl_install_routines in -lldap... yes
+  setting LDADD_ldap to "-lldap -ldl -lpthread"
+checking for ber_init in -llber... no
+checking lber.h usability... yes
+checking lber.h presence... yes
+checking for lber.h... yes
+checking for ldap.h... yes
+checking ldap_ssl.h usability... no
+checking ldap_ssl.h presence... no
+checking for ldap_ssl.h... no
+checking for LDAP toolkit... Solaris
+checking for default DBM... sdbm
+checking sqlite3.h usability... yes
+checking sqlite3.h presence... yes
+checking for sqlite3.h... yes
+checking for sqlite3_open in -lsqlite3... yes
+  setting LDADD_dbd_sqlite3 to " -lsqlite3"
+checking sqlite.h usability... no
+checking sqlite.h presence... no
+checking for sqlite.h... no
+checking sybdb.h usability... no
+checking sybdb.h presence... no
+checking for sybdb.h... no
+checking freetds/sybdb.h usability... no
+checking freetds/sybdb.h presence... no
+checking for freetds/sybdb.h... no
+checking for odbc_config... no
+checking sql.h usability... no
+checking sql.h presence... no
+checking for sql.h... no
+checking odbc/sql.h usability... no
+checking odbc/sql.h presence... no
+checking for odbc/sql.h... no
+checking Expat 1.95.x... yes
+  setting APRUTIL_EXPORT_LIBS to "-lexpat"
+  setting APRUTIL_LIBS to "-lexpat"
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking for type of inbuf parameter to iconv... const char **
+checking for iconv.h... (cached) yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for nl_langinfo... yes
+checking for CODESET in langinfo.h... yes
+checking whether APR has DSO support... yes
+checking for library containing crypt... none required
+checking if system crypt() function is threadsafe... yes
+checking for crypt_r... no
+  adding "-L/usr/lib" to APRUTIL_LIBS
+  adding "-R/usr/lib" to APRUTIL_LIBS
+  adding "-lapr" to APRUTIL_LIBS
+  adding "-luuid" to APRUTIL_LIBS
+  adding "-lsendfile" to APRUTIL_LIBS
+  adding "-lsocket" to APRUTIL_LIBS
+  adding "-lnsl" to APRUTIL_LIBS
+  adding "-lpthread" to APRUTIL_LIBS
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating export_vars.sh
+config.status: creating build/pkg/pkginfo
+config.status: creating apr-util.pc
+config.status: creating apu-1-config
+config.status: creating include/private/apu_select_dbm.h
+config.status: creating include/apr_ldap.h
+config.status: creating include/apu.h
+config.status: creating include/apu_want.h
+config.status: creating test/Makefile
+config.status: creating include/private/apu_config.h
+config.status: executing default commands
+configure: WARNING: unrecognized options: --with-installbuilddir
+--- make
+Running: gmake -j 12
+gmake[1]: Entering directory `/code/tmp/build_admin/apr-util-1.5.4'
+gawk -f /usr/share/i386/build-1/make_exports.awk /code/tmp/build_admin/apr-util-1.5.4/include/apr_anylock.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_base64.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_buckets.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_crypto.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_date.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_dbd.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_dbm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_hooks.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_init.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_option.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_rebind.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_url.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_md4.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_md5.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_memcache.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_optional.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_optional_hooks.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_queue.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_reslist.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_rmm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_sdbm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_sha1.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_strmatch.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_thread_pool.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_uri.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_uuid.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_xlate.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_xml.h /code/tmp/build_admin/apr-util-1.5.4/include/apu_errno.h /code/tmp/build_admin/apr-util-1.5.4/include/apu_version.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_crypto_internal.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbd_internal.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbd_odbc_v2.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbm_private.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apu_internal.h > exports.c
+gawk -f /usr/share/i386/build-1/make_var_export.awk /code/tmp/build_admin/apr-util-1.5.4/include/apr_anylock.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_base64.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_buckets.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_crypto.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_date.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_dbd.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_dbm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_hooks.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_init.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_option.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_rebind.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_url.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_md4.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_md5.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_memcache.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_optional.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_optional_hooks.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_queue.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_reslist.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_rmm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_sdbm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_sha1.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_strmatch.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_thread_pool.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_uri.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_uuid.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_xlate.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_xml.h /code/tmp/build_admin/apr-util-1.5.4/include/apu_errno.h /code/tmp/build_admin/apr-util-1.5.4/include/apu_version.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_crypto_internal.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbd_internal.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbd_odbc_v2.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbm_private.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apu_internal.h > export_vars.c
+sed 's,^\(location=\).*$,\1installed,' < apu-1-config > apu-config.out
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_brigade.lo -c buckets/apr_brigade.c && touch buckets/apr_brigade.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets.lo -c buckets/apr_buckets.c && touch buckets/apr_buckets.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_alloc.lo -c buckets/apr_buckets_alloc.c && touch buckets/apr_buckets_alloc.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_eos.lo -c buckets/apr_buckets_eos.c && touch buckets/apr_buckets_eos.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_file.lo -c buckets/apr_buckets_file.c && touch buckets/apr_buckets_file.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_flush.lo -c buckets/apr_buckets_flush.c && touch buckets/apr_buckets_flush.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_heap.lo -c buckets/apr_buckets_heap.c && touch buckets/apr_buckets_heap.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_mmap.lo -c buckets/apr_buckets_mmap.c && touch buckets/apr_buckets_mmap.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_pipe.lo -c buckets/apr_buckets_pipe.c && touch buckets/apr_buckets_pipe.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_pool.lo -c buckets/apr_buckets_pool.c && touch buckets/apr_buckets_pool.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_refcount.lo -c buckets/apr_buckets_refcount.c && touch buckets/apr_buckets_refcount.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_simple.lo -c buckets/apr_buckets_simple.c && touch buckets/apr_buckets_simple.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_socket.lo -c buckets/apr_buckets_socket.c && touch buckets/apr_buckets_socket.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_crypto.lo -c crypto/apr_crypto.c && touch crypto/apr_crypto.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_md4.lo -c crypto/apr_md4.c && touch crypto/apr_md4.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_md5.lo -c crypto/apr_md5.c && touch crypto/apr_md5.lo
+crypto/getuuid.c: In function ‘true_random’:
+crypto/getuuid.c:135:5: warning: right shift count >= width of type [enabled by default]
+     srand((unsigned int)(((time_now >> 32) ^ time_now) & 0xffffffff));
+     ^
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_passwd.lo -c crypto/apr_passwd.c && touch crypto/apr_passwd.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_sha1.lo -c crypto/apr_sha1.c && touch crypto/apr_sha1.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/crypt_blowfish.lo -c crypto/crypt_blowfish.c && touch crypto/crypt_blowfish.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/getuuid.lo -c crypto/getuuid.c && touch crypto/getuuid.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/uuid.lo -c crypto/uuid.c && touch crypto/uuid.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbd/apr_dbd.lo -c dbd/apr_dbd.c && touch dbd/apr_dbd.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/apr_dbm.lo -c dbm/apr_dbm.c && touch dbm/apr_dbm.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/apr_dbm_sdbm.lo -c dbm/apr_dbm_sdbm.c && touch dbm/apr_dbm_sdbm.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/sdbm/sdbm.lo -c dbm/sdbm/sdbm.c && touch dbm/sdbm/sdbm.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/sdbm/sdbm_hash.lo -c dbm/sdbm/sdbm_hash.c && touch dbm/sdbm/sdbm_hash.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/sdbm/sdbm_lock.lo -c dbm/sdbm/sdbm_lock.c && touch dbm/sdbm/sdbm_lock.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/sdbm/sdbm_pair.lo -c dbm/sdbm/sdbm_pair.c && touch dbm/sdbm/sdbm_pair.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o encoding/apr_base64.lo -c encoding/apr_base64.c && touch encoding/apr_base64.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o hooks/apr_hooks.lo -c hooks/apr_hooks.c && touch hooks/apr_hooks.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_stub.lo -c ldap/apr_ldap_stub.c && touch ldap/apr_ldap_stub.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_url.lo -c ldap/apr_ldap_url.c && touch ldap/apr_ldap_url.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o memcache/apr_memcache.lo -c memcache/apr_memcache.c && touch memcache/apr_memcache.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_date.lo -c misc/apr_date.c && touch misc/apr_date.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_queue.lo -c misc/apr_queue.c && touch misc/apr_queue.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_reslist.lo -c misc/apr_reslist.c && touch misc/apr_reslist.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_rmm.lo -c misc/apr_rmm.c && touch misc/apr_rmm.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_thread_pool.lo -c misc/apr_thread_pool.c && touch misc/apr_thread_pool.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apu_dso.lo -c misc/apu_dso.c && touch misc/apu_dso.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apu_version.lo -c misc/apu_version.c && touch misc/apu_version.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o strmatch/apr_strmatch.lo -c strmatch/apr_strmatch.c && touch strmatch/apr_strmatch.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o uri/apr_uri.lo -c uri/apr_uri.c && touch uri/apr_uri.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o xlate/xlate.lo -c xlate/xlate.c && touch xlate/xlate.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o xml/apr_xml.lo -c xml/apr_xml.c && touch xml/apr_xml.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbd/apr_dbd_sqlite3.lo -c dbd/apr_dbd_sqlite3.c && touch dbd/apr_dbd_sqlite3.lo
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_init.lo -c ldap/apr_ldap_init.c && touch ldap/apr_ldap_init.lo
+crypto/getuuid.c: In function ‘apr_uuid_get’:
+crypto/getuuid.c:197:5: warning: right shift count >= width of type [enabled by default]
+     d[5] = (unsigned char)(timestamp >> 32);
+     ^
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_option.lo -c ldap/apr_ldap_option.c && touch ldap/apr_ldap_option.lo
+crypto/getuuid.c:198:5: warning: right shift count >= width of type [enabled by default]
+     d[4] = (unsigned char)(timestamp >> 40);
+     ^
+crypto/getuuid.c:200:5: warning: right shift count >= width of type [enabled by default]
+     d[7] = (unsigned char)(timestamp >> 48);
+     ^
+crypto/getuuid.c:201:5: warning: right shift count >= width of type [enabled by default]
+     d[6] = (unsigned char)(((timestamp >> 56) & 0x0F) | 0x10);
+     ^
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_rebind.lo -c ldap/apr_ldap_rebind.c && touch ldap/apr_ldap_rebind.lo
+gcc -E -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  exports.c | grep "ap_hack_" | sed -e 's/^.*[)]\(.*\);$/\1/' >> aprutil.exp
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=link gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT   -version-info 5:4:5   -L/usr/lib -R/usr/lib -o libaprutil.la -rpath /usr/lib buckets/apr_brigade.lo buckets/apr_buckets.lo buckets/apr_buckets_alloc.lo buckets/apr_buckets_eos.lo buckets/apr_buckets_file.lo buckets/apr_buckets_flush.lo buckets/apr_buckets_heap.lo buckets/apr_buckets_mmap.lo buckets/apr_buckets_pipe.lo buckets/apr_buckets_pool.lo buckets/apr_buckets_refcount.lo buckets/apr_buckets_simple.lo buckets/apr_buckets_socket.lo crypto/apr_crypto.lo crypto/apr_md4.lo crypto/apr_md5.lo crypto/apr_passwd.lo crypto/apr_sha1.lo crypto/crypt_blowfish.lo crypto/getuuid.lo crypto/uuid.lo dbd/apr_dbd.lo dbm/apr_dbm.lo dbm/apr_dbm_sdbm.lo dbm/sdbm/sdbm.lo dbm/sdbm/sdbm_hash.lo dbm/sdbm/sdbm_lock.lo dbm/sdbm/sdbm_pair.lo encoding/apr_base64.lo hooks/apr_hooks.lo ldap/apr_ldap_stub.lo ldap/apr_ldap_url.lo memcache/apr_memcache.lo misc/apr_date.lo misc/apr_queue.lo misc/apr_reslist.lo misc/apr_rmm.lo misc/apr_thread_pool.lo misc/apu_dso.lo misc/apu_version.lo strmatch/apr_strmatch.lo uri/apr_uri.lo xlate/xlate.lo xml/apr_xml.lo    -luuid -lsendfile -lsocket -lnsl  -lpthread -L/usr/lib -R/usr/lib -lexpat -L/usr/lib -R/usr/lib -lapr -luuid -lsendfile -lsocket -lnsl -lpthread
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=link gcc    -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE    -L/usr/lib -R/usr/lib -L/usr/lib -R/usr/lib -release 1 -module -rpath /usr/lib/apr-util-1 -o ldap/apr_ldap.la ldap/apr_ldap_init.lo ldap/apr_ldap_option.lo ldap/apr_ldap_rebind.lo -lldap -ldl -lpthread
+gcc -E -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  export_vars.c | sed -e 's/^\#[^!]*//' | sed -e '/^$/d' >> aprutil.exp
+/bin/sh /usr/share/i386/build-1/libtool --silent --mode=link gcc    -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE    -L/usr/lib -R/usr/lib -L/usr/lib -R/usr/lib -release 1 -module -rpath /usr/lib/apr-util-1 -o dbd/apr_dbd_sqlite3.la dbd/apr_dbd_sqlite3.lo -lsqlite3
+gmake[1]: Leaving directory `/code/tmp/build_admin/apr-util-1.5.4'
+--- make install
+Running: gmake DESTDIR=/code/tmp/build_admin/library_apr-util_pkg install
+/usr/share/i386/build-1/mkdir.sh /code/tmp/build_admin/library_apr-util_pkg/usr/lib/apr-util-1
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/lib
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/lib/apr-util-1
+libtool: install: warning: remember to run `libtool --finish /usr/lib/apr-util-1'
+libtool: install: warning: remember to run `libtool --finish /usr/lib/apr-util-1'
+gmake[1]: Entering directory `/code/tmp/build_admin/apr-util-1.5.4'
+gmake[1]: Nothing to be done for `local-all'.
+gmake[1]: Leaving directory `/code/tmp/build_admin/apr-util-1.5.4'
+/usr/share/i386/build-1/mkdir.sh /code/tmp/build_admin/library_apr-util_pkg/usr/include /code/tmp/build_admin/library_apr-util_pkg/usr/lib/pkgconfig \
+	     /code/tmp/build_admin/library_apr-util_pkg/usr/lib /code/tmp/build_admin/library_apr-util_pkg/usr/bin/i386
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/include
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/lib/pkgconfig
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/bin
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/bin/i386
+for f in /code/tmp/build_admin/apr-util-1.5.4/include/*.h /code/tmp/build_admin/apr-util-1.5.4/include/*.h; do \
+	/usr/bin/ginstall -c -m 644 ${f} /code/tmp/build_admin/library_apr-util_pkg/usr/include; \
+done
+/usr/bin/ginstall -c -m 644 apr-util.pc /code/tmp/build_admin/library_apr-util_pkg/usr/lib/pkgconfig/apr-util-1.pc
+list=''; for i in $list; do \
+	( cd $i ; gmake DESTDIR=/code/tmp/build_admin/library_apr-util_pkg install ); \
+done
+/bin/sh /usr/share/i386/build-1/libtool --mode=install /usr/bin/ginstall -c -m 755 libaprutil.la /code/tmp/build_admin/library_apr-util_pkg/usr/lib
+libtool: install: /usr/bin/ginstall -c -m 755 .libs/libaprutil.so.0.5.4 /code/tmp/build_admin/library_apr-util_pkg/usr/lib/libaprutil.so.0.5.4
+libtool: install: (cd /code/tmp/build_admin/library_apr-util_pkg/usr/lib && { ln -s -f libaprutil.so.0.5.4 libaprutil.so.0 || { rm -f libaprutil.so.0 && ln -s libaprutil.so.0.5.4 libaprutil.so.0; }; })
+libtool: install: (cd /code/tmp/build_admin/library_apr-util_pkg/usr/lib && { ln -s -f libaprutil.so.0.5.4 libaprutil.so || { rm -f libaprutil.so && ln -s libaprutil.so.0.5.4 libaprutil.so; }; })
+libtool: install: chmod +x /code/tmp/build_admin/library_apr-util_pkg/usr/lib/libaprutil.so.0.5.4
+libtool: install: /usr/bin/ginstall -c -m 755 .libs/libaprutil.lai /code/tmp/build_admin/library_apr-util_pkg/usr/lib/libaprutil.la
+libtool: install: /usr/bin/ginstall -c -m 755 .libs/libaprutil.a /code/tmp/build_admin/library_apr-util_pkg/usr/lib/libaprutil.a
+libtool: install: chmod 644 /code/tmp/build_admin/library_apr-util_pkg/usr/lib/libaprutil.a
+libtool: install: ranlib /code/tmp/build_admin/library_apr-util_pkg/usr/lib/libaprutil.a
+libtool: install: warning: remember to run `libtool --finish /usr/lib'
+/usr/bin/ginstall -c -m 644 aprutil.exp /code/tmp/build_admin/library_apr-util_pkg/usr/lib
+/usr/bin/ginstall -c -m 755 apu-config.out /code/tmp/build_admin/library_apr-util_pkg/usr/bin/i386/apu-1-config
+Removing source directory
+Re-extracting source directory
+Checking for source directory
+--- Source directory not found
+Checking for apr-util source archive
+--- apr-util source archive found
+Extracting archive: apr-util-1.5.4.tar.bz2
+Running: extract_archive apr-util-1.5.4.tar.bz2
+apr-util-1.5.4/
+apr-util-1.5.4/libaprutil.dep
+apr-util-1.5.4/xlate/
+apr-util-1.5.4/xlate/xlate.c
+apr-util-1.5.4/docs/
+apr-util-1.5.4/docs/doxygen.conf
+apr-util-1.5.4/libaprutil.dsp
+apr-util-1.5.4/NWGNUmakefile
+apr-util-1.5.4/hooks/
+apr-util-1.5.4/hooks/apr_hooks.c
+apr-util-1.5.4/aprutil.mak
+apr-util-1.5.4/crypto/
+apr-util-1.5.4/crypto/apr_md4.c
+apr-util-1.5.4/crypto/apr_md5.c
+apr-util-1.5.4/crypto/apr_crypto_openssl.mak
+apr-util-1.5.4/crypto/apr_crypto_openssl.dep
+apr-util-1.5.4/crypto/apr_sha1.c
+apr-util-1.5.4/crypto/apr_crypto.c
+apr-util-1.5.4/crypto/apr_crypto_openssl.dsp
+apr-util-1.5.4/crypto/apr_crypto_nss.c
+apr-util-1.5.4/crypto/getuuid.c
+apr-util-1.5.4/crypto/apr_crypto_nss.dsp
+apr-util-1.5.4/crypto/apr_crypto_openssl.c
+apr-util-1.5.4/crypto/apr_crypto_nss.mak
+apr-util-1.5.4/crypto/crypt_blowfish.h
+apr-util-1.5.4/crypto/uuid.c
+apr-util-1.5.4/crypto/apr_crypto_nss.dep
+apr-util-1.5.4/crypto/apr_passwd.c
+apr-util-1.5.4/crypto/crypt_blowfish.c
+apr-util-1.5.4/test/
+apr-util-1.5.4/test/testutillib.dsp
+apr-util-1.5.4/test/dbd.c
+apr-util-1.5.4/test/testxml.c
+apr-util-1.5.4/test/testmd5.c
+apr-util-1.5.4/test/NWGNUmakefile
+apr-util-1.5.4/test/testutil.c
+apr-util-1.5.4/test/testdbm.c
+apr-util-1.5.4/test/testutil.h
+apr-util-1.5.4/test/abts.c
+apr-util-1.5.4/test/testbuckets.c
+apr-util-1.5.4/test/Makefile.in
+apr-util-1.5.4/test/testreslist.c
+apr-util-1.5.4/test/testdbd.c
+apr-util-1.5.4/test/testutildll.dsp
+apr-util-1.5.4/test/testuri.c
+apr-util-1.5.4/test/testcrypto.c
+apr-util-1.5.4/test/testmemcache.c
+apr-util-1.5.4/test/nw_misc.c
+apr-util-1.5.4/test/NWGNUaputest
+apr-util-1.5.4/test/testrmm.c
+apr-util-1.5.4/test/Makefile.win
+apr-util-1.5.4/test/testall.dsw
+apr-util-1.5.4/test/testmd4.c
+apr-util-1.5.4/test/abts.h
+apr-util-1.5.4/test/teststrmatch.c
+apr-util-1.5.4/test/testpass.c
+apr-util-1.5.4/test/testqueue.c
+apr-util-1.5.4/test/test_apu.h
+apr-util-1.5.4/test/testldap.c
+apr-util-1.5.4/test/data/
+apr-util-1.5.4/test/data/billion-laughs.xml
+apr-util-1.5.4/test/abts_tests.h
+apr-util-1.5.4/test/testdate.c
+apr-util-1.5.4/test/testuuid.c
+apr-util-1.5.4/test/testxlate.c
+apr-util-1.5.4/memcache/
+apr-util-1.5.4/memcache/apr_memcache.c
+apr-util-1.5.4/dbd/
+apr-util-1.5.4/dbd/apr_dbd_odbc.c
+apr-util-1.5.4/dbd/apr_dbd_oracle.dsp
+apr-util-1.5.4/dbd/apr_dbd_sqlite2.dep
+apr-util-1.5.4/dbd/apr_dbd_freetds.dsp
+apr-util-1.5.4/dbd/NWGNUmakefile
+apr-util-1.5.4/dbd/NWGNUdbdmysql
+apr-util-1.5.4/dbd/apr_dbd_pgsql.dep
+apr-util-1.5.4/dbd/NWGNUdbdfreetds
+apr-util-1.5.4/dbd/NWGNUdbdpgsql
+apr-util-1.5.4/dbd/apr_dbd_sqlite3.mak
+apr-util-1.5.4/dbd/apr_dbd_freetds.dep
+apr-util-1.5.4/dbd/apr_dbd_pgsql.mak
+apr-util-1.5.4/dbd/apr_dbd_oracle.mak
+apr-util-1.5.4/dbd/apr_dbd_sqlite3.c
+apr-util-1.5.4/dbd/apr_dbd_mysql.dsp
+apr-util-1.5.4/dbd/apr_dbd.c
+apr-util-1.5.4/dbd/apr_dbd_sqlite2.dsp
+apr-util-1.5.4/dbd/apr_dbd_odbc.dsp
+apr-util-1.5.4/dbd/apr_dbd_freetds.mak
+apr-util-1.5.4/dbd/NWGNUdbdsqli2
+apr-util-1.5.4/dbd/apr_dbd_sqlite3.dsp
+apr-util-1.5.4/dbd/apr_dbd_pgsql.c
+apr-util-1.5.4/dbd/apr_dbd_oracle.c
+apr-util-1.5.4/dbd/apr_dbd_pgsql.dsp
+apr-util-1.5.4/dbd/apr_dbd_sqlite2.mak
+apr-util-1.5.4/dbd/apr_dbd_mysql.dep
+apr-util-1.5.4/dbd/apr_dbd_odbc.mak
+apr-util-1.5.4/dbd/apr_dbd_mysql.c
+apr-util-1.5.4/dbd/apr_dbd_oracle.dep
+apr-util-1.5.4/dbd/apr_dbd_mysql.mak
+apr-util-1.5.4/dbd/apr_dbd_sqlite2.c
+apr-util-1.5.4/dbd/apr_dbd_freetds.c
+apr-util-1.5.4/dbd/apr_dbd_sqlite3.dep
+apr-util-1.5.4/dbd/apr_dbd_odbc.dep
+apr-util-1.5.4/dbd/NWGNUdbdsqli3
+apr-util-1.5.4/configure.in
+apr-util-1.5.4/Makefile.in
+apr-util-1.5.4/build.conf
+apr-util-1.5.4/apr-util.pc.in
+apr-util-1.5.4/README.cmake
+apr-util-1.5.4/aprutil.dep
+apr-util-1.5.4/apu-config.in
+apr-util-1.5.4/configure
+apr-util-1.5.4/buckets/
+apr-util-1.5.4/buckets/apr_buckets_pool.c
+apr-util-1.5.4/buckets/apr_buckets.c
+apr-util-1.5.4/buckets/apr_buckets_flush.c
+apr-util-1.5.4/buckets/apr_buckets_socket.c
+apr-util-1.5.4/buckets/apr_buckets_file.c
+apr-util-1.5.4/buckets/apr_buckets_simple.c
+apr-util-1.5.4/buckets/apr_buckets_mmap.c
+apr-util-1.5.4/buckets/apr_buckets_heap.c
+apr-util-1.5.4/buckets/apr_buckets_alloc.c
+apr-util-1.5.4/buckets/apr_brigade.c
+apr-util-1.5.4/buckets/apr_buckets_pipe.c
+apr-util-1.5.4/buckets/apr_buckets_eos.c
+apr-util-1.5.4/buckets/apr_buckets_refcount.c
+apr-util-1.5.4/renames_pending
+apr-util-1.5.4/CHANGES
+apr-util-1.5.4/CMakeLists.txt
+apr-util-1.5.4/config.layout
+apr-util-1.5.4/uri/
+apr-util-1.5.4/uri/apr_uri.c
+apr-util-1.5.4/Makefile.win
+apr-util-1.5.4/aprutil.dsw
+apr-util-1.5.4/include/
+apr-util-1.5.4/include/apu.hw
+apr-util-1.5.4/include/apu_errno.h
+apr-util-1.5.4/include/apr_optional.h
+apr-util-1.5.4/include/apr_base64.h
+apr-util-1.5.4/include/apr_rmm.h
+apr-util-1.5.4/include/apr_ldap_option.h
+apr-util-1.5.4/include/apr_md5.h
+apr-util-1.5.4/include/apr_xml.h
+apr-util-1.5.4/include/apu.hnw
+apr-util-1.5.4/include/apr_thread_pool.h
+apr-util-1.5.4/include/apu_version.h
+apr-util-1.5.4/include/apr_ldap.hwc
+apr-util-1.5.4/include/apr_sdbm.h
+apr-util-1.5.4/include/apr_ldap_init.h
+apr-util-1.5.4/include/apr_buckets.h
+apr-util-1.5.4/include/apr_optional_hooks.h
+apr-util-1.5.4/include/apr_date.h
+apr-util-1.5.4/include/apr_queue.h
+apr-util-1.5.4/include/apr_ldap.h.in
+apr-util-1.5.4/include/apu.h.in
+apr-util-1.5.4/include/apu_want.hnw
+apr-util-1.5.4/include/apr_anylock.h
+apr-util-1.5.4/include/apr_ldap.hw
+apr-util-1.5.4/include/apr_ldap.hnw
+apr-util-1.5.4/include/apr_ldap_rebind.h
+apr-util-1.5.4/include/apu_want.h.in
+apr-util-1.5.4/include/apr_uri.h
+apr-util-1.5.4/include/apr_memcache.h
+apr-util-1.5.4/include/apu.hwc
+apr-util-1.5.4/include/apr_ldap_url.h
+apr-util-1.5.4/include/apr_strmatch.h
+apr-util-1.5.4/include/apu_want.hw
+apr-util-1.5.4/include/apr_dbd.h
+apr-util-1.5.4/include/apr_md4.h
+apr-util-1.5.4/include/private/
+apr-util-1.5.4/include/private/apu_config.h.in
+apr-util-1.5.4/include/private/apu_config.hw
+apr-util-1.5.4/include/private/apu_config.hnw
+apr-util-1.5.4/include/private/apu_select_dbm.h.in
+apr-util-1.5.4/include/private/apr_dbm_private.h
+apr-util-1.5.4/include/private/apr_dbd_odbc_v2.h
+apr-util-1.5.4/include/private/apr_dbd_internal.h
+apr-util-1.5.4/include/private/apu_select_dbm.hw
+apr-util-1.5.4/include/private/apr_crypto_internal.h
+apr-util-1.5.4/include/private/apu_internal.h
+apr-util-1.5.4/include/apr_xlate.h
+apr-util-1.5.4/include/apr_reslist.h
+apr-util-1.5.4/include/apr_hooks.h
+apr-util-1.5.4/include/apr_sha1.h
+apr-util-1.5.4/include/apr_uuid.h
+apr-util-1.5.4/include/apr_dbm.h
+apr-util-1.5.4/include/apr_crypto.h
+apr-util-1.5.4/libaprutil.mak
+apr-util-1.5.4/dbm/
+apr-util-1.5.4/dbm/NWGNUmakefile
+apr-util-1.5.4/dbm/apr_dbm_ndbm.c
+apr-util-1.5.4/dbm/NWGNUdbmdb
+apr-util-1.5.4/dbm/apr_dbm.c
+apr-util-1.5.4/dbm/apr_dbm_db.dsp
+apr-util-1.5.4/dbm/apr_dbm_sdbm.c
+apr-util-1.5.4/dbm/apr_dbm_db.mak
+apr-util-1.5.4/dbm/sdbm/
+apr-util-1.5.4/dbm/sdbm/sdbm_pair.c
+apr-util-1.5.4/dbm/sdbm/sdbm_pair.h
+apr-util-1.5.4/dbm/sdbm/sdbm_private.h
+apr-util-1.5.4/dbm/sdbm/sdbm.c
+apr-util-1.5.4/dbm/sdbm/sdbm_tune.h
+apr-util-1.5.4/dbm/sdbm/sdbm_lock.c
+apr-util-1.5.4/dbm/sdbm/sdbm_hash.c
+apr-util-1.5.4/dbm/apr_dbm_db.dep
+apr-util-1.5.4/dbm/apr_dbm_gdbm.c
+apr-util-1.5.4/dbm/NWGNUdbmgdbm
+apr-util-1.5.4/dbm/apr_dbm_gdbm.dep
+apr-util-1.5.4/dbm/apr_dbm_gdbm.mak
+apr-util-1.5.4/dbm/apr_dbm_berkeleydb.c
+apr-util-1.5.4/dbm/apr_dbm_gdbm.dsp
+apr-util-1.5.4/libaprutil.rc
+apr-util-1.5.4/misc/
+apr-util-1.5.4/misc/apr_date.c
+apr-util-1.5.4/misc/apu_dso.c
+apr-util-1.5.4/misc/apr_queue.c
+apr-util-1.5.4/misc/apr_reslist.c
+apr-util-1.5.4/misc/apr_thread_pool.c
+apr-util-1.5.4/misc/apr_rmm.c
+apr-util-1.5.4/misc/apu_version.c
+apr-util-1.5.4/LICENSE
+apr-util-1.5.4/build/
+apr-util-1.5.4/build/crypto.m4
+apr-util-1.5.4/build/dbm.m4
+apr-util-1.5.4/build/apu-iconv.m4
+apr-util-1.5.4/build/apr_common.m4
+apr-util-1.5.4/build/config.guess
+apr-util-1.5.4/build/apu-hints.m4
+apr-util-1.5.4/build/apu-conf.m4
+apr-util-1.5.4/build/get-version.sh
+apr-util-1.5.4/build/pkg/
+apr-util-1.5.4/build/pkg/buildpkg.sh
+apr-util-1.5.4/build/pkg/README
+apr-util-1.5.4/build/pkg/pkginfo.in
+apr-util-1.5.4/build/config.sub
+apr-util-1.5.4/build/mkdir.sh
+apr-util-1.5.4/build/nw_apu_export.inc
+apr-util-1.5.4/build/preaprutil.dsp
+apr-util-1.5.4/build/dbd.m4
+apr-util-1.5.4/build/find_apr.m4
+apr-util-1.5.4/build/w32locatedb.pl
+apr-util-1.5.4/build/rpm/
+apr-util-1.5.4/build/rpm/apr-util.spec.in
+apr-util-1.5.4/build/dso.m4
+apr-util-1.5.4/build/find_apu.m4
+apr-util-1.5.4/build/install.sh
+apr-util-1.5.4/README
+apr-util-1.5.4/xml/
+apr-util-1.5.4/xml/NWGNUmakefile
+apr-util-1.5.4/xml/apr_xml.c
+apr-util-1.5.4/xml/expat/
+apr-util-1.5.4/xml/expat/configure.in
+apr-util-1.5.4/xml/expat/Makefile.in
+apr-util-1.5.4/xml/expat/buildconf.sh
+apr-util-1.5.4/xml/expat/conftools/
+apr-util-1.5.4/xml/expat/conftools/install-sh
+apr-util-1.5.4/xml/expat/conftools/config.guess
+apr-util-1.5.4/xml/expat/conftools/libtool.m4
+apr-util-1.5.4/xml/expat/conftools/mkinstalldirs
+apr-util-1.5.4/xml/expat/conftools/ltmain.sh
+apr-util-1.5.4/xml/expat/conftools/PrintPath
+apr-util-1.5.4/xml/expat/conftools/lt~obsolete.m4
+apr-util-1.5.4/xml/expat/conftools/config.sub
+apr-util-1.5.4/xml/expat/conftools/ac_c_bigendian_cross.m4
+apr-util-1.5.4/xml/expat/conftools/ltsugar.m4
+apr-util-1.5.4/xml/expat/conftools/ltoptions.m4
+apr-util-1.5.4/xml/expat/conftools/ltversion.m4
+apr-util-1.5.4/xml/expat/expat_config.h.in
+apr-util-1.5.4/xml/expat/configure
+apr-util-1.5.4/xml/expat/COPYING
+apr-util-1.5.4/xml/expat/lib/
+apr-util-1.5.4/xml/expat/lib/xmlrole.c
+apr-util-1.5.4/xml/expat/lib/xmltok_ns.c
+apr-util-1.5.4/xml/expat/lib/utf8tab.h
+apr-util-1.5.4/xml/expat/lib/xmltok.h
+apr-util-1.5.4/xml/expat/lib/nametab.h
+apr-util-1.5.4/xml/expat/lib/xmltok_impl.c
+apr-util-1.5.4/xml/expat/lib/latin1tab.h
+apr-util-1.5.4/xml/expat/lib/expat_config.hnw
+apr-util-1.5.4/xml/expat/lib/xmltok.c
+apr-util-1.5.4/xml/expat/lib/xml.dsp
+apr-util-1.5.4/xml/expat/lib/xmltok_impl.h
+apr-util-1.5.4/xml/expat/lib/xml.dep
+apr-util-1.5.4/xml/expat/lib/xmlparse.c
+apr-util-1.5.4/xml/expat/lib/map_osd_ebcdic_df04_1.h
+apr-util-1.5.4/xml/expat/lib/xml.mak
+apr-util-1.5.4/xml/expat/lib/winconfig.h
+apr-util-1.5.4/xml/expat/lib/internal.h
+apr-util-1.5.4/xml/expat/lib/xmlrole.h
+apr-util-1.5.4/xml/expat/lib/osd_ebcdic_df04_1.h
+apr-util-1.5.4/xml/expat/lib/ascii.h
+apr-util-1.5.4/xml/expat/lib/expat.dsp
+apr-util-1.5.4/xml/expat/lib/asciitab.h
+apr-util-1.5.4/xml/expat/lib/expat.h
+apr-util-1.5.4/xml/expat/lib/iasciitab.h
+apr-util-1.5.4/xml/expat/README
+apr-util-1.5.4/xml/expat/win32/
+apr-util-1.5.4/xml/expat/win32/MANIFEST.txt
+apr-util-1.5.4/xml/expat/win32/expat.iss
+apr-util-1.5.4/NOTICE
+apr-util-1.5.4/export_vars.sh.in
+apr-util-1.5.4/apr-util.spec
+apr-util-1.5.4/buildconf
+apr-util-1.5.4/build-outputs.mk
+apr-util-1.5.4/strmatch/
+apr-util-1.5.4/strmatch/apr_strmatch.c
+apr-util-1.5.4/aprutil.dsp
+apr-util-1.5.4/ldap/
+apr-util-1.5.4/ldap/NWGNUmakefile
+apr-util-1.5.4/ldap/apr_ldap.dsp
+apr-util-1.5.4/ldap/apr_ldap.dep
+apr-util-1.5.4/ldap/apr_ldap_url.c
+apr-util-1.5.4/ldap/apr_ldap_init.c
+apr-util-1.5.4/ldap/apr_ldap_stub.c
+apr-util-1.5.4/ldap/apr_ldap_rebind.c
+apr-util-1.5.4/ldap/apr_ldap_option.c
+apr-util-1.5.4/ldap/apr_ldap.mak
+apr-util-1.5.4/encoding/
+apr-util-1.5.4/encoding/apr_base64.c
+Checking for patches in patches/ (in order to apply them)
+Applying patches
+Running: gpatch -p1 -t -N -p0
+patching file configure.in
+Hunk #1 succeeded at 153 with fuzz 1 (offset 31 lines).
+--- Applied patch apu-configure.in.patch
+Copying config layout
+Building 64-bit
+--- make (dist)clean
+Running: gmake distclean
+gmake: *** No rule to make target `distclean'.  Stop.
+Running: gmake clean
+gmake: *** No rule to make target `clean'.  Stop.
+--- *** WARNING *** make (dist)clean Failed
+--- autoconf
+--- Running configure (64-bit) in /code/tmp/build_admin/apr-util-1.5.4
+Running: ./configure --prefix=/usr --sysconfdir=/etc --includedir=/usr/include --bindir=/usr/bin/amd64 --sbindir=/usr/sbin/amd64 --libdir=/usr/lib/amd64 --libexecdir=/usr/libexec/amd64 --enable-layout=omni64 --with-installbuilddir=/usr/share/amd64/build-1 --with-apr=/usr --with-dbm=sdbm --with-ldap --without-pgsql
+configure: WARNING: unrecognized options: --with-installbuilddir
+checking build system type... i386-pc-solaris2.11
+checking host system type... i386-pc-solaris2.11
+checking target system type... i386-pc-solaris2.11
+checking for a BSD-compatible install... /usr/bin/ginstall -c
+checking for working mkdir -p... yes
+APR-util Version: 1.5.4
+checking for chosen layout... omni64
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+Applying apr-util hints file rules for i386-pc-solaris2.11
+  setting apu_iconv_inbuf_const to "1"
+  setting apu_crypt_threadsafe to "1"
+checking for library containing fdatasync... none required
+checking for APR... yes
+  setting CPP to "gcc -E"
+  adding "-DSOLARIS2=11" to CPPFLAGS
+  adding "-D_POSIX_PTHREAD_SEMANTICS" to CPPFLAGS
+  adding "-D_REENTRANT" to CPPFLAGS
+  setting APRUTIL_INCLUDES to " -I/usr/include -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT"
+  setting APRUTIL_LDFLAGS to " -m64 -L/usr/lib/amd64 -R/usr/lib/amd64"
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/ggrep
+checking for egrep... /usr/bin/ggrep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for ldap support...
+checking for ldap_init in -lldap50... no
+checking for ldap_init in -lldapssl41... no
+checking for ldap_init in -lldapssl40... no
+checking for ldap_init in -lldapssl30... no
+checking for ldap_init in -lldapssl20... no
+checking for ldap_init in -lldapsdk... no
+checking for ldap_init in -lldapsdk... no
+checking for ldap_init in -lldap... no
+checking for ldap_init in -lldap... no
+checking for ldap_init in -lldap... no
+checking for ldap_init in -lldap... yes
+checking for ldapssl_client_init in -lldap... yes
+checking for ldapssl_client_deinit in -lldap... no
+checking for ldapssl_add_trusted_cert in -lldap... no
+checking for ldap_start_tls_s in -lldap... no
+checking for ldap_sslinit in -lldap... no
+checking for ldapssl_init in -lldap... yes
+checking for ldapssl_install_routines in -lldap... yes
+  setting LDADD_ldap to "-lldap -ldl -lpthread"
+checking for ber_init in -llber... no
+checking lber.h usability... yes
+checking lber.h presence... yes
+checking for lber.h... yes
+checking for ldap.h... yes
+checking ldap_ssl.h usability... no
+checking ldap_ssl.h presence... no
+checking for ldap_ssl.h... no
+checking for LDAP toolkit... Solaris
+checking for default DBM... sdbm
+checking sqlite3.h usability... yes
+checking sqlite3.h presence... yes
+checking for sqlite3.h... yes
+checking for sqlite3_open in -lsqlite3... yes
+  setting LDADD_dbd_sqlite3 to " -lsqlite3"
+checking sqlite.h usability... no
+checking sqlite.h presence... no
+checking for sqlite.h... no
+checking sybdb.h usability... no
+checking sybdb.h presence... no
+checking for sybdb.h... no
+checking freetds/sybdb.h usability... no
+checking freetds/sybdb.h presence... no
+checking for freetds/sybdb.h... no
+checking for odbc_config... no
+checking sql.h usability... no
+checking sql.h presence... no
+checking for sql.h... no
+checking odbc/sql.h usability... no
+checking odbc/sql.h presence... no
+checking for odbc/sql.h... no
+checking Expat 1.95.x... yes
+  setting APRUTIL_EXPORT_LIBS to "-lexpat"
+  setting APRUTIL_LIBS to "-lexpat"
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking for type of inbuf parameter to iconv... const char **
+checking for iconv.h... (cached) yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for nl_langinfo... yes
+checking for CODESET in langinfo.h... yes
+checking whether APR has DSO support... yes
+checking for library containing crypt... none required
+checking if system crypt() function is threadsafe... yes
+checking for crypt_r... no
+  adding "-L/usr/lib/amd64" to APRUTIL_LIBS
+  adding "-R/usr/lib/amd64" to APRUTIL_LIBS
+  adding "-lapr" to APRUTIL_LIBS
+  adding "-luuid" to APRUTIL_LIBS
+  adding "-lsendfile" to APRUTIL_LIBS
+  adding "-lsocket" to APRUTIL_LIBS
+  adding "-lnsl" to APRUTIL_LIBS
+  adding "-lpthread" to APRUTIL_LIBS
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating export_vars.sh
+config.status: creating build/pkg/pkginfo
+config.status: creating apr-util.pc
+config.status: creating apu-1-config
+config.status: creating include/private/apu_select_dbm.h
+config.status: creating include/apr_ldap.h
+config.status: creating include/apu.h
+config.status: creating include/apu_want.h
+config.status: creating test/Makefile
+config.status: creating include/private/apu_config.h
+config.status: executing default commands
+configure: WARNING: unrecognized options: --with-installbuilddir
+--- make
+Running: gmake -j 12
+gmake[1]: Entering directory `/code/tmp/build_admin/apr-util-1.5.4'
+gawk -f /usr/share/amd64/build-1/make_exports.awk /code/tmp/build_admin/apr-util-1.5.4/include/apr_anylock.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_base64.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_buckets.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_crypto.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_date.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_dbd.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_dbm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_hooks.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_init.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_option.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_rebind.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_url.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_md4.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_md5.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_memcache.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_optional.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_optional_hooks.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_queue.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_reslist.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_rmm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_sdbm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_sha1.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_strmatch.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_thread_pool.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_uri.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_uuid.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_xlate.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_xml.h /code/tmp/build_admin/apr-util-1.5.4/include/apu_errno.h /code/tmp/build_admin/apr-util-1.5.4/include/apu_version.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_crypto_internal.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbd_internal.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbd_odbc_v2.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbm_private.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apu_internal.h > exports.c
+gawk -f /usr/share/amd64/build-1/make_var_export.awk /code/tmp/build_admin/apr-util-1.5.4/include/apr_anylock.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_base64.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_buckets.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_crypto.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_date.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_dbd.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_dbm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_hooks.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_init.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_option.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_rebind.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_ldap_url.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_md4.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_md5.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_memcache.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_optional.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_optional_hooks.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_queue.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_reslist.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_rmm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_sdbm.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_sha1.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_strmatch.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_thread_pool.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_uri.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_uuid.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_xlate.h /code/tmp/build_admin/apr-util-1.5.4/include/apr_xml.h /code/tmp/build_admin/apr-util-1.5.4/include/apu_errno.h /code/tmp/build_admin/apr-util-1.5.4/include/apu_version.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_crypto_internal.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbd_internal.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbd_odbc_v2.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apr_dbm_private.h /code/tmp/build_admin/apr-util-1.5.4/include/private/apu_internal.h > export_vars.c
+sed 's,^\(location=\).*$,\1installed,' < apu-1-config > apu-config.out
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_brigade.lo -c buckets/apr_brigade.c && touch buckets/apr_brigade.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets.lo -c buckets/apr_buckets.c && touch buckets/apr_buckets.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_alloc.lo -c buckets/apr_buckets_alloc.c && touch buckets/apr_buckets_alloc.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_eos.lo -c buckets/apr_buckets_eos.c && touch buckets/apr_buckets_eos.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_file.lo -c buckets/apr_buckets_file.c && touch buckets/apr_buckets_file.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_flush.lo -c buckets/apr_buckets_flush.c && touch buckets/apr_buckets_flush.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_heap.lo -c buckets/apr_buckets_heap.c && touch buckets/apr_buckets_heap.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_mmap.lo -c buckets/apr_buckets_mmap.c && touch buckets/apr_buckets_mmap.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_pipe.lo -c buckets/apr_buckets_pipe.c && touch buckets/apr_buckets_pipe.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_pool.lo -c buckets/apr_buckets_pool.c && touch buckets/apr_buckets_pool.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_refcount.lo -c buckets/apr_buckets_refcount.c && touch buckets/apr_buckets_refcount.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_simple.lo -c buckets/apr_buckets_simple.c && touch buckets/apr_buckets_simple.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o buckets/apr_buckets_socket.lo -c buckets/apr_buckets_socket.c && touch buckets/apr_buckets_socket.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_crypto.lo -c crypto/apr_crypto.c && touch crypto/apr_crypto.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_md4.lo -c crypto/apr_md4.c && touch crypto/apr_md4.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_md5.lo -c crypto/apr_md5.c && touch crypto/apr_md5.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_passwd.lo -c crypto/apr_passwd.c && touch crypto/apr_passwd.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/apr_sha1.lo -c crypto/apr_sha1.c && touch crypto/apr_sha1.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/crypt_blowfish.lo -c crypto/crypt_blowfish.c && touch crypto/crypt_blowfish.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/getuuid.lo -c crypto/getuuid.c && touch crypto/getuuid.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o crypto/uuid.lo -c crypto/uuid.c && touch crypto/uuid.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbd/apr_dbd.lo -c dbd/apr_dbd.c && touch dbd/apr_dbd.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/apr_dbm.lo -c dbm/apr_dbm.c && touch dbm/apr_dbm.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/apr_dbm_sdbm.lo -c dbm/apr_dbm_sdbm.c && touch dbm/apr_dbm_sdbm.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/sdbm/sdbm.lo -c dbm/sdbm/sdbm.c && touch dbm/sdbm/sdbm.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/sdbm/sdbm_hash.lo -c dbm/sdbm/sdbm_hash.c && touch dbm/sdbm/sdbm_hash.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/sdbm/sdbm_lock.lo -c dbm/sdbm/sdbm_lock.c && touch dbm/sdbm/sdbm_lock.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbm/sdbm/sdbm_pair.lo -c dbm/sdbm/sdbm_pair.c && touch dbm/sdbm/sdbm_pair.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o encoding/apr_base64.lo -c encoding/apr_base64.c && touch encoding/apr_base64.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o hooks/apr_hooks.lo -c hooks/apr_hooks.c && touch hooks/apr_hooks.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_stub.lo -c ldap/apr_ldap_stub.c && touch ldap/apr_ldap_stub.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_url.lo -c ldap/apr_ldap_url.c && touch ldap/apr_ldap_url.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o memcache/apr_memcache.lo -c memcache/apr_memcache.c && touch memcache/apr_memcache.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_date.lo -c misc/apr_date.c && touch misc/apr_date.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_queue.lo -c misc/apr_queue.c && touch misc/apr_queue.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_reslist.lo -c misc/apr_reslist.c && touch misc/apr_reslist.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_rmm.lo -c misc/apr_rmm.c && touch misc/apr_rmm.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apr_thread_pool.lo -c misc/apr_thread_pool.c && touch misc/apr_thread_pool.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apu_dso.lo -c misc/apu_dso.c && touch misc/apu_dso.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o misc/apu_version.lo -c misc/apu_version.c && touch misc/apu_version.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o strmatch/apr_strmatch.lo -c strmatch/apr_strmatch.c && touch strmatch/apr_strmatch.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o uri/apr_uri.lo -c uri/apr_uri.c && touch uri/apr_uri.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o xlate/xlate.lo -c xlate/xlate.c && touch xlate/xlate.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o xml/apr_xml.lo -c xml/apr_xml.c && touch xml/apr_xml.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o dbd/apr_dbd_sqlite3.lo -c dbd/apr_dbd_sqlite3.c && touch dbd/apr_dbd_sqlite3.lo
+gcc -E -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  exports.c | grep "ap_hack_" | sed -e 's/^.*[)]\(.*\);$/\1/' >> aprutil.exp
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_init.lo -c ldap/apr_ldap_init.c && touch ldap/apr_ldap_init.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_option.lo -c ldap/apr_ldap_option.c && touch ldap/apr_ldap_option.lo
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=compile gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -o ldap/apr_ldap_rebind.lo -c ldap/apr_ldap_rebind.c && touch ldap/apr_ldap_rebind.lo
+gcc -E -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  export_vars.c | sed -e 's/^\#[^!]*//' | sed -e '/^$/d' >> aprutil.exp
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=link gcc    -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64   -m64 -L/usr/lib/amd64 -R/usr/lib/amd64 -m64 -L/usr/lib/amd64 -R/usr/lib/amd64 -release 1 -module -rpath /usr/lib/amd64/apr-util-1 -o ldap/apr_ldap.la ldap/apr_ldap_init.lo ldap/apr_ldap_option.lo ldap/apr_ldap_rebind.lo -lldap -ldl -lpthread
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=link gcc    -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64   -m64 -L/usr/lib/amd64 -R/usr/lib/amd64 -m64 -L/usr/lib/amd64 -R/usr/lib/amd64 -release 1 -module -rpath /usr/lib/amd64/apr-util-1 -o dbd/apr_dbd_sqlite3.la dbd/apr_dbd_sqlite3.lo -lsqlite3
+/bin/sh /usr/share/amd64/build-1/libtool --silent --mode=link gcc   -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -m64 -DHAVE_CONFIG_H  -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT  -I./include -I/usr/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -I/code/tmp/build_admin/apr-util-1.5.4/include -I/code/tmp/build_admin/apr-util-1.5.4/include/private  -I/usr/include   -I/usr/include  -I/usr/include/i386 -DSOLARIS2=11 -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT   -version-info 5:4:5   -m64 -L/usr/lib/amd64 -R/usr/lib/amd64 -o libaprutil.la -rpath /usr/lib/amd64 buckets/apr_brigade.lo buckets/apr_buckets.lo buckets/apr_buckets_alloc.lo buckets/apr_buckets_eos.lo buckets/apr_buckets_file.lo buckets/apr_buckets_flush.lo buckets/apr_buckets_heap.lo buckets/apr_buckets_mmap.lo buckets/apr_buckets_pipe.lo buckets/apr_buckets_pool.lo buckets/apr_buckets_refcount.lo buckets/apr_buckets_simple.lo buckets/apr_buckets_socket.lo crypto/apr_crypto.lo crypto/apr_md4.lo crypto/apr_md5.lo crypto/apr_passwd.lo crypto/apr_sha1.lo crypto/crypt_blowfish.lo crypto/getuuid.lo crypto/uuid.lo dbd/apr_dbd.lo dbm/apr_dbm.lo dbm/apr_dbm_sdbm.lo dbm/sdbm/sdbm.lo dbm/sdbm/sdbm_hash.lo dbm/sdbm/sdbm_lock.lo dbm/sdbm/sdbm_pair.lo encoding/apr_base64.lo hooks/apr_hooks.lo ldap/apr_ldap_stub.lo ldap/apr_ldap_url.lo memcache/apr_memcache.lo misc/apr_date.lo misc/apr_queue.lo misc/apr_reslist.lo misc/apr_rmm.lo misc/apr_thread_pool.lo misc/apu_dso.lo misc/apu_version.lo strmatch/apr_strmatch.lo uri/apr_uri.lo xlate/xlate.lo xml/apr_xml.lo    -luuid -lsendfile -lsocket -lnsl  -lpthread -m64 -L/usr/lib/amd64 -R/usr/lib/amd64 -lexpat -L/usr/lib/amd64 -R/usr/lib/amd64 -lapr -luuid -lsendfile -lsocket -lnsl -lpthread
+gmake[1]: Leaving directory `/code/tmp/build_admin/apr-util-1.5.4'
+--- make install
+Running: gmake DESTDIR=/code/tmp/build_admin/library_apr-util_pkg install
+/usr/share/amd64/build-1/mkdir.sh /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/apr-util-1
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/apr-util-1
+libtool: install: warning: remember to run `libtool --finish /usr/lib/amd64/apr-util-1'
+libtool: install: warning: remember to run `libtool --finish /usr/lib/amd64/apr-util-1'
+gmake[1]: Entering directory `/code/tmp/build_admin/apr-util-1.5.4'
+gmake[1]: Nothing to be done for `local-all'.
+gmake[1]: Leaving directory `/code/tmp/build_admin/apr-util-1.5.4'
+/usr/share/amd64/build-1/mkdir.sh /code/tmp/build_admin/library_apr-util_pkg/usr/include /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/pkgconfig \
+	     /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64 /code/tmp/build_admin/library_apr-util_pkg/usr/bin/amd64
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/pkgconfig
+mkdir /code/tmp/build_admin/library_apr-util_pkg/usr/bin/amd64
+for f in /code/tmp/build_admin/apr-util-1.5.4/include/*.h /code/tmp/build_admin/apr-util-1.5.4/include/*.h; do \
+	/usr/bin/ginstall -c -m 644 ${f} /code/tmp/build_admin/library_apr-util_pkg/usr/include; \
+done
+/usr/bin/ginstall -c -m 644 apr-util.pc /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/pkgconfig/apr-util-1.pc
+list=''; for i in $list; do \
+	( cd $i ; gmake DESTDIR=/code/tmp/build_admin/library_apr-util_pkg install ); \
+done
+/bin/sh /usr/share/amd64/build-1/libtool --mode=install /usr/bin/ginstall -c -m 755 libaprutil.la /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64
+libtool: install: /usr/bin/ginstall -c -m 755 .libs/libaprutil.so.0.5.4 /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/libaprutil.so.0.5.4
+libtool: install: (cd /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64 && { ln -s -f libaprutil.so.0.5.4 libaprutil.so.0 || { rm -f libaprutil.so.0 && ln -s libaprutil.so.0.5.4 libaprutil.so.0; }; })
+libtool: install: (cd /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64 && { ln -s -f libaprutil.so.0.5.4 libaprutil.so || { rm -f libaprutil.so && ln -s libaprutil.so.0.5.4 libaprutil.so; }; })
+libtool: install: chmod +x /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/libaprutil.so.0.5.4
+libtool: install: /usr/bin/ginstall -c -m 755 .libs/libaprutil.lai /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/libaprutil.la
+libtool: install: /usr/bin/ginstall -c -m 755 .libs/libaprutil.a /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/libaprutil.a
+libtool: install: chmod 644 /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/libaprutil.a
+libtool: install: ranlib /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64/libaprutil.a
+libtool: install: warning: remember to run `libtool --finish /usr/lib/amd64'
+/usr/bin/ginstall -c -m 644 aprutil.exp /code/tmp/build_admin/library_apr-util_pkg/usr/lib/amd64
+/usr/bin/ginstall -c -m 755 apu-config.out /code/tmp/build_admin/library_apr-util_pkg/usr/bin/amd64/apu-1-config
+Making isaexec stub binaries
+--- bin
+------ apu-1-config
+Running: /code/src/omnios-build/build/apr-util/../../lib/makeisa.sh /usr/bin apu-1-config
+Making isaexec wrapper for /usr/bin/apu-1-config
+Making package
+--- Generating package manifest from /code/tmp/build_admin/library_apr-util_pkg
+------ Running: /usr/bin/pkgsend generate /code/tmp/build_admin/library_apr-util_pkg > /code/tmp/build_admin/library_apr-util.p5m.int
+--- Generating package metadata
+--- Applying transforms
+--- Resolving dependencies
+------ Adding manual dependencies
+--- Publishing package to file:///code/pkg.syneto.eu-dev/
+Running: /usr/bin/pkgsend -s file:///code/pkg.syneto.eu-dev/ publish -d /code/tmp/build_admin/library_apr-util_pkg -d /code/tmp/build_admin/apr-util-1.5.4 -d /code/src/omnios-build/build/apr-util/. /code/tmp/build_admin/library_apr-util.p5m
+pkg://syneto.eu/library/apr-util@1.5.4,5.11-0.151012:20150113T154428Z
+PUBLISHED
+--- Published library/apr-util@1.5.4,5.11-0.151012
+Cleaning up
+--- Removing temporary install directory /code/tmp/build_admin/library_apr-util_pkg
+Running: rm -rf /code/tmp/build_admin/library_apr-util_pkg
+--- Cleaning up temporary manifest and transform files
+Running: rm -f /code/tmp/build_admin/library_apr-util.p5m.int /code/tmp/build_admin/library_apr-util.p5m.int.2 /code/tmp/build_admin/library_apr-util.p5m.int.3 /code/tmp/build_admin/library_apr-util.p5m /code/tmp/build_admin/library_apr-util.mog /code/tmp/build_admin/library_apr-util.deps.mog
+Done.
