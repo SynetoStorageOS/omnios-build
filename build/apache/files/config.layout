@@ -5,9 +5,9 @@
     sbindir:       ${exec_prefix}/bin/amd64
     libdir:        ${exec_prefix}/lib
     libexecdir:    ${exec_prefix}/libexec/amd64
-    mandir:        ${prefix}/man
+    mandir:        ${prefix}/share/man
     sysconfdir:    /etc/httpd
-    datadir:       ${prefix}/share
+    datadir:       ${prefix}/share/httpd
     installbuilddir: ${datadir}/build/amd64
     errordir:      ${datadir}/error
     iconsdir:      ${datadir}/icons
@@ -28,9 +28,9 @@
     sbindir:       ${exec_prefix}/bin/sparcv9
     libdir:        ${exec_prefix}/lib
     libexecdir:    ${exec_prefix}/libexec/sparcv9
-    mandir:        ${prefix}/man
+    mandir:        ${prefix}/share/man
     sysconfdir:    /etc/httpd
-    datadir:       ${prefix}/share
+    datadir:       ${prefix}/share/httpd
     installbuilddir: ${datadir}/build/sparcv9
     errordir:      ${datadir}/error
     iconsdir:      ${datadir}/icons

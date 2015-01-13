@@ -4,22 +4,21 @@
 . ../../lib/functions.sh
 
 PROG=httpd
-VER=2.2.29
-PKG=server/apache22
+VER=2.4.10
+PKG=server/httpd
 SUMMARY="$PROG - Apache Web Server ($VER)"
 DESC="$SUMMARY"
 
+REMOVE_PREVIOUS=1
+
 BUILD_DEPENDS_IPS="database/sqlite-3 library/security/openssl library/apr library/apr-util" 
-DEPENDS_IPS="library/apr \
-             library/apr-util
-             library/security/openssl \
-             database/sqlite-3"
+DEPENDS_IPS="library/apr library/apr-util library/security/openssl database/sqlite-3"
 
 PREFIX=/usr
 reset_configure_opts
 
 # Package info
-NAME=Apache
+NAME=httpd
 CATEGORY=network
 
 BUILDARCH=64
@@ -37,7 +36,7 @@ fi
 
 # General configure options - BASE is for options to be applied everywhere
 # and the *64 variables are for 64 bit builds.
-CONFIGURE_OPTS_BASE="--enable-dtrace
+CONFIGURE_OPTS_BASE="
     --enable-ldap
     --enable-authnz-ldap
     --enable-ssl
@@ -104,11 +103,12 @@ add_file() {
 
 add_extra_files() {
     logmsg "Installing custom files and scripts"
-    install -d $DESTDIR/lib/svc/manifest/network/
-    add_file manifest-http-apache.xml lib/svc/manifest/network/apache22.xml
+    logcmd install -d $DESTDIR/lib/svc/manifest/network/
+    add_file manifest-http-apache.xml lib/svc/manifest/network/httpd.xml
     logcmd rm -f $DESTDIR/etc/httpd/httpd.*.conf
     logcmd mv $DESTDIR/etc/httpd/httpd.conf $DESTDIR/etc/httpd/httpd.conf.dist
     add_file httpd.conf etc/httpd/httpd.conf
+    logcmd install -d $DESTDIR/var/www
 }
 
 # Add some more files once the source code has been downloaded

@@ -1,9 +1,9 @@
 <?xml version='1.0' ?>
 <!DOCTYPE service_bundle SYSTEM '/usr/share/lib/xml/dtd/service_bundle.dtd.1'>
 
-<service_bundle type='manifest' name='OMNIapache:httpd' >
+<service_bundle type='manifest' name='apache:httpd' >
 	<service name='network/http' type='service' version='1'>
-		<instance name='apache22' enabled='false'>
+		<instance name='apache' enabled='false'>
 
 			<dependency name='loopback'  grouping='require_all'
 			restart_on='error' type='service'>
