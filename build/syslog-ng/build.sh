@@ -47,7 +47,7 @@ GLIB_LIBS="-lglib-2.0 -lgmodule-2.0 -lgthread-2.0"
 PKG_CONFIG_PATH="${PREFIX}/lib/$ISAPART64"
 export LIBS EVTLOG_CFLAGS EVTLOG_LIBS GLIB_CFLAGS GLIB_LIBS PKG_CONFIG_PATH
 
-CONFIGURE_OPTS="--enable-amqp --disable-mongodb --without-libmongo-client --disable-sun-streams"
+CONFIGURE_OPTS="--enable-amqp --disable-mongodb --without-libmongo-client"
 BUILDARCH=64
 
 install_smf_service() {

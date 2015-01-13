@@ -1,0 +1,12 @@
+diff -Nru syslog-ng-3.6.2-orig/scl/syslog-ng.conf syslog-ng-3.6.2/scl/syslog-ng.conf
+--- syslog-ng-3.6.2-orig/scl/syslog-ng.conf	2015-01-13 12:43:17.000000000 +0200
++++ syslog-ng-3.6.2/scl/syslog-ng.conf	2015-01-13 12:46:03.000000000 +0200
+@@ -16,7 +16,7 @@
+ };
+ 
+ destination d_local {
+-	file("/var/log/messages");
++	file("/var/log/messages" suppress(1800));
+ };
+ 
+ log {
