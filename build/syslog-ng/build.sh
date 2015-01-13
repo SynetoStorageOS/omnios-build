@@ -53,7 +53,8 @@ BUILDARCH=64
 install_smf_service() {
     logmsg "--- Installing SMF service"
     logcmd install -d -m 755 ${DESTDIR}/lib/svc/manifest/system/
-    logcmd install -m 755 syslog-ng.xml ${DESTDIR}/lib/svc/manifest/system/syslog-ng.xml
+    logcmd install -m 755 syslog-ng.xml ${DESTDIR}/lib/svc/manifest/system/syslog-ng.xml ||
+        logerr "--- Could not install syslog-ng.xml SMF service configuration file"
 }
 
 init
