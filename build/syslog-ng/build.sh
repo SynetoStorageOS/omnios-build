@@ -50,12 +50,19 @@ export LIBS EVTLOG_CFLAGS EVTLOG_LIBS GLIB_CFLAGS GLIB_LIBS PKG_CONFIG_PATH
 CONFIGURE_OPTS="--enable-amqp --disable-mongodb --without-libmongo-client --disable-sun-streams"
 BUILDARCH=64
 
+install_smf_service() {
+    logmsg "--- Installing SMF service"
+    logcmd install -d -m 755 ${DESTDIR}/lib/svc/manifest/system/
+    logcmd install -m 755 syslog-ng.xml ${DESTDIR}/lib/svc/manifest/system/syslog-ng.xml
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
 prep_build
 build
 make_isa_stub
+install_smf_service
 make_package
 clean_up
 
