@@ -38,10 +38,6 @@ DESC="$SUMMARY"
 BUILD_DEPENDS_IPS="library/glib2 library/eventlog"
 DEPENDS_IPS="$BUILD_DEPENDS_IPS"
 
-REMOVE_PREVIOUS=1
-# NO_PARALLEL_MAKE=1
-export V=1
-
 LDFLAGS64="-L${PREFIX}/lib/$ISAPART64 -R${PREFIX}/lib/$ISAPART64"
 LIBS="-lsocket -lnsl"
 EVTLOG_CFLAGS="-I${PREFIX}/include/eventlog"
@@ -51,7 +47,6 @@ GLIB_LIBS="-lglib-2.0 -lgmodule-2.0 -lgthread-2.0"
 PKG_CONFIG_PATH="${PREFIX}/lib/$ISAPART64"
 export LIBS EVTLOG_CFLAGS EVTLOG_LIBS GLIB_CFLAGS GLIB_LIBS PKG_CONFIG_PATH
 
-#CFLAGS="-std=gnu99"
 CONFIGURE_OPTS="--enable-amqp --disable-mongodb --without-libmongo-client --disable-sun-streams"
 BUILDARCH=64
 
