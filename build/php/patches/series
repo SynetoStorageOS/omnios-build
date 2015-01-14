@@ -1,4 +1,4 @@
 bdb6.patch
 gd-xpm.patch
 socket-illumos.patch
-php-5.6.3-dont-change-apache-conf
+php-5.6.3-dont-change-apache-conf.patch
