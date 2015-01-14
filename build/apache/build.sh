@@ -109,6 +109,7 @@ add_extra_files() {
     logcmd mv $DESTDIR/etc/httpd/httpd.conf $DESTDIR/etc/httpd/httpd.conf.dist
     add_file httpd.conf etc/httpd/httpd.conf
     logcmd install -d $DESTDIR/var/www
+    logcmd install -d $DESTDIR/etc/httpd/conf.d
 }
 
 # Add some more files once the source code has been downloaded
