@@ -54,13 +54,12 @@ BUILD_DEPENDS_IPS="compress/bzip2
     library/libtiff
     library/mhash"
 
-DEPENDS_IPS="system/library"
+DEPENDS_IPS="system/library server/httpd"
 
 # Though not strictly needed since we override build(), still nice to set
 BUILDARCH=64
 reset_configure_opts
 
-#CFLAGS="-O2 -DZLIB_INTERNAL=1 -std=c99"
 CFLAGS="-O2 -DZLIB_INTERNAL=1 -std=gnu99"
 CPPFLAGS=""
 CPPFLAGS64="-I/usr/include/$ISAPART64 -I/usr/include/$ISAPART64/curl \
@@ -137,7 +136,8 @@ CONFIGURE_OPTS="
         --with-pam
         --with-iconv
         --enable-memcache
-        --enable-xdebug=shared"
+        --enable-xdebug=shared
+        --with-apxs2"
 
 make_install() {
     logmsg "--- make install"
