@@ -273,18 +273,11 @@ add_static_extensions() {
     popd > /dev/null
 }
 
-generate_configure() {
-    logmsg "--- Generating configure script"
-    logcmd buildconf --force ||
-        logerr "--- Error generating configure script"
-}
-
 init
 download_source $PROG $PROG $VER
 patch_source
 prep_build
 add_static_extensions
-generate_configure
 build
 clean_dotfiles
 make_package php.mog
