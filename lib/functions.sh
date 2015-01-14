@@ -479,7 +479,7 @@ get_resource() {
             ;;
         *)
             URLPREFIX=$MIRROR
-            $WGET -a $LOGFILE $URLPREFIX/$RESOURCE
+            logcmd $WGET -a $LOGFILE $URLPREFIX/$RESOURCE
             ;;
     esac
 }
