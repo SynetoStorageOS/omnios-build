@@ -8,3 +8,7 @@ tmp.repo/
 .idea
 .project
 distribution/text-install-images-build.xml
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.zip
