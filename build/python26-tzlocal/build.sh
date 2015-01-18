@@ -29,7 +29,7 @@
 
 PROG=tzlocal
 VER=1.1.2
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/tzlocal-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

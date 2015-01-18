@@ -29,7 +29,7 @@
 
 PROG=Tie-Cfg
 VER=0.32
-PKG=library/perl/${PROG}
+PKG=library/perl/Tie-Cfg
 SUMMARY="Tie::Cfg - Ties simple configuration (.ini) files to hashes."
 DESC="$SUMMARY"
 

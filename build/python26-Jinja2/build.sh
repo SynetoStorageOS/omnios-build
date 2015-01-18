@@ -29,7 +29,7 @@
 
 PROG=Jinja2
 VER=2.7.3
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/Jinja2-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

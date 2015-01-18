@@ -29,7 +29,7 @@
 
 PROG=LockFile-Simple
 VER=0.208
-PKG=library/perl/${PROG}
+PKG=library/perl/LockFile-Simple
 SUMMARY="LockFile::Simple - simple file locking scheme."
 DESC="$SUMMARY"
 

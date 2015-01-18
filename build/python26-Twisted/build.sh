@@ -29,7 +29,7 @@
 
 PROG=Twisted
 VER=14.0.2
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/Twisted-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

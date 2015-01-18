@@ -29,7 +29,7 @@
 
 PROG=ordereddict
 VER=1.1
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/ordereddict-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

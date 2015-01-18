@@ -29,7 +29,7 @@
 
 PROG=pyparsing
 VER=2.0.3
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/pyparsing-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 
