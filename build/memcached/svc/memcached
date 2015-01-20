@@ -40,7 +40,7 @@ MCOPTIONS="`getproparg memcached/options`"
 
 case "$1" in
 'start')
-/usr/bin/memcached -u noaccess $MCOPTIONS &
+/usr/bin/memcached -u noaccess $MCOPTIONS -d
 ;;
 
 'stop')
