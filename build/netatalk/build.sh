@@ -66,6 +66,10 @@ service_configs() {
         $DESTDIR/lib/svc/manifest/network/netatalk.xml
 }
 
+setup_logging() {
+    touch ${DESTDIR}/var/log/netatalk.log
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
@@ -73,6 +77,7 @@ prep_build
 build
 make_isa_stub
 service_configs
+setup_logging
 make_package
 clean_up
 
