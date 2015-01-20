@@ -67,7 +67,7 @@ service_configs() {
 }
 
 setup_logging() {
-    touch ${DESTDIR}/var/log/netatalk.log
+    logcmd touch ${DESTDIR}/var/log/netatalk.log
 }
 
 init
