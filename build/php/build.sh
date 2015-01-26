@@ -150,8 +150,8 @@ make_install() {
     logcmd mkdir -p $DESTDIR/etc
     logcmd cp $SRCDIR/php.ini $DESTDIR/etc/php.ini
     logmsg "--- copy apache http configuration"
-    logcmd mkdir -p $DESTDIR/etc/httpd/extra
-    logcmd cp $SRCDIR/httpd-php.conf $DESTDIR/etc/httpd/extra
+    logcmd mkdir -p $DESTDIR/etc/httpd/conf.d
+    logcmd cp $SRCDIR/httpd-php.conf $DESTDIR/etc/httpd/conf.d/
 }
 
 # Create extension dir
