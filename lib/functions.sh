@@ -120,7 +120,7 @@ logcmd() {
         "$@" >> $LOGFILE 2>&1
     else
         echo Running: "$@" | tee -a $LOGFILE
-        "$@" | tee -a $LOGFILE 2>&1
+        "$@" 2>&1 | tee -a $LOGFILE
         return ${PIPESTATUS[0]}
     fi
 }
@@ -479,7 +479,7 @@ get_resource() {
             ;;
         *)
             URLPREFIX=$MIRROR
-            $WGET -a $LOGFILE $URLPREFIX/$RESOURCE
+            logcmd $WGET -a $LOGFILE $URLPREFIX/$RESOURCE
             ;;
     esac
 }

@@ -29,7 +29,7 @@
 
 PROG=Flask
 VER=0.10.1
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/Flask-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

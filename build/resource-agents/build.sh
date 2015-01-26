@@ -42,6 +42,9 @@ CONFIGURE_OPTS="--prefix=/usr --disable-libnet"
 
 export CONFIG_SHELL="/usr/bin/bash"
 
+BUILD_DEPENDS_IPS="cluster/Pacemaker"
+RUN_DEPENDS_IPS="cluster/Pacemaker"
+
 function autogen() {
     logmsg "Running autogen.sh"
     pushd $TMPDIR/$BUILDDIR > /dev/null

@@ -30,11 +30,14 @@
 PROG=Heartbeat-3-0-STABLE
 VER=3.0.5
 PKG=cluster/Heartbeat
-SUMMARY="Heartbeat is a daemon that provides cluster infrastructure (communication and membership) services to its clients. This allows clients to know about the presence (or disappearance!) of peer processes on other machines and to easily exchange messages with them."
+SUMMARY="Heartbeat is a daemon that provides cluster infrastructure (communication and membership) services to its clients."
 DESC="$SUMMARY"
 
 BUILDARCH=32
 NO_PARALLEL_MAKE=1
+
+BUILD_DEPENDS_IPS="cluster/glue"
+RUN_DEPENDS_IPS="cluster/glue"
 
 function bootstrap() {
     logmsg "Running bootstrap"

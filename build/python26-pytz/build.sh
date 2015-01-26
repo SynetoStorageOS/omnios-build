@@ -29,7 +29,7 @@
 
 PROG=pytz
 VER=2014.9
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/pytz-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

@@ -1,0 +1,66 @@
+diff -Nru php-5.6.3-orig/sapi/apache/config.m4 php-5.6.3/sapi/apache/config.m4
+--- php-5.6.3-orig/sapi/apache/config.m4	2014-11-12 15:52:21.000000000 +0200
++++ php-5.6.3/sapi/apache/config.m4	2015-01-14 15:56:30.206801153 +0200
+@@ -92,7 +92,7 @@
+   $APXS -q -S CFLAGS="$APXS_CFLAGS" CFLAGS >/dev/null 2>&1
+ 
+   if test "$?" != "0"; then
+-    APACHE_INSTALL="$APXS -i -a -n php5 $SAPI_SHARED" # Old apxs does not have -S option
++    APACHE_INSTALL="$APXS -i -n php5 $SAPI_SHARED" # Old apxs does not have -S option
+   else 
+     APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`
+     if test -z `$APXS -q SYSCONFDIR`; then
+@@ -105,7 +105,7 @@
+                       \$(mkinstalldirs) '$APXS_SYSCONFDIR' && \
+                        $APXS -S LIBEXECDIR='$APXS_LIBEXECDIR' \
+                              -S SYSCONFDIR='$APXS_SYSCONFDIR' \
+-                             -i -a -n php5 $SAPI_SHARED"
++                             -i -n php5 $SAPI_SHARED"
+     fi
+   fi
+ 
+diff -Nru php-5.6.3-orig/sapi/apache2filter/config.m4 php-5.6.3/sapi/apache2filter/config.m4
+--- php-5.6.3-orig/sapi/apache2filter/config.m4	2014-11-12 15:52:21.000000000 +0200
++++ php-5.6.3/sapi/apache2filter/config.m4	2015-01-14 15:56:21.231907636 +0200
+@@ -78,7 +78,7 @@
+                 \$(mkinstalldirs) '$APXS_SYSCONFDIR' && \
+                  $APXS -S LIBEXECDIR='$APXS_LIBEXECDIR' \
+                        -S SYSCONFDIR='$APXS_SYSCONFDIR' \
+-                       -i -a -n php5"
++                       -i -n php5"
+   fi
+ 
+   case $host_alias in
+diff -Nru php-5.6.3-orig/sapi/apache2handler/config.m4 php-5.6.3/sapi/apache2handler/config.m4
+--- php-5.6.3-orig/sapi/apache2handler/config.m4	2014-11-12 15:52:21.000000000 +0200
++++ php-5.6.3/sapi/apache2handler/config.m4	2015-01-14 15:56:33.511123048 +0200
+@@ -77,7 +77,7 @@
+                 \$(mkinstalldirs) '$APXS_SYSCONFDIR' && \
+                  $APXS -S LIBEXECDIR='$APXS_LIBEXECDIR' \
+                        -S SYSCONFDIR='$APXS_SYSCONFDIR' \
+-                       -i -a -n php5"
++                       -i -n php5"
+   fi
+ 
+   case $host_alias in
+diff -Nru php-5.6.3-orig/sapi/apache_hooks/config.m4 php-5.6.3/sapi/apache_hooks/config.m4
+--- php-5.6.3-orig/sapi/apache_hooks/config.m4	2014-11-12 15:52:21.000000000 +0200
++++ php-5.6.3/sapi/apache_hooks/config.m4	2015-01-14 15:56:17.871319103 +0200
+@@ -93,7 +93,7 @@
+   $APXS -q -S CFLAGS="$APXS_CFLAGS" CFLAGS >/dev/null 2>&1
+ 
+   if test "$?" != "0"; then
+-    APACHE_HOOKS_INSTALL="$APXS -i -a -n php5 $SAPI_SHARED" # Old apxs does not have -S option
++    APACHE_HOOKS_INSTALL="$APXS -i -n php5 $SAPI_SHARED" # Old apxs does not have -S option
+   else 
+     APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`
+     if test -z `$APXS -q SYSCONFDIR`; then
+@@ -106,7 +106,7 @@
+                       \$(mkinstalldirs) '$APXS_SYSCONFDIR' && \
+                        $APXS -S LIBEXECDIR='$APXS_LIBEXECDIR' \
+                              -S SYSCONFDIR='$APXS_SYSCONFDIR' \
+-                             -i -a -n php5 $SAPI_SHARED"
++                             -i -n php5 $SAPI_SHARED"
+     fi
+   fi
+ 

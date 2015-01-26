@@ -29,7 +29,7 @@
 
 PROG=gunicorn
 VER=18.0
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/gunicorn-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

@@ -38,6 +38,9 @@ BUILDARCH=32
 CFLAGS="$CFLAGS -DHAVE_NFDS_T"
 CONFIGURE_OPTS="--disable-libnet --disable-ansi --disable-fatal-warnings"
 
+BUILD_DEPENDS_IPS="library/libqb"
+RUN_DEPENDS_IPS="library/libqb"
+
 init
 download_source $PROG $PROG $VER
 patch_source

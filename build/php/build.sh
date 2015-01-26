@@ -54,13 +54,12 @@ BUILD_DEPENDS_IPS="compress/bzip2
     library/libtiff
     library/mhash"
 
-DEPENDS_IPS="system/library"
+DEPENDS_IPS="system/library server/httpd"
 
 # Though not strictly needed since we override build(), still nice to set
 BUILDARCH=64
 reset_configure_opts
 
-#CFLAGS="-O2 -DZLIB_INTERNAL=1 -std=c99"
 CFLAGS="-O2 -DZLIB_INTERNAL=1 -std=gnu99"
 CPPFLAGS=""
 CPPFLAGS64="-I/usr/include/$ISAPART64 -I/usr/include/$ISAPART64/curl \
@@ -98,7 +97,6 @@ CONFIGURE_OPTS="
         --with-mhash
         --with-mcrypt=shared
         --with-gd=shared
-        --with-xpm=no
         --enable-gd-native-ttf
         --enable-exif=shared
         --enable-bcmath=shared
@@ -137,7 +135,9 @@ CONFIGURE_OPTS="
         --with-pam
         --with-iconv
         --enable-memcache
-        --enable-xdebug=shared"
+        --enable-xdebug=shared
+        --with-apxs2
+        --enable-cli"
 
 make_install() {
     logmsg "--- make install"
@@ -149,6 +149,9 @@ make_install() {
     logmsg "--- copy php.ini with sensible defaults"
     logcmd mkdir -p $DESTDIR/etc
     logcmd cp $SRCDIR/php.ini $DESTDIR/etc/php.ini
+    logmsg "--- copy apache http configuration"
+    logcmd mkdir -p $DESTDIR/etc/httpd/conf.d
+    logcmd cp $SRCDIR/httpd-php.conf $DESTDIR/etc/httpd/conf.d/
 }
 
 # Create extension dir
@@ -161,72 +164,64 @@ create_extension_dir() {
 install_ext_bcmath() {
     create_extension_dir
     logmsg "--- Moving files for bcmath extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/bcmath.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/bcmath.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving bcmath extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/bcmath.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving bcmath extensions failed."
 }
 
 # PHP calendar extension
 install_ext_calendar() {
     create_extension_dir
     logmsg "--- Moving files for calendar extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/calendar.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/calendar.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving calendar extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/calendar.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving calendar extensions failed."
 }
 
 # PHP curl extension
 install_ext_curl() {
     create_extension_dir
     logmsg "--- Moving files for curl extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/curl.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/curl.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving curl extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/curl.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving curl extensions failed."
 }
 
 # PHP exif extension
 install_ext_exif() {
     create_extension_dir
     logmsg "--- Moving files for exif extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/exif.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/exif.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving exif extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/exif.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving exif extensions failed."
 }
 
 # PHP ftp extension
 install_ext_ftp() {
     create_extension_dir
     logmsg "--- Moving files for ftp extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/ftp.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/ftp.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving ftp extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/ftp.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving ftp extensions failed."
 }
 
 # PHP gd extension
 install_ext_gd() {
     create_extension_dir
     logmsg "--- Moving files for gd extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/gd.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/gd.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving gd extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/gd.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving gd extensions failed."
 }
 
 # PHP mbstring extension
 install_ext_mbstring() {
     create_extension_dir
     logmsg "--- Moving files for mbstring extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/mbstring.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/mbstring.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving mbstring extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/mbstring.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving mbstring extensions failed."
 }
 
 # PHP mcrypt extension
 install_ext_mcrypt() {
     create_extension_dir
     logmsg "--- Moving files for mcrypt extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/mcrypt.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/mcrypt.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving mcrypt extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/mcrypt.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving mcrypt extensions failed."
 }
 
 # PHP pdo extension
@@ -243,18 +238,16 @@ install_ext_sqlite() {
 install_ext_zlib() {
     create_extension_dir
     logmsg "--- Moving files for zlib extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/zlib.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/zlib.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving zlib extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/zlib.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving zlib extensions failed."
 }
 
 # PHP zip extension
 install_ext_zip() {
     create_extension_dir
     logmsg "--- Moving files for zip extension"
-    logcmd mv $INSTALLDIR/$EXTENSION_DIR/zip.a $DESTDIR/$EXTENSION_DIR/ && \
-        logcmd mv $INSTALLDIR/$EXTENSION_DIR/zip.so $DESTDIR/$EXTENSION_DIR/ || \
-            logerr "--- Moving zip extensions failed."
+    logcmd mv $INSTALLDIR/$EXTENSION_DIR/zip.so $DESTDIR/$EXTENSION_DIR/ || \
+        logerr "--- Moving zip extensions failed."
 }
 
 

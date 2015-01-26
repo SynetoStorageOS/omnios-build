@@ -29,7 +29,7 @@
 
 PROG=six
 VER=1.9.0
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/six-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

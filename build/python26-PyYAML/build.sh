@@ -29,7 +29,7 @@
 
 PROG=PyYAML
 VER=3.11
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/PyYAML-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

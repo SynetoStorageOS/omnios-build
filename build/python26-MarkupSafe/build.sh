@@ -29,7 +29,7 @@
 
 PROG=MarkupSafe
 VER=0.23
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/MarkupSafe-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

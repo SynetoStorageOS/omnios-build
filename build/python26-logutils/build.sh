@@ -29,7 +29,7 @@
 
 PROG=logutils
 VER=0.3.3
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/logutils-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

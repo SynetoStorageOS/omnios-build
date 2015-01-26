@@ -29,7 +29,7 @@
 
 PROG=pycparser
 VER=2.10
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/pycparser-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

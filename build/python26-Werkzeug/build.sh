@@ -29,7 +29,7 @@
 
 PROG=Werkzeug
 VER=0.9.6
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/Werkzeug-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

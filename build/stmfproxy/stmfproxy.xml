@@ -64,7 +64,7 @@
         <template>
             <common_name>
                 <loctext xml:lang="C">
-                    Syneto Storage STMF PROXY (ALUA)
+                    STMF PROXY (ALUA)
                 </loctext>
             </common_name>
         </template>

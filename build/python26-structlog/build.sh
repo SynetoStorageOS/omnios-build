@@ -29,7 +29,7 @@
 
 PROG=structlog
 VER=0.4.2
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/structlog-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

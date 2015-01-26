@@ -29,7 +29,7 @@
 
 PROG=itsdangerous
 VER=0.24
-PKG=library/python-2/${PROG}-26
+PKG=library/python-2/itsdangerous-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 

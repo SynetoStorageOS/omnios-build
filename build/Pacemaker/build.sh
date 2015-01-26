@@ -40,6 +40,9 @@ LDFLAGS="-L/usr/gnu/lib"
 CONFIGURE_OPTS_32="$CONFIGURE_OPTS_32 --bindir=${PREFIX}/bin --sbindir=${PREFIX}/sbin --disable-ansi --disable-fatal-warnings --with-heartbeat --with-corosync=no"
 export CONFIG_SHELL="/usr/bin/bash"
 
+BUILD_DEPENDS_IPS="cluster/Heartbeat"
+RUN_DEPENDS_IPS="cluster/Heartbeat"
+
 function link_lrmd() {
     mkdir -p ${DESTDIR}/usr/lib/heartbeat
     ln -s /usr/libexec/pacemaker/lrmd ${DESTDIR}/usr/lib/heartbeat/lrmd

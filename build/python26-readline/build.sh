@@ -27,9 +27,9 @@
 # Load support functions
 . ../../lib/functions.sh
 
-PROG=gunicorn
-VER=18.0
-PKG=library/python-2/${PROG}-26
+PROG=readline
+VER=6.2.4.1
+PKG=library/python-2/readline-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 
