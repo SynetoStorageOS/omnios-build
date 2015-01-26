@@ -156,6 +156,7 @@
       -->
       <software_data action="install">
         <name>pkg:/entire@latest</name>
+        <name>pkg:/management/storage-os-core</name>
         <name>pkg:/system/install/text-install</name>
         <name>pkg:/system/install/media/internal</name>
       </software_data>
