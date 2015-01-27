@@ -1266,7 +1266,7 @@ update_git_repo() {
         popd >/dev/null
     else
         logmsg "Cloning ${REPO_SOURCE} ..."
-        logcmd  $GIT clone -b ${BRANCH} ${REPO_SOURCE} $TMPDIR/$BUILDDIR ||
+        logcmd $GIT clone -b ${BRANCH} ${REPO_SOURCE} $TMPDIR/$BUILDDIR ||
             logerr "Failed to clone repo $REPO_SOURCE"
     fi
 
