@@ -28,7 +28,7 @@
 . ../../lib/functions.sh
 
 PROG=collectd
-VER=5.4.1
+VER=5.4.99
 PKG=system/collectd
 SUMMARY="Collectd data collection service"
 DESC="$SUMMARY"
@@ -39,7 +39,7 @@ CC="gcc -std=gnu99"
 CONFIGURE_OPTS="--without-libnetsnmp --enable-write_graphite --mandir=/usr/share/man"
 
 init
-download_source $PROG $PROG $VER
+update_git_repo ${UPSTREAM_REPO_CONTAINER}/${PROG}
 patch_source
 prep_build
 strip_install
