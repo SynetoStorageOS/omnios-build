@@ -30,7 +30,7 @@
 PROG=Werkzeug
 VER=0.9.6
 PKG=library/python-2/Werkzeug-26
-SUMMARY="${PROG}"
+SUMMARY="Werkzeug - a flexible WSGI(Web Server Gateway Interface) implementation and toolkit"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

@@ -30,7 +30,7 @@
 PROG=pycurl
 VER=7.19.5
 PKG=library/python-2/pycurl
-SUMMARY="Python bindings for libcurl"
+SUMMARY="pycurl - Python bindings for libcurl"
 DESC="PycURL provides a thin layer of Python bindings on top of libcurl."
 
 DEPENDS_IPS="runtime/python-26 library/security/openssl@1.0.1 web/curl"

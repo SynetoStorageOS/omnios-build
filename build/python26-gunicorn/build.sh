@@ -30,7 +30,7 @@
 PROG=gunicorn
 VER=18.0
 PKG=library/python-2/gunicorn-26
-SUMMARY="${PROG}"
+SUMMARY="gunicorn(Green Unicorn) - a Python WSGI HTTP Server for UNIX"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

@@ -30,7 +30,7 @@
 PROG=importlib
 VER=1.0.3
 PKG=library/python-2/importlib-26
-SUMMARY="${PROG}"
+SUMMARY="importlib - implementation of import"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

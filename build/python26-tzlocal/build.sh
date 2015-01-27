@@ -30,7 +30,7 @@
 PROG=tzlocal
 VER=1.1.2
 PKG=library/python-2/tzlocal-26
-SUMMARY="${PROG}"
+SUMMARY="A Python module that tries to figure out what your local timezone is "
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

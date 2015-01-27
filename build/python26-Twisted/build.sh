@@ -30,7 +30,7 @@
 PROG=Twisted
 VER=14.0.2
 PKG=library/python-2/Twisted-26
-SUMMARY="${PROG}"
+SUMMARY="Twisted - an event-based framework for internet applications"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

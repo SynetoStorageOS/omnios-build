@@ -30,7 +30,7 @@
 PROG=six
 VER=1.9.0
 PKG=library/python-2/six-26
-SUMMARY="${PROG}"
+SUMMARY="six - a Python 2 and 3 compatibility library"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

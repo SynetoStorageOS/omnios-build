@@ -33,7 +33,7 @@ CXX=g++
 PROG=Python
 VER=2.6.8
 PKG=runtime/python-26
-SUMMARY="$PROG"
+SUMMARY="python - an interpreted, interactive, object-oriented programming language"
 DESC="$SUMMARY"
 
 BUILD_DEPENDS_IPS="developer/build/autoconf"

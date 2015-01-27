@@ -30,7 +30,7 @@
 PROG=PyYAML
 VER=3.11
 PKG=library/python-2/PyYAML-26
-SUMMARY="${PROG}"
+SUMMARY="PyYAML - a YAML parser and emitter for Python"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

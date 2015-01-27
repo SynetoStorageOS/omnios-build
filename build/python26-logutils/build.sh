@@ -30,7 +30,7 @@
 PROG=logutils
 VER=0.3.3
 PKG=library/python-2/logutils-26
-SUMMARY="${PROG}"
+SUMMARY="The logutils package provides a set of handlers and utilities for the Python standard library's logging package"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

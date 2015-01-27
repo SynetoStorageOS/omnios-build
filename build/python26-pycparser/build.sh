@@ -30,7 +30,7 @@
 PROG=pycparser
 VER=2.10
 PKG=library/python-2/pycparser-26
-SUMMARY="${PROG}"
+SUMMARY="pycparser - a parser for the C language, written in pure Python"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

@@ -30,7 +30,7 @@
 PROG=itsdangerous
 VER=0.24
 PKG=library/python-2/itsdangerous-26
-SUMMARY="${PROG}"
+SUMMARY="itsdangerous - various helpers to pass data to untrusted environments and to get it back safe and sound"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

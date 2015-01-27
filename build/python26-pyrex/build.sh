@@ -30,7 +30,7 @@
 PROG=Pyrex
 VER=0.9.9
 PKG=library/python-2/pyrex-26
-SUMMARY="Pyrex - a Language for Writing Python Extension Modules"
+SUMMARY="Pyrex - a language for writing Python Extension Modules"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

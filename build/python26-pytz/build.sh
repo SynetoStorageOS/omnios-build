@@ -30,7 +30,7 @@
 PROG=pytz
 VER=2014.9
 PKG=library/python-2/pytz-26
-SUMMARY="${PROG}"
+SUMMARY="pytz - world timezone definitions for Python"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

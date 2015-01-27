@@ -30,7 +30,7 @@
 PROG=CherryPy
 VER=3.2.2
 PKG=library/python-2/cherrypy
-SUMMARY="cherrypy - A Minimalist Python Web Framework"
+SUMMARY="cherrypy - a minimalist Python Web Framework"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

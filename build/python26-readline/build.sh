@@ -30,7 +30,7 @@
 PROG=readline
 VER=6.2.4.1
 PKG=library/python-2/readline-26
-SUMMARY="${PROG}"
+SUMMARY="readline - the standard Python readline extension statically linked against the GNU readline library, providing readline support to Python on platforms without it"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

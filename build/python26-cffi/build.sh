@@ -30,7 +30,7 @@
 PROG=cffi
 VER=0.8.6
 PKG=library/python-2/cffi-26
-SUMMARY="${PROG}"
+SUMMARY="cffi - C Foreign Function Interface for Python"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

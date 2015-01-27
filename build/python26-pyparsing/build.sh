@@ -30,7 +30,7 @@
 PROG=pyparsing
 VER=2.0.3
 PKG=library/python-2/pyparsing-26
-SUMMARY="${PROG}"
+SUMMARY="pyparsing - an alternative approach to creating and executing simple grammars, vs. the traditional lex/yacc approach, or the use of regular expressions"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

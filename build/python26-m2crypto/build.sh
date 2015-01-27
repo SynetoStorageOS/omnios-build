@@ -30,7 +30,7 @@
 PROG=M2Crypto
 VER=0.22.3
 PKG=library/python-2/m2crypto
-SUMMARY="Python interface for openssl"
+SUMMARY="M2Crypto - Python interface for openssl"
 DESC="M2Crypto provides a python interface to the openssl library."
 
 DEPENDS_IPS="runtime/python-26 library/security/openssl@1.0.1"

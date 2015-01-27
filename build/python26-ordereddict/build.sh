@@ -30,7 +30,7 @@
 PROG=ordereddict
 VER=1.1
 PKG=library/python-2/ordereddict-26
-SUMMARY="${PROG}"
+SUMMARY="ordereddict - a drop-in substitute for Py2.7's new collections.OrderedDict that works in Python 2.4-2.6"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

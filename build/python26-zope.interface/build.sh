@@ -30,7 +30,7 @@
 PROG=zope.interface
 VER=4.1.2
 PKG=library/python-2/zope.interface-26
-SUMMARY="${PROG}"
+SUMMARY="zope.interface - interfaces for Python"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

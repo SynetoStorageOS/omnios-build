@@ -30,7 +30,7 @@
 PROG=Flask
 VER=0.10.1
 PKG=library/python-2/Flask-26
-SUMMARY="${PROG}"
+SUMMARY="flask - a microframework for Python based on Werkzeug and Jinja2"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

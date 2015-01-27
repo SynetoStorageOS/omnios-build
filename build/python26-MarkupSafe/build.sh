@@ -30,7 +30,7 @@
 PROG=MarkupSafe
 VER=0.23
 PKG=library/python-2/MarkupSafe-26
-SUMMARY="${PROG}"
+SUMMARY="MarkupSafe implements a unicode subclass that supports HTML strings"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

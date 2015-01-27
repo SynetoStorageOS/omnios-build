@@ -30,7 +30,7 @@
 PROG=structlog
 VER=0.4.2
 PKG=library/python-2/structlog-26
-SUMMARY="${PROG}"
+SUMMARY="structlog - structured logging for Python"
 DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"

@@ -30,8 +30,8 @@
 PROG=Jinja2
 VER=2.7.3
 PKG=library/python-2/Jinja2-26
-SUMMARY="${PROG}"
-DESC="$SUMMARY"
+SUMMARY="Jinja2 - a template engine written in pure Python"
+DESC="It provides a Django inspired non-XML syntax but supports inline expressions and an optional sandboxed environment."
 
 DEPENDS_IPS="runtime/python-26"
 
