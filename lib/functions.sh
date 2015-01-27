@@ -1254,15 +1254,19 @@ wait_for_prebuilt() {
 
 update_git_repo() {
     local REPO_SOURCE=$1
+    local BRANCH=$2
+
+    BRANCH=${BRANCH:master}
 
     if [[ -d $TMPDIR/$BUILDDIR ]]; then
         logmsg "Updating existing cloned repo in $TMPDIR/$BUILDDIR"
         pushd $TMPDIR/$BUILDDIR
+        logcmd $GIT checkout $BRANCH
         logcmd $GIT pull
         popd >/dev/null
     else
         logmsg "Cloning ${REPO_SOURCE} ..."
-        logcmd  $GIT clone ${REPO_SOURCE} $TMPDIR/$BUILDDIR ||
+        logcmd  $GIT clone -b ${BRANCH} ${REPO_SOURCE} $TMPDIR/$BUILDDIR ||
             logerr "Failed to clone repo $REPO_SOURCE"
     fi
 
