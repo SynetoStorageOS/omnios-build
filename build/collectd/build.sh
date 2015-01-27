@@ -39,7 +39,7 @@ CC="gcc -std=gnu99"
 CONFIGURE_OPTS="--without-libnetsnmp --enable-write_graphite --mandir=/usr/share/man"
 
 init
-update_git_repo ${UPSTREAM_REPO_CONTAINER}/${PROG}
+update_git_repo ${UPSTREAM_REPO_CONTAINER}/${PROG} syneto
 patch_source
 prep_build
 strip_install
