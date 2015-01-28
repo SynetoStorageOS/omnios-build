@@ -46,13 +46,9 @@ function bootstrap() {
     popd > /dev/null
 }
 
-function install_services() {
-    svccfg validate heartbeat.xml || logerr "Invalid service configuration file: heartbeat.xml"
-	install -d -m 755 ${DESTDIR}/lib/svc/method/
-	install -d -m 755 ${DESTDIR}/var/svc/manifest/system/
-	install -d -m 755 ${DESTDIR}/usr/sbin/
-	install -m 755 svc-heartbeat.sh ${DESTDIR}/lib/svc/method/svc-heartbeat
-	install -m 644 heartbeat.xml ${DESTDIR}/var/svc/manifest/system/heartbeat.xml
+function install_service_scripts() {
+    logcmd install -d -m 755 ${DESTDIR}/lib/svc/method/
+    logcmd install -m 755 svc-heartbeat.sh ${DESTDIR}/lib/svc/method/svc-heartbeat
 }
 
 init
@@ -61,7 +57,8 @@ patch_source
 bootstrap
 prep_build
 build
-install_services
+install_service_scripts
+install_service system heartbeat.xml
 make_package
 clean_up
 
