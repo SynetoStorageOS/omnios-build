@@ -36,7 +36,6 @@ DESC="$SUMMARY"
 DEPENDS_IPS="runtime/perl"
 BUILD_DEPENDS_IPS="runtime/perl runtime/perl/manual"
 
-BUILDARCH=64
 CC="gcc -std=gnu99"
 CONFIGURE_OPTS="--without-libnetsnmp --enable-write_graphite --mandir=/usr/share/man"
 
@@ -64,5 +63,6 @@ patch_source
 prep_build
 build
 strip_install
+make_isa_stub
 make_package
 clean_up
