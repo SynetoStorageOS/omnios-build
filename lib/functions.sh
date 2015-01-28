@@ -1280,5 +1280,17 @@ autogen() {
     logcmd ./autogen.sh || logerr "Failed to run autogen.sh"
     popd > /dev/null
 }
+
+function install_service() {
+    SERVICE_CATEGORY=$1
+    SERVICE_XML=$2
+
+    logmsg "--- Installing service manifest ${SERVICE_XML} into category ${SERVICE_CATEGORY}"
+    logcmd svccfg validate ${SERVICE_XML} || logerr "Invalid service configuration file: ${SERVICE_XML}"
+    logcmd install -d -m 755 ${DESTDIR}/lib/svc/method/
+    logcmd install -d -m 755 ${DESTDIR}/var/svc/manifest/${SERVICE_CATEGORY}/
+    logcmd install -m 644 ${SERVICE_XML} ${DESTDIR}/var/svc/manifest/${SERVICE_CATEGORY}/${SERVICE_XML}
+}
+
 # Vim hints
 # vim:ts=4:sw=4:et:
