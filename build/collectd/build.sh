@@ -21,7 +21,7 @@
 # CDDL HEADER END
 #
 #
-# Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2015 Syneto Limited.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
@@ -33,15 +33,36 @@ PKG=system/collectd
 SUMMARY="Collectd data collection service"
 DESC="$SUMMARY"
 
+DEPENDS_IPS="runtime/perl"
+BUILD_DEPENDS_IPS="runtime/perl runtime/perl/manual"
+
 BUILDARCH=64
-DEPENDS_IPS="SUNWcs"
 CC="gcc -std=gnu99"
 CONFIGURE_OPTS="--without-libnetsnmp --enable-write_graphite --mandir=/usr/share/man"
+
+# We need this to find pod2man
+export PATH=$PATH:/usr/perl5/5.16.1/bin
+
+save_function configure32 orig_configure32
+configure32() {
+    logmsg "--- generate configure"
+    ./build.sh || \
+        logerr "------ Failed generating configure"
+    orig_configure32
+}
+save_function configure64 orig_configure64
+configure64() {
+    logmsg "--- generate configure"
+    ./build.sh || \
+        logerr "------ Failed generating configure"
+    orig_configure64
+}
 
 init
 update_git_repo ${UPSTREAM_REPO_CONTAINER}/${PROG} syneto
 patch_source
 prep_build
+build
 strip_install
 make_package
 clean_up
