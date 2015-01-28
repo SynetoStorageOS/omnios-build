@@ -64,5 +64,6 @@ prep_build
 build
 strip_install
 make_isa_stub
+install_service system collectd.xml
 make_package
 clean_up
