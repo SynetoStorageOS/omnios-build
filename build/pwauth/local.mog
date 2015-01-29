@@ -1,1 +1,5 @@
 license License.txt license=BSD-3
+
+<transform file path=usr/bin/pwauth -> set mode 4755>
+<transform file path=usr/bin/i386/pwauth -> set mode 4755>
+<transform file path=usr/bin/amd64/pwauth -> set mode 4755>

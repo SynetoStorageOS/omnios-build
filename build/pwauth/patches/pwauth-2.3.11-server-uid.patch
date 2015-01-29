@@ -1,0 +1,43 @@
+diff -Nru pwauth-2.3.11-orig/auth_sun.c pwauth-2.3.11/auth_sun.c
+--- pwauth-2.3.11-orig/auth_sun.c	2009-04-04 07:45:56.000000000 +0300
++++ pwauth-2.3.11/auth_sun.c	2015-01-29 17:36:39.420752297 +0200
+@@ -79,6 +79,9 @@
+ #ifdef MIN_UNIX_UID
+     if (hisuid < MIN_UNIX_UID) return(STATUS_BLOCKED);
+ #endif
++#ifdef MAX_UNIX_UID
++    if (hisuid > MAX_UNIX_UID) return(STATUS_BLOCKED);
++#endif
+ #ifdef SHADOW_JFH
+     cpass= pw_encrypt(passwd, spwd->sp_pwdp);
+ #else
+diff -Nru pwauth-2.3.11-orig/config.h pwauth-2.3.11/config.h
+--- pwauth-2.3.11-orig/config.h	2013-10-04 16:59:08.000000000 +0300
++++ pwauth-2.3.11/config.h	2015-01-29 17:40:21.371030890 +0200
+@@ -279,7 +279,7 @@
+  * to change the uid list.
+  */
+ 
+-#define SERVER_UIDS 30		/* user "wwwrun" on the author's system */
++#define SERVER_UIDS 100		/* user "wwwrun" on the author's system */
+ 
+ 
+ /* If MIN_UNIX_UID is defined to an integer, logins with uid numbers less than
+@@ -291,7 +291,16 @@
+  * given value will be accepted).
+  */
+ 
+-#define MIN_UNIX_UID 500	/**/
++#define MIN_UNIX_UID 100	/**/
++
++/* If MAX_UNIX_UID is defined to an integer, logins with uid numbers greater
++ * than that value will be rejected, even if the password is correct.
++ *
++ * This is taken into consideration only when using SHADOW_SUN authentication
++ * method.
++ */
++
++#define MAX_UNIX_UID 100	/**/
+ 
+ 
+ /* If IGNORE_CASE is defined, the login given is checked in two different

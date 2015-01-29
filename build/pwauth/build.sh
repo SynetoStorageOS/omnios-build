@@ -33,6 +33,24 @@ PKG=system/pwauth
 SUMMARY="Pwauth is an authenticator designed to support reasonably secure web authentication out of the system password database"
 DESC="$SUMMARY"
 
+build32() {
+    pushd $TMPDIR/$BUILDDIR > /dev/null
+    logcmd make clean
+    logcmd make CC='gcc -m32' pwauth
+    logcmd install -d -m 755 ${DESTDIR}/usr/bin/i386
+    logcmd install -m 755 pwauth ${DESTDIR}/usr/bin/i386
+    popd > /dev/null
+}
+
+build64() {
+    pushd $TMPDIR/$BUILDDIR > /dev/null
+    logcmd make clean
+    logcmd make CC='gcc -m64' pwauth
+    logcmd install -d -m 755 ${DESTDIR}/usr/bin/amd64
+    logcmd install -m 755 pwauth ${DESTDIR}/usr/bin/amd64
+    popd > /dev/null
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
@@ -40,4 +58,4 @@ prep_build
 build
 make_isa_stub
 make_package
-clean_up
+# clean_up

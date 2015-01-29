@@ -1,0 +1,11 @@
+diff -Nru pwauth-2.3.11-orig/pwauth.h pwauth-2.3.11/pwauth.h
+--- pwauth-2.3.11-orig/pwauth.h	2009-04-04 07:45:56.000000000 +0300
++++ pwauth-2.3.11/pwauth.h	2015-01-29 16:42:30.000000000 +0200
+@@ -35,6 +35,7 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <strings.h>
+ #include <fcntl.h>
+ #include <errno.h>
+ #include <sys/types.h>
