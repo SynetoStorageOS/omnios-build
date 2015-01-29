@@ -36,7 +36,7 @@ DESC="$SUMMARY"
 BUILDARCH=32
 NO_PARALLEL_MAKE=1
 
-BUILD_DEPENDS_IPS="cluster/glue"
+BUILD_DEPENDS_IPS="cluster/glue autoconf automake libtool"
 RUN_DEPENDS_IPS="cluster/glue"
 
 function bootstrap() {
