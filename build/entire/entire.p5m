@@ -254,6 +254,7 @@ depend fmri=locale/zh_hk@0.5.11,5.11-@PVER@ type=require
 depend fmri=locale/zh_mo@0.5.11,5.11-@PVER@ type=require
 depend fmri=locale/zh_sg@0.5.11,5.11-@PVER@ type=require
 depend fmri=locale/zh_tw@0.5.11,5.11-@PVER@ type=require
+depend fmri=logging/syslog-ng type=require
 depend fmri=naming/ldap@0.5.11,5.11-@PVER@ type=require
 depend fmri=network/bridging@0.5.11,5.11-@PVER@ type=require
 depend fmri=network/dns/bind@9.10,5.11-@PVER@ type=require
