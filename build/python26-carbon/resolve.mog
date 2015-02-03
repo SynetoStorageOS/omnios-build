@@ -1,0 +1,5 @@
+<transform pkg.debug.depend.file=client.* -> drop>
+<transform pkg.debug.depend.file=protocol.* -> drop>
+<transform pkg.debug.depend.file=spec.* -> drop>
+<transform pkg.debug.depend.file=content.* -> drop>
+<transform pkg.debug.depend.file=txamqp* -> drop>
