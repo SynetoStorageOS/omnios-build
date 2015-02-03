@@ -33,7 +33,7 @@ PKG=library/python-2/carbon-26
 SUMMARY="${PROG}"
 DESC="$SUMMARY"
 
-RUN_DEPENDS_IPS="user/admin runtime/python-26 python-2/Twisted-26"
+RUN_DEPENDS_IPS="user/admin runtime/python-26 library/python-2/Twisted-26"
 BUILD_DEPENDS_IPS="runtime/python-26"
 BUILDARCH=32
 

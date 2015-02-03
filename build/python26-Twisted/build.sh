@@ -33,7 +33,7 @@ PKG=library/python-2/Twisted-26
 SUMMARY="Twisted - an event-based framework for internet applications"
 DESC="$SUMMARY"
 
-DEPENDS_IPS="runtime/python-26 python-2/zope.interface-26"
+DEPENDS_IPS="runtime/python-26 library/python-2/zope.interface-26"
 export CFLAGS="$CFLAGS -std=c89"
 
 init
