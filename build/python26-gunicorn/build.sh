@@ -40,7 +40,8 @@ DEPENDS_IPS="runtime/python-26
  	library/python-2/Werkzeug-26
  	library/python-2/Jinja2-26
  	library/python-2/MarkupSafe-26
- 	library/python-2/itsdangerous-26"
+ 	library/python-2/itsdangerous-26
+ 	library/python-2/structlog-26"
 
 init
 download_source $PROG $PROG $VER
