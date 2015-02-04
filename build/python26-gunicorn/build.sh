@@ -45,7 +45,8 @@ DEPENDS_IPS="runtime/python-26
  	library/python-2/PyYAML-26
  	library/python-2/tzlocal-26
  	library/python-2/importlib-26
- 	library/python-2/logutils-26"
+ 	library/python-2/logutils-26
+ 	library/python-2/cairocffi-26"
 
 init
 download_source $PROG $PROG $VER
