@@ -1,0 +1,4 @@
+license LICENSE license="Syneto Proprietary"
+
+<transform dir path=var/storage -> set owner admin>
+<transform dir path=var/storage -> set group staff>
