@@ -33,7 +33,7 @@ PKG=library/python-2/cffi-26
 SUMMARY="cffi - C Foreign Function Interface for Python"
 DESC="$SUMMARY"
 
-DEPENDS_IPS="runtime/python-26"
+DEPENDS_IPS="runtime/python-26 library/python-2/pycparser-26"
 
 init
 download_source $PROG $PROG $VER

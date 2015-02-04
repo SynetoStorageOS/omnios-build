@@ -33,7 +33,7 @@ PKG=library/python-2/cairocffi-26
 SUMMARY="Cairocffi -  a CFFI-based drop-in replacement for Pycairo, a set of Python bindings and object-oriented API for cairo(a 2D vector graphics library with support for multiple backends including image buffers, PNG, PostScript, PDF, and SVG file output)"
 DESC="$SUMMARY"
 
-DEPENDS_IPS="runtime/python-26"
+DEPENDS_IPS="runtime/python-26 library/python-2/cffi-26"
 
 init
 download_source $PROG $PROG $VER
