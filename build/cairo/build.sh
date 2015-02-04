@@ -33,6 +33,8 @@ PKG=library/cairo
 SUMMARY="Cairo is a 2D graphics library with support for multiple output devices. "
 DESC="{$SUMMARY}"
 
+CONFIGURE_OPTS="--disable-gtk-doc"
+
 init
 download_source $PROG $PROG $VER
 patch_source
