@@ -33,7 +33,14 @@ PKG=library/python-2/gunicorn-26
 SUMMARY="gunicorn(Green Unicorn) - a Python WSGI HTTP Server for UNIX"
 DESC="$SUMMARY"
 
-DEPENDS_IPS="runtime/python-26 library/python-2/pytz-26 library/python-2/six-26 library/python-2/Flask-26 library/python-2/Werkzeug-26 library/python-2/Jinja2-26 library/python-2/MarkupSafe-26"
+DEPENDS_IPS="runtime/python-26
+ 	library/python-2/pytz-26
+ 	library/python-2/six-26
+ 	library/python-2/Flask-26
+ 	library/python-2/Werkzeug-26
+ 	library/python-2/Jinja2-26
+ 	library/python-2/MarkupSafe-26
+ 	library/python-2/itsdangerous-26"
 
 init
 download_source $PROG $PROG $VER
