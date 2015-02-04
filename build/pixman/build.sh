@@ -36,7 +36,6 @@ DESC="{$SUMMARY}"
 init
 download_source $PROG $PROG $VER
 patch_source
-autogen
 prep_build
 build
 make_isa_stub
