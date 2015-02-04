@@ -52,6 +52,7 @@ install_configuration_files() {
 }
 
 install_service_script() {
+	logcmd install -d -m 755 ${DESTDIR}/lib/svc/method
  	logcmd install -m 755 svc-${PROG}.sh ${DESTDIR}/lib/svc/method/svc-${PROG}
 }
 
