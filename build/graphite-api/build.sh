@@ -51,11 +51,17 @@ install_configuration_files() {
 	logcmd install -d -m 755 ${DESTDIR}/etc
 }
 
+install_service_script() {
+ 	logcmd install -m 755 svc-${PROG}.sh ${DESTDIR}/lib/svc/method/svc-${PROG}
+}
+
 init
 update_git_repo ${UPSTREAM_REPO_CONTAINER}/${PROG}
 prep_build
 python_build
 install_configuration_files
+install_service_script
+install_service system ${PROG}.xml
 make_package
 clean_up
 
