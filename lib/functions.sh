@@ -1292,5 +1292,16 @@ function install_service() {
     logcmd install -m 644 ${SERVICE_XML} ${DESTDIR}/var/svc/manifest/${SERVICE_CATEGORY}/${SERVICE_XML}
 }
 
+sunstudio_location() {
+    logmsg "Ensuring that Sun Studio is where Illumos/Caiman thinks it is..."
+    if [[ -L /opt/SUNWspro ]]; then
+	logmsg "--- fake SUNWspro link exists, good"
+    else
+	logmsg "--- making fake SUNWspro directory"
+	logcmd sudo ln -s /opt/sunstudio12.1 /opt/SUNWspro || \
+	    logerr "--- Error: failed to make link"
+    fi
+}
+
 # Vim hints
 # vim:ts=4:sw=4:et:

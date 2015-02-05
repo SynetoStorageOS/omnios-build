@@ -60,24 +60,6 @@ CAIMAN_CODEMGR_SEDSTRING="s/CODEMGR_WS=.*/CODEMGR_WS=`echo $CODEMGR_WS | sed 's/
 CAIMAN_PKG_REDIST="PKGPUBLISHER_REDIST=syneto.eu; export PKGPUBLISHER_REDIST;"
 CAIMAN_PKG_BRANCH="PKGVERS_BRANCH=$PVER; export PKGVERS_BRANCH;"
 
-sunstudio_location() {
-    logmsg "Ensuring that Sun Studio is where Caiman thinks it is..."
-    if [[ -d /opt/SUNWspro ]]; then
-	logmsg "--- fake SUNWspro directory exists, good"
-    else
-	logmsg "--- making fake SUNWspro directory"
-	logcmd mkdir -p /opt/SUNWspro || \
-	    logerr "--- Error: failed to make directory"
-    fi
-    if [[ -L /opt/SUNWspro/sunstudio12.1 ]]; then
-	logmsg "--- sunstudio12.1 link exists, good"
-    else
-	logmsg "--- soft-linking to /opt/sunstudio12.1"
-        logcmd ln -s /opt/sunstudio12.1 /opt/SUNWspro/sunstudio12.1 || \
-            logerr "--- Failed: ln -s /opt/sunstudio12.1/ /opt/SUNWspro"
-    fi
-}
-
 #In order for the clone to work while running as root, you must have ssh'ed into the box with agent forwarding turned on.  Also the sudo'er file must either have the default, group, or user set to allow SSL_AUTH_SOCK.
 
 clone_source(){

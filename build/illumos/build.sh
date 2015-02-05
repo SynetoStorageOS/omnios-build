@@ -73,17 +73,6 @@ ILLUMOS_CW_GCC_DIR='export CW_GCC_DIR="$GCC_ROOT/bin"'
 ILLUMOS_BUILDNUM="ONNV_BUILDNUM=$VER; export ONNV_BUILDNUM;"
 ILLUMOS_MULTI_PROTO="export MULTI_PROTO=yes"
 
-sunstudio_location() {
-    logmsg "Ensuring that Sun Studio is where Illumos thinks it is..."
-    if [[ -L /opt/SUNWspro ]]; then
-	logmsg "--- fake SUNWspro link exists, good"
-    else
-	logmsg "--- making fake SUNWspro directory"
-	logcmd sudo ln -s /opt/sunstudio12.1 /opt/SUNWspro || \
-	    logerr "--- Error: failed to make link"
-    fi
-}
-
 # In order for the clone to work while running as root, you must have ssh'ed
 # into the box with agent forwarding turned on. Also the sudo'er file must
 # either have the default, group, or user set to allow SSL_AUTH_SOCK.
