@@ -44,7 +44,7 @@ build32() {
 save_function build64 build64_orig
 build64() {
 	PKG_CONFIG_PATH=/usr/lib/amd64/pkgconfig
-	build32_orig
+	build64_orig
 }
 
 init
