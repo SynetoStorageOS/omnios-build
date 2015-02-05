@@ -61,7 +61,7 @@ install_contrib_plugins() {
 	CONTRIB_PLUGINS_PATH=${DESTDIR}/usr/lib/collectd/contrib
 	logcmd install -d -m 755 ${CONTRIB_PLUGINS_PATH}
 	logcmd cp -a ${TMPDIR}/${BUILDDIR}/contrib/Syneto ${CONTRIB_PLUGINS_PATH}
-	logcmd cp -a ${TMPDIR}/${BUILDDIR}}/contrib/Coraid ${CONTRIB_PLUGINS_PATH}
+	logcmd cp -a ${TMPDIR}/${BUILDDIR}/contrib/Coraid ${CONTRIB_PLUGINS_PATH}
 }
 
 init
