@@ -57,6 +57,13 @@ configure64() {
     orig_configure64
 }
 
+install_contrib_plugins() {
+	CONTRIB_PLUGINS_PATH=${DESTDIR}/usr/lib/collectd/contrib
+	logcmd install -d -m 755 ${CONTRIB_PLUGINS_PATH}
+	logcmd cp -a ${UPSTREAM_REPO_CONTAINER}/${PROG}/contrib/Syneto ${CONTRIB_PLUGINS_PATH}
+	logcmd cp -a ${UPSTREAM_REPO_CONTAINER}/${PROG}/contrib/Coraid ${CONTRIB_PLUGINS_PATH}
+}
+
 init
 update_git_repo ${UPSTREAM_REPO_CONTAINER}/${PROG} syneto
 patch_source
@@ -65,5 +72,6 @@ build
 strip_install
 make_isa_stub
 install_service system collectd.xml
+install_contrib_plugins
 make_package
 clean_up
