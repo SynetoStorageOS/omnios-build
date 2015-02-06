@@ -5,3 +5,5 @@ license COPYING license=GPLv3
 <transform file path=usr/man/man3/Collectd::Unixsock.3 -> drop>
 <transform dir path=usr/man/man3 -> drop>
 <transform dir path=usr/man -> drop>
+
+<transform file path=usr/lib/collectd/contrib/.* -> set mode 0755>
