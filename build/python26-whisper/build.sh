@@ -28,7 +28,7 @@
 . ../../lib/functions.sh
 
 PROG=whisper
-VER=0.9.12
+VER=0.9.13
 PKG=library/python-2/whisper-26
 SUMMARY="Whisper - a file-based time-series database format for Graphite"
 DESC="$SUMMARY"
