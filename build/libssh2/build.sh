@@ -22,6 +22,7 @@
 #
 #
 # Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2015 Syneto LTD.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
@@ -29,7 +30,7 @@
 
 PROG=libssh2
 VER=1.4.3
-PKG=omniti/library/libssh2
+PKG=library/libssh2
 SUMMARY="$PROG - a client-side C library implementing the SSH2 protocol."
 DESC="$SUMMARY"
 

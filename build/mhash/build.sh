@@ -22,6 +22,7 @@
 #
 #
 # Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2015 Syneto LTD.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
@@ -31,7 +32,7 @@ PROG=mhash                          # App name
 VER=0.9.9.9                         # App version
 VERHUMAN=$VER                       # Human-readable version
 #PVER=                              # Branch (set in config.sh, override here if needed)
-PKG=omniti/library/mhash            # Package name (e.g. library/foo)
+PKG=library/mhash            # Package name (e.g. library/foo)
 SUMMARY="mhash"                     # One-liner, must be filled in
 DESC="Mhash is a free (under GNU Lesser GPL) library which provides a uniform interface to a large number of hash algorithms. These algorithms can be used to compute checksums, message digests, and other signatures."         # Longer description, must be filled in
 

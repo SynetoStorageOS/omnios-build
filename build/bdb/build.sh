@@ -22,6 +22,7 @@
 #
 #
 # Copyright 2011-2012 OmniTI Computer Consulting, Inc.  All rights reserved.
+# Copyright 2015 Syneto LTD.  All rights reserved.
 # Use is subject to license terms.
 #
 # Load support functions
@@ -30,7 +31,7 @@
 PROG=bdb
 VER=6.0.30
 VERHUMAN=$VER
-PKG=omniti/database/bdb
+PKG=database/bdb
 SUMMARY="$PROG - Berkeley DB: an embedded database library for key/value data"
 DESC="$SUMMARY"
 
