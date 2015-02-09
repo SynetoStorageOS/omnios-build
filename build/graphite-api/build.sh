@@ -44,7 +44,8 @@ LIBDIR=${PREFIX}/lib/python2.6/vendor-packages
 RUN_DEPENDS_IPS="user/admin
 	library/python-2/gunicorn-26
 	library/python-2/cairocffi-26
-	library/python-2/pyparsing-26"
+	library/python-2/pyparsing-26
+	library/cairo"
 
 install_configuration_files() {
 	logcmd install -d -m 755 ${DESTDIR}/${DATA_ROOT}
