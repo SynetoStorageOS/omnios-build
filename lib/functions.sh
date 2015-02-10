@@ -1256,7 +1256,7 @@ update_git_repo() {
     local REPO_SOURCE=$1
     local BRANCH=$2
 
-    BRANCH=${BRANCH:master}
+    BRANCH=${BRANCH:-master}
 
     if [[ -d $TMPDIR/$BUILDDIR ]]; then
         logmsg "Updating existing cloned repo in $TMPDIR/$BUILDDIR"
