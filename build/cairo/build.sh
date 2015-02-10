@@ -35,15 +35,17 @@ DESC="{$SUMMARY}"
 
 DEPENDS_IPS="library/pixman"
 
+REMOVE_PREVIOUS=1
+
 save_function build32 build32_orig
 build32() {
-	PKG_CONFIG_PATH=/usr/lib/pkgconfig
+	export PKG_CONFIG_PATH=/usr/lib/pkgconfig
 	build32_orig
 }
 
 save_function build64 build64_orig
 build64() {
-	PKG_CONFIG_PATH=/usr/lib/amd64/pkgconfig
+	export PKG_CONFIG_PATH=/usr/lib/amd64/pkgconfig
 	build64_orig
 }
 
