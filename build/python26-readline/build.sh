@@ -35,6 +35,22 @@ DESC="$SUMMARY"
 
 DEPENDS_IPS="runtime/python-26"
 
+LDFLAGS32="-L/usr/gnu/lib -R/usr/gnu/lib"
+LDFLAGS64="-L/usr/gnu/lib/amd64 -R/usr/gnu/lib/amd64"
+
+LDFLAGS32="-L/usr/gnu/lib -R/usr/gnu/lib"
+LDFLAGS64="-L/usr/gnu/lib/amd64 -R/usr/gnu/lib/amd64"
+
+pre_python_32() {
+    export LDFLAGS=$LDFLAGS32
+    logcmd $PYTHON ./setup.py clean
+}
+
+pre_python_64() {
+    export LDFLAGS=$LDFLAGS64
+    logcmd $PYTHON ./setup.py clean
+}
+
 init
 download_source $PROG $PROG $VER
 patch_source
