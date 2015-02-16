@@ -3,7 +3,7 @@
 
 <service_bundle type='manifest' name='apache:httpd' >
 	<service name='network/http' type='service' version='1'>
-		<instance name='apache' enabled='false'>
+		<instance name='apache' enabled='true'>
 
 			<dependency name='loopback'  grouping='require_all'
 			restart_on='error' type='service'>
