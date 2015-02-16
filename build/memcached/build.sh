@@ -33,7 +33,7 @@ PKG=system/memcached
 SUMMARY="Distributed memory object caching system"
 DESC="$SUMMARY"
 
-BUILD_DEPENDS_IPS="library/libevent"
+BUILD_DEPENDS_IPS="library/libevent network/netcat"
 
 DEPENDS_IPS="SUNWcs"
 

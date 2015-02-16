@@ -40,7 +40,8 @@ MCOPTIONS="`getproparg memcached/options`"
 
 case "$1" in
 'start')
-/usr/bin/memcached -u noaccess $MCOPTIONS -d
+/usr/bin/memcached -u noaccess $MCOPTIONS -d &
+while /usr/bin/nc -q 1 localhost 11211 </dev/null; do sleep 1; done
 ;;
 
 'stop')
