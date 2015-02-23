@@ -136,6 +136,8 @@ CONFIGURE_OPTS="
         --with-pam
         --with-iconv
         --enable-memcached
+        --enable-memcached-igbinary
+        --disable-memcached-sasl
         --enable-xdebug=shared
         --with-apxs2
         --enable-cli"
