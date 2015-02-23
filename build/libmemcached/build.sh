@@ -36,6 +36,8 @@ DESC="$SUMMARY"
 
 DEPENDS_IPS="SUNWcs"
 
+LDFLAGS='-lsocket'
+
 init
 download_source $PROG $PROG $VER
 patch_source

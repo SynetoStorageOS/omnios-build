@@ -1,0 +1,14 @@
+diff -Nru libmemcached-1.0.18-orig/libmemcached/byteorder.cc libmemcached-1.0.18/libmemcached/byteorder.cc
+--- libmemcached-1.0.18-orig/libmemcached/byteorder.cc	2014-02-09 13:52:42.000000000 +0200
++++ libmemcached-1.0.18/libmemcached/byteorder.cc	2015-02-23 16:46:51.691547099 +0200
+@@ -38,6 +38,10 @@
+ #include "mem_config.h"
+ #include "libmemcached/byteorder.h"
+ 
++#include <sys/types.h>
++#include <netinet/in.h>
++#include <inttypes.h>
++
+ /* Byte swap a 64-bit number. */
+ #ifndef swap64
+ static inline uint64_t swap64(uint64_t in)
