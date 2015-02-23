@@ -134,7 +134,7 @@ CONFIGURE_OPTS="
         --enable-igbinary
         --with-pam
         --with-iconv
-        --enable-memcache
+        --enable-memcached
         --enable-xdebug=shared
         --with-apxs2
         --enable-cli"
