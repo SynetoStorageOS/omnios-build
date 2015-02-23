@@ -34,7 +34,7 @@ PKG=system/libmemcached
 SUMMARY="libMemcached is an open source C/C++ client library and tools for the memcached server"
 DESC="$SUMMARY"
 
-DEPENDS_IPS="SUNWcs"
+DEPENDS_IPS="SUNWcs system/memcached"
 
 LDFLAGS='-lsocket'
 

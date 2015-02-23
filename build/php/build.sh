@@ -43,6 +43,7 @@ BUILD_DEPENDS_IPS="compress/bzip2
     system/library/iconv/utf-8
     system/library/iconv/utf-8/manual
     system/library/iconv/xsh4/latin
+    system/libmemcached
     web/curl
     library/zlib
     library/freetype2
@@ -54,7 +55,7 @@ BUILD_DEPENDS_IPS="compress/bzip2
     library/libtiff
     library/mhash"
 
-DEPENDS_IPS="system/library server/httpd"
+DEPENDS_IPS="system/library server/httpd system/libmemcached"
 
 # Though not strictly needed since we override build(), still nice to set
 BUILDARCH=64
