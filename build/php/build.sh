@@ -84,8 +84,8 @@ CONFIGURE_OPTS="
         --mandir=$PREFIX/share/man
         --with-pear=$PREFIX/pear
         --enable-dtrace
-        --enable-cgi
-        --enable-fpm
+        --enable-cgi=no
+        --enable-fpm=no
         --enable-zip=shared
         --with-zlib=shared
         --with-sqlite3=static
