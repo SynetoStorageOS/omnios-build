@@ -28,7 +28,7 @@
 . ../../lib/functions.sh
 
 PROG=php
-VER=5.6.5
+VER=5.6.6
 PKG=runtime/php
 SUMMARY="PHP Server 5.6"
 DESC="PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML."
@@ -57,17 +57,14 @@ BUILD_DEPENDS_IPS="compress/bzip2
 
 DEPENDS_IPS="system/library server/httpd system/libmemcached"
 
-# Though not strictly needed since we override build(), still nice to set
 BUILDARCH=64
 reset_configure_opts
 
-CFLAGS="-O2 -DZLIB_INTERNAL=1 -std=gnu99"
-CPPFLAGS=""
-CPPFLAGS64="-I/usr/include/$ISAPART64 -I/usr/include/$ISAPART64/curl \
-    -I/usr/include"
-LDFLAGS64="$LDFLAGS64 -L/usr/lib/$ISAPART64 -R/usr/lib/$ISAPART64 \
-    -L$PREFIX/lib -R$PREFIX/lib"
-
+export CFLAGS="-O2 -DZLIB_INTERNAL=1 -std=gnu99"
+export CPPFLAGS=""
+export CPPFLAGS64="-I/usr/include/$ISAPART64 -I/usr/include/$ISAPART64/curl -I/usr/include"
+export LDFLAGS64="$LDFLAGS64 -L/usr/lib/$ISAPART64 -R/usr/lib/$ISAPART64 -L$PREFIX/lib -R$PREFIX/lib"
+export ISALIST="amd64 i386"
 
 export EXTENSION_DIR=$PREFIX/lib/php/modules
 CONFIGURE_OPTS_32=""
@@ -139,7 +136,8 @@ CONFIGURE_OPTS="
         --disable-memcached-sasl
         --enable-xdebug=shared
         --with-apxs2
-        --enable-cli"
+        --enable-cli
+        --enable-libgcc=no"
 
 make_install() {
     logmsg "--- make install"
