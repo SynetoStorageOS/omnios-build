@@ -3,3 +3,7 @@
 <transform pkg.debug.depend.file=spec.* -> drop>
 <transform pkg.debug.depend.file=content.* -> drop>
 <transform pkg.debug.depend.file=txamqp* -> drop>
+
+<transform pkg.debug.depend.reason=usr/lib/python2.6/vendor-packages/carbon/amqp_publisher.py -> drop>
+<transform pkg.debug.depend.reason=usr/lib/python2.6/vendor-packages/carbon/amqp_listener.py -> drop>
+<transform pkg.debug.depend.reason=usr/bin/carbon-client.py -> drop>
