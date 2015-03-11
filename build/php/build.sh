@@ -53,7 +53,8 @@ BUILD_DEPENDS_IPS="compress/bzip2
     library/libpng
     library/libssh2
     library/libtiff
-    library/mhash"
+    library/mhash
+    server/httpd"
 
 DEPENDS_IPS="system/library server/httpd system/libmemcached"
 
