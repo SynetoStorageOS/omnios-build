@@ -58,4 +58,4 @@ prep_build
 build
 make_isa_stub
 make_package
-# clean_up
+clean_up
