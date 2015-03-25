@@ -67,6 +67,8 @@ service_configs() {
 }
 
 setup_logging() {
+    logcmd install -d -m 755 ${DESTDIR}/var
+    logcmd install -d -m 755 ${DESTDIR}/var/log
     logcmd touch ${DESTDIR}/var/log/netatalk.log
 }
 
