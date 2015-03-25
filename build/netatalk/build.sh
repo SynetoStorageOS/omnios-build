@@ -57,6 +57,7 @@ CONFIGURE_OPTS="
     --enable-nfsv4acls
     --enable-krbV-uam
     --with-dtrace
+    --with-pam=/var/netatalk
 "
 
 service_configs() {
