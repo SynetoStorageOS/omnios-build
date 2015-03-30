@@ -330,7 +330,7 @@
       <validation path="/usr/sbin/svccfg" args="apply -n"/>
     </configuration>
     <configuration name="pre-pkg-img-mod" type="sysconf"
-        source="/usr/share/distro_const/profile/text.xml">
+        source="__BUILDPATH__/text.xml">
       <validation path="/usr/sbin/svccfg" args="apply -n"/>
     </configuration>
     <configuration name="pre-pkg-img-mod" type="sysconf"
