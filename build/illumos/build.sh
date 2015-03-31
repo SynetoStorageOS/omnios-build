@@ -83,10 +83,10 @@ clone_source() {
     logmsg "Entering $TMPDIR/$BUILDDIR"
     pushd $TMPDIR/$BUILDDIR > /dev/null 
     if [ -d illumos-omnios ]; then
-        logmsg "OMNI Illumos Source in place. Pulling changes from upstream."
+        logmsg "Building OMNI Illumos Source in place. Pulling changes from upstream."
         pushd illumos-omnios
-        $GIT fetch
-        $GIT pull
+        logcmd $GIT fetch
+        logcmd $GIT pull
         popd
     else
         logmsg "Cloning OMNI Illumos Source..."
