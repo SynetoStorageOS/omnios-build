@@ -36,6 +36,8 @@ DESC="This isn't used, it's in the makefiles for pkg"
 PROG=pkg
 VER=omni
 BUILDNUM=$RELVER
+CVSBRANCH=syneto
+
 if [[ -z "$PKGPUBLISHER" ]]; then
     logerr "No PKGPUBLISHER specified. Check lib/site.sh?"
     exit # Force it, we're fucked here.
@@ -74,7 +76,7 @@ clone_source(){
     fi
     pushd pkg > /dev/null || logerr "no source"
     logcmd $GIT pull || logerr "failed to pull"
-    logcmd $GIT checkout r$RELVER || logmsg "No r$RELVER branch, using master."
+    logcmd $GIT checkout $CVSBRANCH || logmsg "No $CVSBRANCH branch, using master."
     popd > /dev/null
     popd > /dev/null 
 }
